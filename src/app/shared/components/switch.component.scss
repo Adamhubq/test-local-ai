@@ -1,0 +1,103 @@
+@import '../../../styles/design-tokens.scss';
+
+.ns-switch-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  width: 100%;
+}
+
+.ns-switch__container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  position: relative;
+}
+
+.ns-switch__input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.ns-switch__slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-xl);
+  height: var(--size-md);
+  border-radius: var(--border-radius-full);
+  background-color: var(--color-surface);
+  transition: var(--transition-normal);
+  position: relative;
+  cursor: pointer;
+  
+  &::before {
+    content: '';
+    width: var(--size-sm);
+    height: var(--size-sm);
+    border-radius: 50%;
+    background-color: var(--color-text);
+    transition: var(--transition-normal);
+    position: absolute;
+    left: var(--spacing-xs);
+  }
+}
+
+.ns-switch__input:checked ~ .ns-switch__slider {
+  background-color: var(--color-accent);
+  
+  &::before {
+    left: calc(100% - var(--size-sm) - var(--spacing-xs));
+  }
+}
+
+.ns-switch__input:focus ~ .ns-switch__slider {
+  outline: var(--outline-focus);
+  outline-offset: var(--spacing-xs);
+}
+
+.ns-switch__input:disabled ~ .ns-switch__slider {
+  background-color: var(--color-surface);
+  cursor: not-allowed;
+  
+  &::before {
+    background-color: var(--color-text-muted);
+  }
+}
+
+.ns-switch__label {
+  font-family: var(--font-label-family);
+  font-weight: var(--font-label-weight);
+  font-size: var(--font-label-size);
+  line-height: var(--font-label-line-height);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  cursor: pointer;
+}
+
+.ns-switch__required {
+  color: var(--color-danger);
+}
+
+.ns-switch__hint,
+.ns-switch__error {
+  font-family: var(--font-caption-family);
+  font-weight: var(--font-caption-weight);
+  font-size: var(--font-caption-size);
+  line-height: var(--font-caption-line-height);
+  margin-top: var(--spacing-xs);
+}
+
+.ns-switch__hint {
+  color: var(--color-text-secondary);
+}
+
+.ns-switch__error {
+  color: var(--color-danger);
+  display: block;
+}

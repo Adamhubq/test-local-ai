@@ -1,0 +1,98 @@
+@import '../../../styles/design-tokens.scss';
+
+.ns-radio-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  width: 100%;
+}
+
+.ns-radio__container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  position: relative;
+}
+
+.ns-radio__input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.ns-radio__checkmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-md);
+  height: var(--size-md);
+  border: var(--border);
+  border-radius: 50%;
+  background-color: var(--color-background);
+  transition: var(--transition-normal);
+  position: relative;
+  
+  &::after {
+    content: '';
+    display: none;
+    width: var(--size-xs);
+    height: var(--size-xs);
+    background-color: var(--color-accent);
+    border-radius: 50%;
+  }
+}
+
+.ns-radio__input:checked ~ .ns-radio__checkmark::after {
+  display: block;
+}
+
+.ns-radio__input:focus ~ .ns-radio__checkmark {
+  outline: var(--outline-focus);
+  outline-offset: var(--spacing-xs);
+}
+
+.ns-radio__input:disabled ~ .ns-radio__checkmark {
+  border-color: var(--color-surface);
+  background-color: var(--color-surface);
+  cursor: not-allowed;
+}
+
+.ns-radio__input:disabled:checked ~ .ns-radio__checkmark::after {
+  background-color: var(--color-text-muted);
+}
+
+.ns-radio__label {
+  font-family: var(--font-label-family);
+  font-weight: var(--font-label-weight);
+  font-size: var(--font-label-size);
+  line-height: var(--font-label-line-height);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  cursor: pointer;
+}
+
+.ns-radio__required {
+  color: var(--color-danger);
+}
+
+.ns-radio__hint,
+.ns-radio__error {
+  font-family: var(--font-caption-family);
+  font-weight: var(--font-caption-weight);
+  font-size: var(--font-caption-size);
+  line-height: var(--font-caption-line-height);
+  margin-top: var(--spacing-xs);
+}
+
+.ns-radio__hint {
+  color: var(--color-text-secondary);
+}
+
+.ns-radio__error {
+  color: var(--color-danger);
+  display: block;
+}

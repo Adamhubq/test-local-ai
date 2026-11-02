@@ -5,6 +5,10 @@ import { IconButtonComponent } from './components/icon-button.component';
 import { ButtonExampleComponent } from './components/button-example.component';
 import { InputComponent } from './components/input.component';
 import { TextareaComponent } from './components/textarea.component';
+import { SelectComponent } from './components/select.component';
+import { CheckboxComponent } from './components/checkbox.component';
+import { RadioComponent } from './components/radio.component';
+import { SwitchComponent } from './components/switch.component';
 
 @NgModule({
   declarations: [
@@ -12,7 +16,11 @@ import { TextareaComponent } from './components/textarea.component';
     IconButtonComponent,
     ButtonExampleComponent,
     InputComponent,
-    TextareaComponent
+    TextareaComponent,
+    SelectComponent,
+    CheckboxComponent,
+    RadioComponent,
+    SwitchComponent
   ],
   imports: [
     CommonModule
@@ -22,7 +30,11 @@ import { TextareaComponent } from './components/textarea.component';
     IconButtonComponent,
     ButtonExampleComponent,
     InputComponent,
-    TextareaComponent
+    TextareaComponent,
+    SelectComponent,
+    CheckboxComponent,
+    RadioComponent,
+    SwitchComponent
   ]
 })
 export class SharedModule { }

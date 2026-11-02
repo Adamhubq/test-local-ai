@@ -1,0 +1,112 @@
+@import '../../../styles/design-tokens.scss';
+
+.ns-checkbox-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  width: 100%;
+}
+
+.ns-checkbox__container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  position: relative;
+}
+
+.ns-checkbox__input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.ns-checkbox__checkmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-md);
+  height: var(--size-md);
+  border: var(--border);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-background);
+  transition: var(--transition-normal);
+  position: relative;
+  
+  &::after {
+    content: '';
+    display: none;
+    width: var(--size-xs);
+    height: var(--size-xs);
+    background-color: var(--color-accent);
+    border-radius: 50%;
+  }
+}
+
+.ns-checkbox__input:checked ~ .ns-checkbox__checkmark::after {
+  display: block;
+}
+
+.ns-checkbox__input:indeterminate ~ .ns-checkbox__checkmark {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  
+  &::after {
+    content: '';
+    display: block;
+    width: var(--size-xs);
+    height: 2px;
+    background-color: var(--color-background);
+    border-radius: 0;
+  }
+}
+
+.ns-checkbox__input:focus ~ .ns-checkbox__checkmark {
+  outline: var(--outline-focus);
+  outline-offset: var(--spacing-xs);
+}
+
+.ns-checkbox__input:disabled ~ .ns-checkbox__checkmark {
+  border-color: var(--color-surface);
+  background-color: var(--color-surface);
+  cursor: not-allowed;
+}
+
+.ns-checkbox__input:disabled:checked ~ .ns-checkbox__checkmark::after {
+  background-color: var(--color-text-muted);
+}
+
+.ns-checkbox__label {
+  font-family: var(--font-label-family);
+  font-weight: var(--font-label-weight);
+  font-size: var(--font-label-size);
+  line-height: var(--font-label-line-height);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  cursor: pointer;
+}
+
+.ns-checkbox__required {
+  color: var(--color-danger);
+}
+
+.ns-checkbox__hint,
+.ns-checkbox__error {
+  font-family: var(--font-caption-family);
+  font-weight: var(--font-caption-weight);
+  font-size: var(--font-caption-size);
+  line-height: var(--font-caption-line-height);
+  margin-top: var(--spacing-xs);
+}
+
+.ns-checkbox__hint {
+  color: var(--color-text-secondary);
+}
+
+.ns-checkbox__error {
+  color: var(--color-danger);
+  display: block;
+}

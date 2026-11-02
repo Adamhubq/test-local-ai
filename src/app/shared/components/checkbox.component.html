@@ -1,0 +1,34 @@
+<div class="ns-checkbox-wrapper">
+  <div class="ns-checkbox__container">
+    <input
+      [id]="id || 'checkbox-' + (Math.random() | number)"
+      type="checkbox"
+      [checked]="checked"
+      [indeterminate]="indeterminate"
+      [disabled]="disabled"
+      [required]="required"
+      (change)="onCheckboxChange()"
+      (keydown)="onKeydown($event)"
+      class="ns-checkbox__input"
+      [class.ns-checkbox__input--indeterminate]="indeterminate"
+    />
+    <span class="ns-checkbox__checkmark" aria-hidden="true"></span>
+  </div>
+
+  <label 
+    *ngIf="label" 
+    [for]="id || 'checkbox-' + (Math.random() | number)"
+    class="ns-checkbox__label"
+  >
+    {{ label }}
+    <span *ngIf="required" class="ns-checkbox__required">*</span>
+  </label>
+</div>
+
+<div *ngIf="hint" class="ns-checkbox__hint">
+  {{ hint }}
+</div>
+
+<div *ngIf="error" class="ns-checkbox__error">
+  {{ error }}
+</div>

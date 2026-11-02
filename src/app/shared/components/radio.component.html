@@ -1,0 +1,34 @@
+<div class="ns-radio-wrapper">
+  <div class="ns-radio__container">
+    <input
+      [id]="id || 'radio-' + (Math.random() | number)"
+      type="radio"
+      [name]="getGroupName()"
+      [value]="value"
+      [checked]="checked"
+      [disabled]="disabled"
+      [required]="required"
+      (change)="onRadioChange()"
+      (keydown)="onKeydown($event)"
+      class="ns-radio__input"
+    />
+    <span class="ns-radio__checkmark" aria-hidden="true"></span>
+  </div>
+
+  <label 
+    *ngIf="label" 
+    [for]="id || 'radio-' + (Math.random() | number)"
+    class="ns-radio__label"
+  >
+    {{ label }}
+    <span *ngIf="required" class="ns-radio__required">*</span>
+  </label>
+</div>
+
+<div *ngIf="hint" class="ns-radio__hint">
+  {{ hint }}
+</div>
+
+<div *ngIf="error" class="ns-radio__error">
+  {{ error }}
+</div>

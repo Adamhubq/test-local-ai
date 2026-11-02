@@ -1,0 +1,32 @@
+<div class="ns-switch-wrapper">
+  <div class="ns-switch__container">
+    <input
+      [id]="id || 'switch-' + (Math.random() | number)"
+      type="checkbox"
+      [checked]="checked"
+      [disabled]="disabled"
+      [required]="required"
+      (change)="onSwitchChange()"
+      (keydown)="onKeydown($event)"
+      class="ns-switch__input"
+    />
+    <span class="ns-switch__slider" aria-hidden="true"></span>
+  </div>
+
+  <label 
+    *ngIf="label" 
+    [for]="id || 'switch-' + (Math.random() | number)"
+    class="ns-switch__label"
+  >
+    {{ label }}
+    <span *ngIf="required" class="ns-switch__required">*</span>
+  </label>
+</div>
+
+<div *ngIf="hint" class="ns-switch__hint">
+  {{ hint }}
+</div>
+
+<div *ngIf="error" class="ns-switch__error">
+  {{ error }}
+</div>
