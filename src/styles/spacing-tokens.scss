@@ -1,0 +1,136 @@
+// ========================================
+// NOVA STORE Spacing & Sizing Tokens
+// ========================================
+
+// Spacing Scale - Multiplicative system (base 4px)
+:root {
+  /* Base spacing units */
+  --spacing-0: 0;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-7: 28px;
+  --spacing-8: 32px;
+  --spacing-9: 36px;
+  --spacing-10: 40px;
+  --spacing-11: 44px;
+  --spacing-12: 48px;
+  --spacing-13: 52px;
+  --spacing-14: 56px;
+  --spacing-15: 60px;
+  --spacing-16: 64px;
+  --spacing-17: 68px;
+  --spacing-18: 72px;
+  --spacing-19: 76px;
+  --spacing-20: 80px;
+  --spacing-21: 84px;
+  --spacing-22: 88px;
+  --spacing-23: 92px;
+  --spacing-24: 96px;
+  
+  /* Common spacing aliases */
+  --spacing-xs: var(--spacing-2);
+  --spacing-sm: var(--spacing-4);
+  --spacing-md: var(--spacing-6);
+  --spacing-lg: var(--spacing-8);
+  --spacing-xl: var(--spacing-10);
+  --spacing-xxl: var(--spacing-12);
+  --spacing-xxxl: var(--spacing-16);
+  
+  /* Container widths */
+  --container-width-xs: 540px;
+  --container-width-sm: 720px;
+  --container-width-md: 960px;
+  --container-width-lg: 1140px;
+  --container-width-xl: 1320px;
+  --container-width-xxl: 1500px;
+  
+  /* Page padding */
+  --page-padding-xs: var(--spacing-4);
+  --page-padding-sm: var(--spacing-6);
+  --page-padding-md: var(--spacing-8);
+  --page-padding-lg: var(--spacing-10);
+  --page-padding-xl: var(--spacing-12);
+  
+  /* Grid gutters */
+  --grid-gutter-xs: var(--spacing-1);
+  --grid-gutter-sm: var(--spacing-2);
+  --grid-gutter-md: var(--spacing-4);
+  --grid-gutter-lg: var(--spacing-6);
+  --grid-gutter-xl: var(--spacing-8);
+  
+  /* Component sizing */
+  --component-height-xs: 24px;
+  --component-height-sm: 32px;
+  --component-height-md: 40px;
+  --component-height-lg: 48px;
+  --component-height-xl: 56px;
+  --component-height-xxl: 64px;
+  
+  /* Button sizing */
+  --button-height-xs: var(--component-height-xs);
+  --button-height-sm: var(--component-height-sm);
+  --button-height-md: var(--component-height-md);
+  --button-height-lg: var(--component-height-lg);
+  --button-height-xl: var(--component-height-xl);
+  
+  /* Input sizing */
+  --input-height-xs: var(--component-height-xs);
+  --input-height-sm: var(--component-height-sm);
+  --input-height-md: var(--component-height-md);
+  --input-height-lg: var(--component-height-lg);
+  
+  /* Card sizing */
+  --card-width-xs: 280px;
+  --card-width-sm: 320px;
+  --card-width-md: 360px;
+  --card-width-lg: 400px;
+  --card-width-xl: 440px;
+  --card-width-xxl: 480px;
+  
+  /* Icon sizing */
+  --icon-size-xs: 12px;
+  --icon-size-sm: 16px;
+  --icon-size-md: 20px;
+  --icon-size-lg: 24px;
+  --icon-size-xl: 32px;
+  --icon-size-xxl: 40px;
+  
+  /* Avatar sizing */
+  --avatar-size-xs: 32px;
+  --avatar-size-sm: 40px;
+  --avatar-size-md: 48px;
+  --avatar-size-lg: 56px;
+  --avatar-size-xl: 64px;
+  
+  /* Badge sizing */
+  --badge-height-xs: 16px;
+  --badge-height-sm: 20px;
+  --badge-height-md: 24px;
+  --badge-height-lg: 28px;
+  --badge-height-xl: 32px;
+  
+  /* Navigation item sizing */
+  --nav-item-height-xs: var(--component-height-xs);
+  --nav-item-height-sm: var(--component-height-sm);
+  --nav-item-height-md: var(--component-height-md);
+  --nav-item-height-lg: var(--component-height-lg);
+  
+  /* Section spacing */
+  --section-spacing-xs: var(--spacing-4);
+  --section-spacing-sm: var(--spacing-6);
+  --section-spacing-md: var(--spacing-8);
+  --section-spacing-lg: var(--spacing-10);
+  --section-spacing-xl: var(--spacing-12);
+  --section-spacing-xxl: var(--spacing-16);
+  
+  /* Form element spacing */
+  --form-element-spacing-xs: var(--spacing-2);
+  --form-element-spacing-sm: var(--spacing-4);
+  --form-element-spacing-md: var(--spacing-6);
+  --form-element-spacing-lg: var(--spacing-8);
+  --form-element-spacing-xl: var(--spacing-10);
+}
