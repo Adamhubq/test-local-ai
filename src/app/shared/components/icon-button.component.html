@@ -1,0 +1,8 @@
+<button class="ns-icon-button" [disabled]="disabled || loading">
+  <span class="ns-icon-button__content">
+    <ng-content></ng-content>
+  </span>
+  <span class="ns-icon-button__loader" *ngIf="loading">
+    <span class="ns-icon-button__spinner"></span>
+  </span>
+</button>
