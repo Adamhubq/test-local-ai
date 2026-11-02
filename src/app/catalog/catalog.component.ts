@@ -7,8 +7,6 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-catalog',
-  standalone: true,
-  imports: [ProductCardComponent, SearchComponent, CommonModule],
   templateUrl: './catalog.component.html',
   styleUrls: ['./catalog.component.scss']
 })
