@@ -1,7 +1,7 @@
 <div class="container">
   <h2>Shopping Cart</h2>
   
-  <div *ngIf="cart.items.length === 0; else cartItems" class="empty-cart">
+  <div *ngIf="!cart || cart.items.length === 0; else cartItems" class="empty-cart">
     <p>Your cart is empty</p>
   </div>
   
@@ -20,8 +20,8 @@
       
       <div class="cart-summary">
         <h3>Order Summary</h3>
-        <p>Total Items: {{ cart.totalItems }}</p>
-        <p>Total Price: ${{ cart.totalPrice }}</p>
+        <p>Total Items: {{ cart?.totalItems }}</p>
+        <p>Total Price: ${{ cart?.totalPrice }}</p>
         <button class="btn btn-primary">Proceed to Checkout</button>
       </div>
       
