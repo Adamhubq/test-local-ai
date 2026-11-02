@@ -42,6 +42,10 @@ import { AccordionComponent } from './components/accordion/accordion.component';
 import { AccordionItemComponent } from './components/accordion/accordion-item.component';
 import { AccordionExampleComponent } from './components/accordion/accordion-example.component';
 
+// Toast components
+import { ToastComponent } from './components/toast/toast.component';
+import { ToastContainerComponent } from './components/toast-container/toast-container.component';
+
 @NgModule({
   declarations: [
     ButtonComponent,
@@ -76,7 +80,9 @@ import { AccordionExampleComponent } from './components/accordion/accordion-exam
     TabsComponent,
     AccordionComponent,
     AccordionItemComponent,
-    AccordionExampleComponent
+    AccordionExampleComponent,
+    ToastComponent,
+    ToastContainerComponent
   ],
   imports: [
     CommonModule
@@ -111,7 +117,9 @@ import { AccordionExampleComponent } from './components/accordion/accordion-exam
     TabsComponent,
     AccordionComponent,
     AccordionItemComponent,
-    AccordionExampleComponent
+    AccordionExampleComponent,
+    ToastComponent,
+    ToastContainerComponent
   ]
 })
 export class SharedModule { }

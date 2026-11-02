@@ -9,6 +9,7 @@ export interface Notification {
   type: NotificationType;
   duration?: number; // in milliseconds
   dismissible?: boolean; // whether user can close it manually
+  isVisible?: boolean; // for UI visibility control
 }
 
 @Injectable({
@@ -26,7 +27,8 @@ export class NotificationService {
       message,
       type,
       duration: options?.duration ?? 5000, // default 5 seconds
-      dismissible: options?.dismissible ?? true
+      dismissible: options?.dismissible ?? true,
+      isVisible: true
     };
 
     this.notificationsSubject.next(notification);
@@ -56,9 +58,9 @@ export class NotificationService {
   }
 
   dismiss(id: string): void {
-    // We could implement a more sophisticated dismissal system if needed
-    // For now, we'll just emit a null notification to indicate dismissal
-    // This approach keeps the API simple and allows for future expansion
+    // This will be handled by the toast container component
+    // We just need to emit a notification with isVisible = false
+    // The container will handle the actual dismissal logic
   }
 
   private generateId(): string {

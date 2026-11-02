@@ -1,0 +1,9 @@
+<div class="toast-container">
+  <app-toast 
+    *ngFor="let notification of notifications; let i = index"
+    [notification]="notification"
+    [isVisible]="notification.isVisible"
+    (dismiss)="onDismiss(notification.id)"
+  >
+  </app-toast>
+</div>

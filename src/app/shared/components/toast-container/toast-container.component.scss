@@ -1,0 +1,16 @@
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  width: 100%;
+  max-width: 400px;
+  
+  // Ensure toasts don't overlap with header or other critical elements
+  @media (max-width: 768px) {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+}

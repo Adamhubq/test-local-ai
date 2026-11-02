@@ -1,0 +1,21 @@
+<div 
+  class="toast toast--{{ notification.type }} toast--visible"
+  [class.toast--hidden]="!isVisible"
+  role="alert"
+  [attr.aria-live]="getAriaLive()"
+  [attr.aria-label]="getAriaLabel()"
+  [attr.aria-describedby]="'toast-message-' + notification.id"
+>
+  <div class="toast__content">
+    <span class="toast__icon" aria-hidden="true">{{ getIcon() }}</span>
+    <span class="toast__message" [id]="'toast-message-' + notification.id">{{ notification.message }}</span>
+  </div>
+  <button 
+    *ngIf="notification.dismissible !== false"
+    class="toast__close-button"
+    (click)="dismiss()"
+    aria-label="Close notification"
+  >
+    ×
+  </button>
+</div>
