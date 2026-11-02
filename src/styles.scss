@@ -1,27 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 
+// Import design tokens first
+@import 'styles/design-tokens';
+
+// Import variables and mixins
+@import 'styles/variables';
+@import 'styles/mixins';
+
 // Import reset
 @import 'styles/reset';
 
-// Import design tokens and variables
-@import 'styles/design-tokens';
-@import 'styles/variables';
-@import 'styles/mixins';
+// Import components
 @import 'styles/components';
 
 // Global styles
 html,
 body {
   height: 100%;
-}
-
-// Ensure consistent box-sizing for all elements
-html {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
 }
