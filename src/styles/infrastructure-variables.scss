@@ -1,0 +1,37 @@
+// ========================================
+// NOVA STORE Infrastructure Variables
+// ========================================
+
+// Base Sizes
+:root {
+  --base-size-unit: 4px;
+  --base-size-xs: calc(var(--base-size-unit) * 1);
+  --base-size-sm: calc(var(--base-size-unit) * 2);
+  --base-size-md: calc(var(--base-size-unit) * 4);
+  --base-size-lg: calc(var(--base-size-unit) * 6);
+  --base-size-xl: calc(var(--base-size-unit) * 8);
+  --base-size-xxl: calc(var(--base-size-unit) * 12);
+  --base-size-xxxl: calc(var(--base-size-unit) * 16);
+}
+
+// Container Width
+:root {
+  --container-width: 1200px;
+}
+
+// Z-index Layers (Base layers for infrastructure)
+:root {
+  --z-index-base: 0;
+  --z-index-low: 10;
+  --z-index-medium: 100;
+  --z-index-high: 1000;
+  --z-index-very-high: 10000;
+}
+
+// Transition Durations
+:root {
+  --transition-duration-fast: 150ms;
+  --transition-duration-normal: 300ms;
+  --transition-duration-slow: 500ms;
+  --transition-duration-extra-slow: 750ms;
+}

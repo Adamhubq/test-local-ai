@@ -5,6 +5,9 @@
 // Import design tokens first
 @import 'design-tokens';
 
+// Import infrastructure variables
+@import 'infrastructure-variables';
+
 // Component-specific variables
 $primary-color: var(--color-primary);
 $secondary-color: var(--color-secondary);
@@ -51,6 +54,6 @@ $box-shadow-md: var(--box-shadow-md);
 $box-shadow-lg: var(--box-shadow-lg);
 $box-shadow-xl: var(--box-shadow-xl);
 
-$transition-fast: var(--transition-fast);
-$transition-normal: var(--transition-normal);
-$transition-slow: var(--transition-slow);
+$transition-fast: var(--transition-duration-fast);
+$transition-normal: var(--transition-duration-normal);
+$transition-slow: var(--transition-duration-slow);

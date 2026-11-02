@@ -3,6 +3,9 @@
 // Import design tokens first
 @import 'styles/design-tokens';
 
+// Import infrastructure variables
+@import 'styles/infrastructure-variables';
+
 // Import variables and mixins
 @import 'styles/variables';
 @import 'styles/mixins';
