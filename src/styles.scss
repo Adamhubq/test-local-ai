@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
+// Import reset
+@import 'styles/reset';
+
 // Import design tokens and variables
 @import 'styles/design-tokens';
 @import 'styles/variables';
@@ -7,64 +10,18 @@
 @import 'styles/components';
 
 // Global styles
-* {
-  margin: 0;
-  padding: 0;
+html,
+body {
+  height: 100%;
+}
+
+// Ensure consistent box-sizing for all elements
+html {
   box-sizing: border-box;
 }
 
-body {
-  font-family: var(--font-family-primary);
-  background-color: var(--color-light);
-  color: var(--color-dark);
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
-}
-
-.btn {
-  padding: var(--spacing-sm) var(--spacing-md);
-  border: none;
-  border-radius: var(--border-radius-sm);
-  cursor: pointer;
-  transition: var(--transition-normal);
-  font-size: var(--font-size-md);
-  
-  &.btn-primary {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    
-    &:hover {
-      background-color: var(--color-primary-dark);
-    }
-  }
-  
-  &.btn-secondary {
-    background-color: var(--color-secondary);
-    color: var(--color-white);
-    
-    &:hover {
-      background-color: var(--color-secondary-dark);
-    }
-  }
-  
-  &.btn-danger {
-    background-color: var(--color-danger);
-    color: var(--color-white);
-    
-    &:hover {
-      background-color: var(--color-danger-dark);
-    }
-  }
-}
-
-.card {
-  background-color: var(--color-white);
-  border-radius: var(--border-radius-md);
-  box-shadow: var(--box-shadow-md);
-  padding: var(--spacing-lg);
-  margin-bottom: var(--spacing-md);
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }

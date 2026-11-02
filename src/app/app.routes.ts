@@ -23,6 +23,10 @@ export const routes: Route[] = [
     loadChildren: () => import('./features/product-detail/product-detail.module').then(m => m.ProductDetailModule)
   },
   {
+    path: 'product/:slug',
+    loadComponent: () => import('./features/product-detail/product-detail.component').then(m => m.ProductDetailComponent)
+  },
+  {
     path: 'brands',
     loadChildren: () => import('./features/brands/brands.module').then(m => m.BrandsModule)
   },
@@ -33,6 +37,10 @@ export const routes: Route[] = [
   {
     path: 'categories',
     loadChildren: () => import('./features/categories/categories.module').then(m => m.CategoriesModule)
+  },
+  {
+    path: 'category/:slug',
+    loadComponent: () => import('./features/categories/categories.component').then(m => m.CategoriesComponent)
   },
   {
     path: 'wishlist',
@@ -57,6 +65,10 @@ export const routes: Route[] = [
   {
     path: 'contacts',
     loadChildren: () => import('./features/contacts/contacts.module').then(m => m.ContactsModule)
+  },
+  {
+    path: 'checkout',
+    loadComponent: () => import('./features/checkout/checkout.component').then(m => m.CheckoutComponent)
   },
   {
     path: '**',
