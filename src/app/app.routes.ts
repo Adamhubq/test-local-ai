@@ -15,6 +15,10 @@ export const routes: Route[] = [
     loadComponent: () => import('./components/components.component').then(m => m.ComponentsComponent)
   },
   {
+    path: 'tokens',
+    loadComponent: () => import('./app/design-tokens-demo.component').then(m => m.DesignTokensDemoComponent)
+  },
+  {
     path: 'cart',
     loadChildren: () => import('./features/cart/cart.module').then(m => m.CartModule)
   },

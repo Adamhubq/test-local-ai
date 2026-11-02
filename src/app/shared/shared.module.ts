@@ -56,6 +56,9 @@ import { ConfirmationDialogExampleComponent } from './components/confirmation-di
 import { EmptyStateComponent } from './components/empty-state/empty-state.component';
 import { ErrorStateComponent } from './components/error-state/error-state.component';
 
+// Design Tokens Demo Component
+import { DesignTokensDemoComponent } from '../app/design-tokens-demo.component';
+
 @NgModule({
   declarations: [
     ButtonComponent,
@@ -96,7 +99,8 @@ import { ErrorStateComponent } from './components/error-state/error-state.compon
     SkeletonComponent,
     LoaderComponent,
     ConfirmationDialogComponent,
-    ConfirmationDialogExampleComponent
+    ConfirmationDialogExampleComponent,
+    DesignTokensDemoComponent,
 
     EmptyStateComponent,
     ErrorStateComponent
@@ -140,7 +144,8 @@ import { ErrorStateComponent } from './components/error-state/error-state.compon
     SkeletonComponent,
     LoaderComponent,
     ConfirmationDialogComponent,
-    ConfirmationDialogExampleComponent
+    ConfirmationDialogExampleComponent,
+    DesignTokensDemoComponent,
 
     EmptyStateComponent,
     ErrorStateComponent
