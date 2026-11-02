@@ -1,0 +1,27 @@
+<div class="skeleton" [ngClass]="type" [style.width]="width" [style.height]="height" [style.borderRadius]="borderRadius">
+  <div class="skeleton-content" [ngClass]="{ 'animated': animated }">
+    <ng-container *ngIf="type === 'text'">
+      <div class="skeleton-line"></div>
+      <div class="skeleton-line skeleton-line--secondary"></div>
+      <div class="skeleton-line skeleton-line--tertiary"></div>
+    </ng-container>
+
+    <ng-container *ngIf="type === 'image'">
+      <div class="skeleton-image"></div>
+    </ng-container>
+
+    <ng-container *ngIf="type === 'product-card'">
+      <div class="skeleton-product-image"></div>
+      <div class="skeleton-product-content">
+        <div class="skeleton-line skeleton-line--large"></div>
+        <div class="skeleton-line skeleton-line--medium"></div>
+        <div class="skeleton-line skeleton-line--small"></div>
+        <div class="skeleton-line skeleton-line--small"></div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="type === 'block'">
+      <div class="skeleton-block"></div>
+    </ng-container>
+  </div>
+</div>

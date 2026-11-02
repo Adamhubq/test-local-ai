@@ -1,0 +1,106 @@
+@import 'styles/design-tokens.scss';
+@import 'styles/mixins.scss';
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-surface-100);
+  border-radius: inherit;
+
+  &.text {
+    height: auto;
+  }
+
+  &.image {
+    aspect-ratio: 1/1;
+  }
+
+  &.product-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &.block {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.skeleton-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &.animated {
+    animation: skeleton-loading 1.5s infinite ease-in-out;
+  }
+
+  .skeleton-line {
+    background-color: var(--color-surface-200);
+    border-radius: 4px;
+    height: 12px;
+    margin-bottom: 8px;
+
+    &--secondary {
+      width: 80%;
+    }
+
+    &--tertiary {
+      width: 60%;
+    }
+
+    &--large {
+      width: 100%;
+      height: 16px;
+    }
+
+    &--medium {
+      width: 90%;
+      height: 14px;
+    }
+
+    &--small {
+      width: 70%;
+      height: 12px;
+    }
+  }
+
+  .skeleton-image,
+  .skeleton-product-image {
+    background-color: var(--color-surface-200);
+    border-radius: 8px;
+    aspect-ratio: 1/1;
+    width: 100%;
+  }
+
+  .skeleton-product-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .skeleton-block {
+    background-color: var(--color-surface-200);
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-content.animated {
+    animation: none;
+    background-color: var(--color-surface-200);
+  }
+}
