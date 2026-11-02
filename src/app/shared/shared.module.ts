@@ -37,6 +37,11 @@ import { ModalExampleComponent } from './components/modal/modal-example.componen
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { TabsComponent } from './components/tabs/tabs.component';
 
+// Accordion components
+import { AccordionComponent } from './components/accordion/accordion.component';
+import { AccordionItemComponent } from './components/accordion/accordion-item.component';
+import { AccordionExampleComponent } from './components/accordion/accordion-example.component';
+
 @NgModule({
   declarations: [
     ButtonComponent,
@@ -68,7 +73,10 @@ import { TabsComponent } from './components/tabs/tabs.component';
     SearchSuggestionsComponent,
     ModalExampleComponent,
     DropdownComponent,
-    TabsComponent
+    TabsComponent,
+    AccordionComponent,
+    AccordionItemComponent,
+    AccordionExampleComponent
   ],
   imports: [
     CommonModule
@@ -100,7 +108,10 @@ import { TabsComponent } from './components/tabs/tabs.component';
     ModalComponent,
     SearchSuggestionsComponent,
     DropdownComponent,
-    TabsComponent
+    TabsComponent,
+    AccordionComponent,
+    AccordionItemComponent,
+    AccordionExampleComponent
   ]
 })
 export class SharedModule { }

@@ -1,0 +1,18 @@
+<div class="accordion-item-wrapper">
+  <button 
+    class="accordion-button"
+    [attr.aria-expanded]="active"
+    [attr.aria-controls]="'accordion-content-' + id"
+    (click)="toggle()"
+    type="button">
+    <span class="accordion-title">{{ title }}</span>
+    <span class="accordion-icon" [attr.aria-hidden]="true">▼</span>
+  </button>
+  
+  <div 
+    class="accordion-content"
+    [attr.aria-hidden]="!active"
+    [attr.id]="'accordion-content-' + id">
+    <ng-content></ng-content>
+  </div>
+</div>
