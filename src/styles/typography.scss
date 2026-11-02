@@ -2,7 +2,56 @@
 // NOVA STORE Typography Utilities
 // ========================================
 
-// Typography Scale Mixins
+// Semantic Typography Mixins (using new semantic tokens)
+@mixin font-display {
+  font-family: var(--font-display-family);
+  font-weight: var(--font-display-weight);
+  font-size: var(--font-display-size);
+  line-height: var(--font-display-line-height);
+  letter-spacing: var(--font-display-letter-spacing);
+}
+
+@mixin font-heading {
+  font-family: var(--font-heading-family);
+  font-weight: var(--font-heading-weight);
+  font-size: var(--font-heading-size);
+  line-height: var(--font-heading-line-height);
+  letter-spacing: var(--font-heading-letter-spacing);
+}
+
+@mixin font-title {
+  font-family: var(--font-title-family);
+  font-weight: var(--font-title-weight);
+  font-size: var(--font-title-size);
+  line-height: var(--font-title-line-height);
+  letter-spacing: var(--font-title-letter-spacing);
+}
+
+@mixin font-body {
+  font-family: var(--font-body-family);
+  font-weight: var(--font-body-weight);
+  font-size: var(--font-body-size);
+  line-height: var(--font-body-line-height);
+  letter-spacing: var(--font-body-letter-spacing);
+}
+
+@mixin font-caption {
+  font-family: var(--font-caption-family);
+  font-weight: var(--font-caption-weight);
+  font-size: var(--font-caption-size);
+  line-height: var(--font-caption-line-height);
+  letter-spacing: var(--font-caption-letter-spacing);
+}
+
+@mixin font-label {
+  font-family: var(--font-label-family);
+  font-weight: var(--font-label-weight);
+  font-size: var(--font-label-size);
+  line-height: var(--font-label-line-height);
+  letter-spacing: var(--font-label-letter-spacing);
+}
+
+// Typography Scale Mixins (legacy - for backward compatibility)
 @mixin hero-heading {
   font-size: var(--font-size-xxxxl);
   font-weight: var(--font-weight-bold);

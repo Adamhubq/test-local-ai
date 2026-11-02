@@ -81,6 +81,56 @@
   --line-height-tight: 1.2;
   --line-height-normal: 1.5;
   --line-height-loose: 1.8;
+  
+  /* Letter spacing */
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: normal;
+  --letter-spacing-wide: 0.02em;
+}
+
+// Semantic Typography Tokens
+:root {
+  /* Display - Large, attention-grabbing text for hero sections */
+  --font-display-family: var(--font-family-primary);
+  --font-display-weight: var(--font-weight-bold);
+  --font-display-size: var(--font-size-xxxxl);
+  --font-display-line-height: var(--line-height-tight);
+  --font-display-letter-spacing: var(--letter-spacing-tight);
+  
+  /* Heading - Main section headings */
+  --font-heading-family: var(--font-family-primary);
+  --font-heading-weight: var(--font-weight-semibold);
+  --font-heading-size: var(--font-size-xxxl);
+  --font-heading-line-height: var(--line-height-tight);
+  --font-heading-letter-spacing: var(--letter-spacing-normal);
+  
+  /* Title - Subheadings and section titles */
+  --font-title-family: var(--font-family-primary);
+  --font-title-weight: var(--font-weight-bold);
+  --font-title-size: var(--font-size-xxl);
+  --font-title-line-height: var(--line-height-tight);
+  --font-title-letter-spacing: var(--letter-spacing-normal);
+  
+  /* Body - Main content text */
+  --font-body-family: var(--font-family-primary);
+  --font-body-weight: var(--font-weight-normal);
+  --font-body-size: var(--font-size-md);
+  --font-body-line-height: var(--line-height-normal);
+  --font-body-letter-spacing: var(--letter-spacing-normal);
+  
+  /* Caption - Small text for metadata, footnotes */
+  --font-caption-family: var(--font-family-primary);
+  --font-caption-weight: var(--font-weight-normal);
+  --font-caption-size: var(--font-size-sm);
+  --font-caption-line-height: var(--line-height-tight);
+  --font-caption-letter-spacing: var(--letter-spacing-normal);
+  
+  /* Label - Text for form labels, tags, etc. */
+  --font-label-family: var(--font-family-primary);
+  --font-label-weight: var(--font-weight-medium);
+  --font-label-size: var(--font-size-sm);
+  --font-label-line-height: var(--line-height-tight);
+  --font-label-letter-spacing: var(--letter-spacing-normal);
 }
 
 // Grid System
