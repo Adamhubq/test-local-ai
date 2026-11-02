@@ -115,22 +115,15 @@
   }
   
   &-title {
-    font-size: var(--font-size-lg);
-    margin-bottom: var(--spacing-sm);
-    color: var(--color-text);
+    @extend .product-title;
   }
   
   &-price {
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-accent);
-    margin-bottom: var(--spacing-md);
+    @extend .product-price;
   }
   
   &-description {
-    color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-md);
-    line-height: var(--line-height-normal);
+    @extend .product-description;
   }
 }
 
@@ -160,14 +153,11 @@
   }
   
   &-title {
-    font-size: var(--font-size-md);
-    margin-bottom: var(--spacing-xs);
+    @extend .product-title;
   }
   
   &-price {
-    color: var(--color-accent);
-    font-weight: var(--font-weight-bold);
-    margin-bottom: var(--spacing-xs);
+    @extend .product-price;
   }
   
   &-quantity {
