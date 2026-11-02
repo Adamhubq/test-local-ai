@@ -12,7 +12,7 @@ export const routes: Route[] = [
   },
   {
     path: 'components',
-    loadComponent: () => import('./components/components.component').then(m => m.ComponentsComponent)
+    loadComponent: () => import('./components/showcase.component').then(m => m.ShowcaseComponent)
   },
   {
     path: 'tokens',

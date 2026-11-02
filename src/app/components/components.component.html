@@ -1,287 +1,198 @@
-<div class="ui-kit-container">
+<div class="showcase-container">
   <h1>{{ title }}</h1>
   
-  <div class="ui-kit-content">
-    <!-- Buttons -->
-    <section class="ui-kit-section">
-      <h2>Buttons</h2>
-      <div class="ui-kit-grid">
-        <div class="ui-kit-card">
-          <h3>Primary Button</h3>
-          <p>Standard primary action button</p>
-          <button class="btn btn-primary">Primary</button>
-        </div>
-        <div class="ui-kit-card">
-          <h3>Secondary Button</h3>
-          <p>Secondary action button</p>
-          <button class="btn btn-secondary">Secondary</button>
-        </div>
-        <div class="ui-kit-card">
-          <h3>Icon Button</h3>
-          <p>Button with icon only</p>
-          <button class="btn btn-icon"><i class="icon">favorite</i></button>
+  <div class="showcase-content">
+    <!-- Product Card -->
+    <section class="showcase-section">
+      <h2>Product Card</h2>
+      <div class="showcase-grid">
+        <div class="showcase-card">
+          <app-product-card 
+            [product]="demoProducts[0]"
+            (addToCart)="onAddToCart($event)"
+            (toggleFavorite)="onToggleFavorite($event)">
+          </app-product-card>
         </div>
       </div>
     </section>
 
-    <!-- Forms -->
-    <section class="ui-kit-section">
-      <h2>Forms</h2>
-      <div class="ui-kit-grid">
-        <div class="ui-kit-card">
-          <h3>Input Field</h3>
-          <p>Text input with validation</p>
-          <input type="text" [(ngModel)]="inputValue" placeholder="Enter text" class="form-input">
-        </div>
-        <div class="ui-kit-card">
-          <h3>Select Dropdown</h3>
-          <p>Dropdown selection component</p>
-          <select [(ngModel)]="selectValue" class="form-select">
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-          </select>
-        </div>
-        <div class="ui-kit-card">
-          <h3>Checkbox</h3>
-          <p>Checkbox with label</p>
-          <label class="checkbox-label">
-            <input type="checkbox" [(ngModel)]="checkboxChecked" class="form-checkbox"> 
-            <span>Check me</span>
-          </label>
-        </div>
-        <div class="ui-kit-card">
-          <h3>Radio Buttons</h3>
-          <p>Group of radio buttons</p>
-          <label class="radio-label">
-            <input type="radio" [(ngModel)]="radioValue" value="option1" name="radio-group"> 
-            <span>Option 1</span>
-          </label>
-          <label class="radio-label">
-            <input type="radio" [(ngModel)]="radioValue" value="option2" name="radio-group"> 
-            <span>Option 2</span>
-          </label>
-        </div>
-        <div class="ui-kit-card">
-          <h3>Switch</h3>
-          <p>Toggle switch component</p>
-          <label class="switch-label">
-            <input type="checkbox" [(ngModel)]="switchChecked" class="form-switch"> 
-            <span class="slider"></span>
-            <span>Toggle Switch</span>
-          </label>
-        </div>
+    <!-- Product Grid -->
+    <section class="showcase-section">
+      <h2>Product Grid</h2>
+      <div class="showcase-grid">
+        <app-product-grid [products]="demoProducts"></app-product-grid>
       </div>
     </section>
 
-    <!-- Inputs -->
-    <section class="ui-kit-section">
-      <h2>Inputs</h2>
-      <div class="ui-kit-grid">
-        <div class="ui-kit-card">
-          <h3>Text Input</h3>
-          <p>Standard text input field</p>
-          <input type="text" [(ngModel)]="inputValue" placeholder="Text input" class="input-field">
-        </div>
-        <div class="ui-kit-card">
-          <h3>Textarea</h3>
-          <p>Multi-line text input</p>
-          <textarea [(ngModel)]="textareaValue" placeholder="Enter text here..." class="textarea-field"></textarea>
-        </div>
+    <!-- Search Bar -->
+    <section class="showcase-section">
+      <h2>Search Bar</h2>
+      <div class="showcase-card">
+        <app-search-bar 
+          [placeholder]="'Search products...'"
+          (search)="onSearch($event)">
+        </app-search-bar>
+        <p>Search query: {{ searchQuery }}</p>
       </div>
     </section>
 
-    <!-- Navigation -->
-    <section class="ui-kit-section">
-      <h2>Navigation</h2>
-      <div class="ui-kit-grid">
-        <div class="ui-kit-card">
-          <h3>Breadcrumbs</h3>
-          <p>Path navigation breadcrumbs</p>
-          <nav class="breadcrumbs">Home / Category / Product</nav>
-        </div>
-        <div class="ui-kit-card">
-          <h3>Pagination</h3>
-          <p>Page navigation controls</p>
-          <nav class="pagination">
-            <button class="btn btn-secondary">&laquo; Previous</button>
-            <button class="btn btn-primary">1</button>
-            <button class="btn btn-secondary">2</button>
-            <button class="btn btn-secondary">3</button>
-            <button class="btn btn-secondary">Next &raquo;</button>
-          </nav>
-        </div>
+    <!-- Search Suggestions -->
+    <section class="showcase-section">
+      <h2>Search Suggestions</h2>
+      <div class="showcase-card">
+        <app-search-suggestions 
+          [suggestions]="demoSearchSuggestions"
+          (selectSuggestion)="onSelectSuggestion($event)">
+        </app-search-suggestions>
       </div>
     </section>
 
-    <!-- Data Display -->
-    <section class="ui-kit-section">
-      <h2>Data Display</h2>
-      <div class="ui-kit-grid">
-        <div class="ui-kit-card">
-          <h3>Badge</h3>
-          <p>Badge with status or count</p>
-          <span class="badge">New</span>
-          <span class="badge" style="background-color: #e74c3c;">Error</span>
-          <span class="badge" style="background-color: #27ae60;">Success</span>
-        </div>
-        <div class="ui-kit-card">
-          <h3>Chip</h3>
-          <p>Tag or filter chip component</p>
-          <span class="chip">Chip 1</span>
-          <span class="chip" style="background-color: #9b59b6;">Chip 2</span>
-          <span class="chip" style="background-color: #f39c12;">Chip 3</span>
-        </div>
-        <div class="ui-kit-card">
-          <h3>Divider</h3>
-          <p>Visual separator</p>
-          <hr class="divider">
-        </div>
-        <div class="ui-kit-card">
-          <h3>Avatar</h3>
-          <p>User avatar component</p>
-          <div class="avatar">JD</div>
-        </div>
-        <div class="ui-kit-card">
-          <h3>Price</h3>
-          <p>Product price display</p>
-          <div class="price">$99.99</div>
-        </div>
-        <div class="ui-kit-card">
-          <h3>Rating</h3>
-          <p>Star rating component</p>
-          <div class="rating">
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">★</span>
-            <span class="star">☆</span>
-            <span class="star">☆</span>
-          </div>
-        </div>
+    <!-- Modal -->
+    <section class="showcase-section">
+      <h2>Modal</h2>
+      <div class="showcase-card">
+        <button class="btn btn-primary" (click)="openModal()">Open Modal</button>
+        <app-modal 
+          *ngIf="isModalOpen"
+          [title]="'Sample Modal'"
+          (close)="closeModal()">
+          <p>This is a sample modal content.</p>
+          <p>You can put any content here.</p>
+        </app-modal>
       </div>
     </section>
 
-    <!-- Cards -->
-    <section class="ui-kit-section">
-      <h2>Cards</h2>
-      <div class="ui-kit-grid">
-        <div class="ui-kit-card">
-          <h3>Product Card</h3>
-          <p>Display product information</p>
-          <div class="product-card">
-            <div class="product-image">Image</div>
-            <div class="product-info">
-              <h4>Product Name</h4>
-              <p class="price">$29.99</p>
-              <button class="btn btn-primary">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-        <div class="ui-kit-card">
-          <h3>Info Card</h3>
-          <p>Information display card</p>
-          <div class="info-card">
-            <h4>Card Title</h4>
-            <p>Card content goes here...</p>
-          </div>
-        </div>
-        <div class="ui-kit-card">
-          <h3>Feature Card</h3>
-          <p>Feature or benefit card</p>
-          <div class="feature-card">
-            <h4>Feature Title</h4>
-            <p>Feature description...</p>
-          </div>
-        </div>
+    <!-- Drawer -->
+    <section class="showcase-section">
+      <h2>Drawer</h2>
+      <div class="showcase-card">
+        <button class="btn btn-primary" (click)="openDrawer()">Open Drawer</button>
+        <app-drawer 
+          *ngIf="isDrawerOpen"
+          [title]="'Sample Drawer'"
+          (close)="closeDrawer()">
+          <p>This is a sample drawer content.</p>
+          <p>Drawers are useful for additional information or actions.</p>
+        </app-drawer>
       </div>
     </section>
 
-    <!-- Product Components -->
-    <section class="ui-kit-section">
-      <h2>Product Components</h2>
-      <div class="ui-kit-grid">
-        <div class="ui-kit-card">
-          <h3>Product Grid</h3>
-          <p>Grid layout for products</p>
-          <div class="product-grid">
-            <div class="product-item">Item 1</div>
-            <div class="product-item">Item 2</div>
-            <div class="product-item">Item 3</div>
-          </div>
-        </div>
-        <div class="ui-kit-card">
-          <h3>Product List</h3>
-          <p>List view of products</p>
-          <div class="product-list">
-            <div class="list-item">List Item 1</div>
-            <div class="list-item">List Item 2</div>
-          </div>
-        </div>
-        <div class="ui-kit-card">
-          <h3>Product Detail</h3>
-          <p>Detailed product information</p>
-          <div class="product-detail">
-            <h4>Product Title</h4>
-            <p>Product description...</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Overlays -->
-    <section class="ui-kit-section">
-      <h2>Overlays</h2>
-      <div class="ui-kit-grid">
-        <div class="ui-kit-card">
-          <h3>Modal</h3>
-          <p>Modal dialog overlay</p>
-          <button class="btn btn-secondary">Open Modal</button>
-        </div>
-        <div class="ui-kit-card">
-          <h3>Dropdown</h3>
-          <p>Dropdown menu overlay</p>
+    <!-- Dropdown -->
+    <section class="showcase-section">
+      <h2>Dropdown</h2>
+      <div class="showcase-card">
+        <app-dropdown 
+          [isOpen]="isDropdownOpen"
+          (toggle)="openDropdown()"
+          (close)="closeDropdown()">
           <button class="btn btn-secondary">Open Dropdown</button>
-        </div>
-        <div class="ui-kit-card">
-          <h3>Toast</h3>
-          <p>Notification toast message</p>
-          <button class="btn btn-secondary">Show Toast</button>
+          <div dropdown-content>
+            <a href="#" class="dropdown-item">Item 1</a>
+            <a href="#" class="dropdown-item">Item 2</a>
+            <a href="#" class="dropdown-item">Item 3</a>
+          </div>
+        </app-dropdown>
+      </div>
+    </section>
+
+    <!-- Tabs -->
+    <section class="showcase-section">
+      <h2>Tabs</h2>
+      <div class="showcase-card">
+        <app-tabs 
+          [tabs]="[
+            { id: 'tab1', label: 'Tab 1' },
+            { id: 'tab2', label: 'Tab 2' },
+            { id: 'tab3', label: 'Tab 3' }
+          ]"
+          [activeTab]="activeTab"
+          (tabChange)="activeTab = $event">
+        </app-tabs>
+        <div class="tab-content">
+          <p>Content for {{ activeTab }}</p>
         </div>
       </div>
     </section>
 
-    <!-- Feedback -->
-    <section class="ui-kit-section">
-      <h2>Feedback</h2>
-      <div class="ui-kit-grid">
-        <div class="ui-kit-card">
-          <h3>Loader</h3>
-          <p>Progress indicator</p>
-          <div class="loader">Loading...</div>
-        </div>
-        <div class="ui-kit-card">
-          <h3>Alert</h3>
-          <p>Informational alert message</p>
-          <div class="alert">Alert Message</div>
-        </div>
+    <!-- Accordion -->
+    <section class="showcase-section">
+      <h2>Accordion</h2>
+      <div class="showcase-card">
+        <app-accordion>
+          <app-accordion-item 
+            *ngFor="let item of accordionItems" 
+            [title]="item.title"
+            [content]="item.content">
+          </app-accordion-item>
+        </app-accordion>
       </div>
     </section>
 
-    <!-- Foundations -->
-    <section class="ui-kit-section">
-      <h2>Foundations</h2>
-      <div class="ui-kit-grid">
-        <div class="ui-kit-card">
-          <h3>Colors</h3>
-          <p>Primary, secondary, and neutral color palette</p>
-        </div>
-        <div class="ui-kit-card">
-          <h3>Typography</h3>
-          <p>Font families, sizes, and weights</p>
-        </div>
-        <div class="ui-kit-card">
-          <h3>Spacing</h3>
-          <p>Grid system and spacing tokens</p>
-        </div>
+    <!-- Toast -->
+    <section class="showcase-section">
+      <h2>Toast</h2>
+      <div class="showcase-card">
+        <button class="btn btn-primary" (click)="showToastMessage('This is a toast message!')">Show Toast</button>
+        <app-toast 
+          *ngIf="showToast"
+          [message]="toastMessage"
+          [type]="'success'">
+        </app-toast>
+      </div>
+    </section>
+
+    <!-- Skeleton -->
+    <section class="showcase-section">
+      <h2>Skeleton</h2>
+      <div class="showcase-card">
+        <app-skeleton [rows]="3"></app-skeleton>
+      </div>
+    </section>
+
+    <!-- Loader -->
+    <section class="showcase-section">
+      <h2>Loader</h2>
+      <div class="showcase-card">
+        <app-loader></app-loader>
+      </div>
+    </section>
+
+    <!-- Empty State -->
+    <section class="showcase-section">
+      <h2>Empty State</h2>
+      <div class="showcase-card">
+        <app-empty-state 
+          [title]="'No products found'"
+          [message]="'Try adjusting your search or filter to find what you\'re looking for.'"
+          [icon]="'search'">
+        </app-empty-state>
+      </div>
+    </section>
+
+    <!-- Error State -->
+    <section class="showcase-section">
+      <h2>Error State</h2>
+      <div class="showcase-card">
+        <app-error-state 
+          [title]="'Something went wrong'"
+          [message]="'We couldn\'t load the content. Please try again later.'"
+          [icon]="'error'">
+        </app-error-state>
+      </div>
+    </section>
+
+    <!-- Confirmation Dialog -->
+    <section class="showcase-section">
+      <h2>Confirmation Dialog</h2>
+      <div class="showcase-card">
+        <button class="btn btn-primary" (click)="openConfirmationDialog()">Open Confirmation Dialog</button>
+        <app-confirmation-dialog 
+          *ngIf="isConfirmationDialogOpen"
+          [title]="'Confirm Action'"
+          [message]="'Are you sure you want to perform this action?'"
+          (confirm)="confirmAction()"
+          (cancel)="cancelAction()">
+        </app-confirmation-dialog>
       </div>
     </section>
   </div>

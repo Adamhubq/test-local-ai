@@ -1,0 +1,148 @@
+.showcase-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.showcase-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.showcase-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.demo-section {
+  margin-bottom: 30px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 4px;
+}
+
+.product-card-demo {
+  display: flex;
+  max-width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.product-image-placeholder {
+  width: 120px;
+  height: 120px;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #666;
+}
+
+.product-info {
+  padding: 15px;
+  flex: 1;
+}
+
+.product-brand {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.product-info h4 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rating-value {
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.stars {
+  color: #ffc107;
+}
+
+.product-prices {
+  margin-bottom: 15px;
+}
+
+.current-price {
+  font-weight: bold;
+  color: #333;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.add-to-cart-btn {
+  width: 100%;
+  padding: 8px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-bar-demo {
+  display: flex;
+  max-width: 300px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+}
+
+.clear-btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.accordion-demo {
+  max-width: 400px;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #eee;
+}
+
+.accordion-header {
+  padding: 15px;
+  background: #f8f9fa;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.accordion-content {
+  padding: 15px;
+  background: white;
+}
+
+.toast-demo {
+  display: inline-block;
+}
