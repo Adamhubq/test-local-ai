@@ -1,0 +1,31 @@
+<div class="product-grid" [ngStyle]="{'grid-template-columns': 'repeat(' + columns + ', 1fr)', 'gap': gap}">
+  <ng-container *ngIf="loading; else content">
+    <div class="product-grid__loading" *ngFor="let item of Array(columns); trackBy: trackByProductId">
+      <div class="product-card-placeholder"></div>
+    </div>
+  </ng-container>
+
+  <ng-template #content>
+    <ng-container *ngIf="error; else emptyOrProducts">
+      <div class="product-grid__error">
+        <p>{{ error }}</p>
+      </div>
+    </ng-container>
+
+    <ng-template #emptyOrProducts>
+      <ng-container *ngIf="empty; else productsList">
+        <div class="product-grid__empty">
+          <p>Нет товаров для отображения</p>
+        </div>
+      </ng-container>
+
+      <ng-template #productsList>
+        <app-product-card
+          *ngFor="let product of products; trackBy: trackByProductId"
+          [product]="product"
+          class="product-grid__item">
+        </app-product-card>
+      </ng-template>
+    </ng-template>
+  </ng-template>
+</div>
