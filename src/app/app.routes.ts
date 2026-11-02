@@ -19,10 +19,6 @@ export const routes: Route[] = [
     loadChildren: () => import('./features/cart/cart.module').then(m => m.CartModule)
   },
   {
-    path: 'product/:id',
-    loadChildren: () => import('./features/product-detail/product-detail.module').then(m => m.ProductDetailModule)
-  },
-  {
     path: 'product/:slug',
     loadComponent: () => import('./features/product-detail/product-detail.component').then(m => m.ProductDetailComponent)
   },
