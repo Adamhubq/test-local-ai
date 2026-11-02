@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-components',
-  template: '<p>Components component</p>'
+  templateUrl: './components.component.html',
+  styleUrls: ['./components.component.scss']
 })
 export class ComponentsComponent {
+  title = 'NOVA STORE UI Kit';
 }

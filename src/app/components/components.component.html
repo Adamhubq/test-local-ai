@@ -1,33 +1,234 @@
-<div class="components-container">
+<div class="ui-kit-container">
   <h1>{{ title }}</h1>
   
-  <div class="components-grid">
-    <!-- Catalog Component -->
-    <div class="component-card">
-      <h2>Catalog Component</h2>
-      <p>Displays product catalog</p>
-      <app-catalog></app-catalog>
-    </div>
+  <div class="ui-kit-content">
+    <!-- Foundations -->
+    <section class="ui-kit-section">
+      <h2>Foundations</h2>
+      <div class="ui-kit-grid">
+        <div class="ui-kit-card">
+          <h3>Colors</h3>
+          <p>Primary, secondary, and neutral color palette</p>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Typography</h3>
+          <p>Font families, sizes, and weights</p>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Spacing</h3>
+          <p>Grid system and spacing tokens</p>
+        </div>
+      </div>
+    </section>
 
-    <!-- Filter Component -->
-    <div class="component-card">
-      <h2>Filter Component</h2>
-      <p>Provides filtering functionality</p>
-      <app-filter></app-filter>
-    </div>
+    <!-- Buttons -->
+    <section class="ui-kit-section">
+      <h2>Buttons</h2>
+      <div class="ui-kit-grid">
+        <div class="ui-kit-card">
+          <h3>Primary Button</h3>
+          <p>Standard primary action button</p>
+          <button class="btn btn-primary">Primary</button>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Secondary Button</h3>
+          <p>Secondary action button</p>
+          <button class="btn btn-secondary">Secondary</button>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Icon Button</h3>
+          <p>Button with icon only</p>
+          <button class="btn btn-icon"><i class="icon">favorite</i></button>
+        </div>
+      </div>
+    </section>
 
-    <!-- Menu Component -->
-    <div class="component-card">
-      <h2>Menu Component</h2>
-      <p>Navigation menu</p>
-      <app-menu></app-menu>
-    </div>
+    <!-- Forms -->
+    <section class="ui-kit-section">
+      <h2>Forms</h2>
+      <div class="ui-kit-grid">
+        <div class="ui-kit-card">
+          <h3>Input Field</h3>
+          <p>Text input with validation</p>
+          <input type="text" placeholder="Enter text" class="form-input">
+        </div>
+        <div class="ui-kit-card">
+          <h3>Select Dropdown</h3>
+          <p>Dropdown selection component</p>
+          <select class="form-select">
+            <option>Option 1</option>
+            <option>Option 2</option>
+          </select>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Checkbox</h3>
+          <p>Checkbox with label</p>
+          <label class="checkbox-label">
+            <input type="checkbox" class="form-checkbox"> 
+            <span>Check me</span>
+          </label>
+        </div>
+      </div>
+    </section>
 
-    <!-- Product Card Component -->
-    <div class="component-card">
-      <h2>Product Card Component</h2>
-      <p>Displays individual product information</p>
-      <app-product-card></app-product-card>
-    </div>
+    <!-- Inputs -->
+    <section class="ui-kit-section">
+      <h2>Inputs</h2>
+      <div class="ui-kit-grid">
+        <div class="ui-kit-card">
+          <h3>Text Input</h3>
+          <p>Standard text input field</p>
+          <input type="text" placeholder="Text input" class="input-field">
+        </div>
+        <div class="ui-kit-card">
+          <h3>Textarea</h3>
+          <p>Multi-line text input</p>
+          <textarea placeholder="Enter text here..." class="textarea-field"></textarea>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Radio Buttons</h3>
+          <p>Group of radio buttons</p>
+          <label class="radio-label">
+            <input type="radio" name="radio-group"> 
+            <span>Option 1</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation -->
+    <section class="ui-kit-section">
+      <h2>Navigation</h2>
+      <div class="ui-kit-grid">
+        <div class="ui-kit-card">
+          <h3>Header</h3>
+          <p>Main navigation header</p>
+          <header class="header">Header Navigation</header>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Menu</h3>
+          <p>Navigation menu component</p>
+          <nav class="menu">Navigation Menu</nav>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Breadcrumbs</h3>
+          <p>Path navigation breadcrumbs</p>
+          <nav class="breadcrumbs">Home / Category / Product</nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cards -->
+    <section class="ui-kit-section">
+      <h2>Cards</h2>
+      <div class="ui-kit-grid">
+        <div class="ui-kit-card">
+          <h3>Product Card</h3>
+          <p>Display product information</p>
+          <div class="product-card">Product Card</div>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Info Card</h3>
+          <p>Information display card</p>
+          <div class="info-card">Info Card</div>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Feature Card</h3>
+          <p>Feature or benefit card</p>
+          <div class="feature-card">Feature Card</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Components -->
+    <section class="ui-kit-section">
+      <h2>Product Components</h2>
+      <div class="ui-kit-grid">
+        <div class="ui-kit-card">
+          <h3>Product Grid</h3>
+          <p>Grid layout for products</p>
+          <div class="product-grid">Product Grid</div>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Product List</h3>
+          <p>List view of products</p>
+          <div class="product-list">Product List</div>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Product Detail</h3>
+          <p>Detailed product information</p>
+          <div class="product-detail">Product Detail</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overlays -->
+    <section class="ui-kit-section">
+      <h2>Overlays</h2>
+      <div class="ui-kit-grid">
+        <div class="ui-kit-card">
+          <h3>Modal</h3>
+          <p>Modal dialog overlay</p>
+          <button class="btn btn-secondary">Open Modal</button>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Dropdown</h3>
+          <p>Dropdown menu overlay</p>
+          <button class="btn btn-secondary">Open Dropdown</button>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Toast</h3>
+          <p>Notification toast message</p>
+          <button class="btn btn-secondary">Show Toast</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feedback -->
+    <section class="ui-kit-section">
+      <h2>Feedback</h2>
+      <div class="ui-kit-grid">
+        <div class="ui-kit-card">
+          <h3>Loader</h3>
+          <p>Progress indicator</p>
+          <div class="loader">Loading...</div>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Alert</h3>
+          <p>Informational alert message</p>
+          <div class="alert">Alert Message</div>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Badge</h3>
+          <p>Badge with status or count</p>
+          <span class="badge">New</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Display -->
+    <section class="ui-kit-section">
+      <h2>Data Display</h2>
+      <div class="ui-kit-grid">
+        <div class="ui-kit-card">
+          <h3>Table</h3>
+          <p>Tabular data display</p>
+          <table class="data-table">
+            <tr><td>Row 1</td></tr>
+            <tr><td>Row 2</td></tr>
+          </table>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Pagination</h3>
+          <p>Page navigation controls</p>
+          <nav class="pagination">Pagination Controls</nav>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Chip</h3>
+          <p>Tag or filter chip component</p>
+          <span class="chip">Chip</span>
+        </div>
+      </div>
+    </section>
   </div>
 </div>
