@@ -48,6 +48,13 @@ import { ToastContainerComponent } from './components/toast-container/toast-cont
 import { SkeletonComponent } from './components/skeleton/skeleton.component';
 import { LoaderComponent } from './components/loader/loader.component';
 
+    EmptyStateComponent,
+    ErrorStateComponent
+
+// Empty State and Error State
+import { EmptyStateComponent } from './components/empty-state/empty-state.component';
+import { ErrorStateComponent } from './components/error-state/error-state.component';
+
 @NgModule({
   declarations: [
     ButtonComponent,
@@ -87,6 +94,9 @@ import { LoaderComponent } from './components/loader/loader.component';
     ToastContainerComponent,
     SkeletonComponent,
     LoaderComponent
+
+    EmptyStateComponent,
+    ErrorStateComponent
   ],
   imports: [
     CommonModule
@@ -126,6 +136,9 @@ import { LoaderComponent } from './components/loader/loader.component';
     ToastContainerComponent,
     SkeletonComponent,
     LoaderComponent
+
+    EmptyStateComponent,
+    ErrorStateComponent
   ]
 })
 export class SharedModule { }

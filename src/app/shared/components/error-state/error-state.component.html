@@ -1,0 +1,18 @@
+<div class="error-state">
+  <div class="error-state__content">
+    <div class="error-state__icon" *ngIf="showIcon && icon">
+      <i class="error-state__icon-element" [class]="icon"></i>
+    </div>
+    
+    <h3 class="error-state__title" *ngIf="title">{{ title }}</h3>
+    
+    <p class="error-state__description" *ngIf="description">{{ description }}</p>
+    
+    <button 
+      *ngIf="actionLabel" 
+      class="error-state__action-button"
+      (click)="onAction()">
+      {{ actionLabel }}
+    </button>
+  </div>
+</div>

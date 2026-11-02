@@ -27,6 +27,27 @@ import { RatingExampleComponent } from './rating/rating-example.component';
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 
+// New components for search
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { SearchSuggestionsComponent } from './components/search-suggestions/search-suggestions.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { ModalExampleComponent } from './components/modal/modal-example.component';
+
+// Dropdown and Tabs components
+import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { TabsComponent } from './components/tabs/tabs.component';
+
+// Accordion components
+import { AccordionComponent } from './components/accordion/accordion.component';
+import { AccordionItemComponent } from './components/accordion/accordion-item.component';
+import { AccordionExampleComponent } from './components/accordion/accordion-example.component';
+
+// Toast components
+import { ToastComponent } from './components/toast/toast.component';
+import { ToastContainerComponent } from './components/toast-container/toast-container.component';
+import { SkeletonComponent } from './components/skeleton/skeleton.component';
+import { LoaderComponent } from './components/loader/loader.component';
+
 @NgModule({
   declarations: [
     ButtonComponent,
@@ -52,7 +73,20 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     RangePipe,
     RatingExampleComponent,
     BreadcrumbsComponent,
-    PaginationComponent
+    PaginationComponent,
+    SearchBarComponent,
+    ModalComponent,
+    SearchSuggestionsComponent,
+    ModalExampleComponent,
+    DropdownComponent,
+    TabsComponent,
+    AccordionComponent,
+    AccordionItemComponent,
+    AccordionExampleComponent,
+    ToastComponent,
+    ToastContainerComponent,
+    SkeletonComponent,
+    LoaderComponent
   ],
   imports: [
     CommonModule
@@ -79,7 +113,19 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     PriceExampleComponent,
     RatingComponent,
     BreadcrumbsComponent,
-    PaginationComponent
+    PaginationComponent,
+    SearchBarComponent,
+    ModalComponent,
+    SearchSuggestionsComponent,
+    DropdownComponent,
+    TabsComponent,
+    AccordionComponent,
+    AccordionItemComponent,
+    AccordionExampleComponent,
+    ToastComponent,
+    ToastContainerComponent,
+    SkeletonComponent,
+    LoaderComponent
   ]
 })
 export class SharedModule { }
