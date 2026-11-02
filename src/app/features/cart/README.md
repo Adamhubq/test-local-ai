@@ -1,15 +1,16 @@
 # Cart Feature
 
-The cart feature module contains all components and services related to shopping cart functionality.
+This module contains the cart functionality including:
+- Cart component with product listing
+- Total amount calculation
+- Checkout and continue shopping actions
 
-This feature includes:
-- Cart management (add, remove, update items)
-- Cart summary and totals calculation
-- Cart persistence
-- Checkout process integration
-- Promotions and coupons application
+## Components
+- `CartComponent` - Main cart display component
 
-Structure:
-- Components for cart views
-- Services for cart operations
-- Models specific to cart functionality
+## Services Used
+- `CartService` - Manages cart state and operations
+
+## Models Used
+- `CartItem` - Represents items in the cart
+- `Product` - Product information for cart items

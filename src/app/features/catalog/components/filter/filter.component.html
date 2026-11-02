@@ -1,0 +1,32 @@
+<div class="filter">
+  <h3>Filters</h3>
+  <div class="filter__group">
+    <label>Category</label>
+    <select (change)="onCategoryChange($event)">
+      <option value="">All Categories</option>
+      <option *ngFor="let category of categories" [value]="category.id">
+        {{ category.name }}
+      </option>
+    </select>
+  </div>
+  
+  <div class="filter__group">
+    <label>Price Range</label>
+    <div class="filter__price-range">
+      <span>{{ minPrice }} - {{ maxPrice }}</span>
+      <input type="range" min="0" max="10000" [(ngModel)]="priceRange" (change)="onPriceChange()">
+    </div>
+  </div>
+  
+  <div class="filter__group">
+    <label>Brand</label>
+    <select (change)="onBrandChange($event)">
+      <option value="">All Brands</option>
+      <option *ngFor="let brand of brands" [value]="brand.id">
+        {{ brand.name }}
+      </option>
+    </select>
+  </div>
+  
+  <button class="filter__reset-btn" (click)="resetFilters()">Reset Filters</button>
+</div>

@@ -1,0 +1,29 @@
+.catalog-page {
+  padding: 20px;
+  
+  .catalog-header {
+    margin-bottom: 30px;
+    
+    h1 {
+      font-size: 2rem;
+      color: #333;
+    }
+  }
+  
+  .catalog-content {
+    display: flex;
+    gap: 20px;
+    
+    .filters {
+      flex: 0 0 250px;
+    }
+    
+    .products-list {
+      flex: 1;
+      
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+  }
+}

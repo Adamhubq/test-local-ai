@@ -1,10 +1,9 @@
 # Shared Module
 
-The shared module contains components, directives, and pipes that are used across multiple features.
-These are typically:
-- Reusable UI components (buttons, cards, modals)
-- Custom directives
-- Custom pipes
-- Common utilities
+Shared module contains components, directives and pipes that are used across multiple feature modules.
 
-This module is imported by feature modules that need to use these shared components.
+## Structure
+- Components: Reusable UI components (e.g., buttons, cards, forms)
+- Directives: Custom directives used throughout the application
+- Pipes: Custom pipes for data transformation
+- Utilities: Common utility functions and helpers

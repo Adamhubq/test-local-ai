@@ -1,10 +1,9 @@
 # Core Module
 
-The core module contains singleton services and components that are shared throughout the application.
-These are typically services that should only be instantiated once, such as:
-- Authentication services
-- Global configuration services
-- Application-wide utilities
-- Base components that are used across multiple features
+Core module contains application-wide services, guards, interceptors and other singleton components that are shared across the entire application.
 
-This module is imported only once in the main application module.
+## Structure
+- Services: Application-wide services (e.g., authentication, logging)
+- Guards: Route guards for application-wide access control
+- Interceptors: HTTP interceptors for request/response handling
+- Components: Core components used throughout the application

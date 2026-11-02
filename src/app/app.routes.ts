@@ -1,8 +1,4 @@
 import { Route } from '@angular/router';
-import { CatalogComponent } from './catalog/catalog.component';
-import { ComponentsComponent } from './components/components.component';
-import { CartComponent } from './features/cart/cart.component';
-import { ProductDetailComponent } from './features/product-detail/product-detail.component';
 
 export const routes: Route[] = [
   {
@@ -12,19 +8,55 @@ export const routes: Route[] = [
   },
   {
     path: 'catalog',
-    component: CatalogComponent
+    loadComponent: () => import('./features/catalog/catalog.component').then(m => m.CatalogComponent)
   },
   {
     path: 'components',
-    component: ComponentsComponent
+    loadComponent: () => import('./components/components.component').then(m => m.ComponentsComponent)
   },
   {
     path: 'cart',
-    component: CartComponent
+    loadChildren: () => import('./features/cart/cart.module').then(m => m.CartModule)
   },
   {
     path: 'product/:id',
-    component: ProductDetailComponent
+    loadChildren: () => import('./features/product-detail/product-detail.module').then(m => m.ProductDetailModule)
+  },
+  {
+    path: 'brands',
+    loadChildren: () => import('./features/brands/brands.module').then(m => m.BrandsModule)
+  },
+  {
+    path: 'brand/:slug',
+    loadComponent: () => import('./features/brand/brand.component').then(m => m.BrandComponent)
+  },
+  {
+    path: 'categories',
+    loadChildren: () => import('./features/categories/categories.module').then(m => m.CategoriesModule)
+  },
+  {
+    path: 'wishlist',
+    loadChildren: () => import('./features/wishlist/wishlist.module').then(m => m.WishlistModule)
+  },
+  {
+    path: 'account',
+    loadChildren: () => import('./features/account/account.module').then(m => m.AccountModule)
+  },
+  {
+    path: 'account/orders',
+    loadChildren: () => import('./features/account/orders/orders.module').then(m => m.OrdersModule)
+  },
+  {
+    path: 'search',
+    loadChildren: () => import('./features/search/search.module').then(m => m.SearchModule)
+  },
+  {
+    path: 'about',
+    loadChildren: () => import('./features/about/about.module').then(m => m.AboutModule)
+  },
+  {
+    path: 'contacts',
+    loadChildren: () => import('./features/contacts/contacts.module').then(m => m.ContactsModule)
   },
   {
     path: '**',

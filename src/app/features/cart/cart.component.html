@@ -1,31 +1,29 @@
-<div class="container">
-  <h2>Shopping Cart</h2>
-  
-  <div *ngIf="!cart || cart.items.length === 0; else cartItems" class="empty-cart">
-    <p>Your cart is empty</p>
+<div class="cart-page">
+  <div class="cart-header">
+    <h1>Корзина</h1>
   </div>
   
-  <ng-template #cartItems>
+  <div class="cart-content">
     <div class="cart-items">
-      <div class="cart-item" *ngFor="let item of cart.items">
-        <div class="item-info">
-          <h3>{{ item.product.name }}</h3>
-          <p>Price: ${{ item.product.price }}</p>
-          <p>Quantity: {{ item.quantity }}</p>
-        </div>
-        <div class="item-actions">
-          <button class="btn btn-danger" (click)="removeFromCart(item.product.id)">Remove</button>
-        </div>
+      <!-- Список товаров в корзине будет здесь -->
+      <div class="empty-cart" *ngIf="!hasItems">
+        <p>Ваша корзина пуста</p>
       </div>
       
-      <div class="cart-summary">
-        <h3>Order Summary</h3>
-        <p>Total Items: {{ cart?.totalItems }}</p>
-        <p>Total Price: ${{ cart?.totalPrice }}</p>
-        <button class="btn btn-primary">Proceed to Checkout</button>
+      <div class="cart-item" *ngFor="let item of cartItems">
+        <!-- Элементы корзины будут здесь -->
+        <app-product-card [product]="item.product"></app-product-card>
       </div>
-      
-      <button class="btn btn-danger" (click)="clearCart()">Clear Cart</button>
     </div>
-  </ng-template>
-</div>
+    
+    <div class="cart-summary">
+      <div class="summary-total">
+        <h3>Итого: <span class="total-amount">0 ₽</span></h3>
+      </div>
+      
+      <div class="summary-actions">
+        <button class="btn btn-secondary" (click)="continueShopping()">Продолжить покупки</button>
+        <button class="btn btn-primary" (click)="proceedToCheckout()">Оформить заказ</button>
+      </div>
+    </div>
+  </div>

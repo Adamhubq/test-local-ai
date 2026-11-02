@@ -1,15 +1,12 @@
 # Features Module
 
-The features module contains feature-specific modules that represent distinct sections of the application.
-Each feature module should be self-contained and encapsulate:
-- Feature-specific components
-- Feature-specific services
-- Feature-specific routing
-- Feature-specific models
+Features module contains all feature-specific modules and components organized by business domain.
 
-Examples of features:
-- Catalog
-- Cart
-- User Profile
-- Admin Panel
-- Checkout
+## Structure
+- Home: Main landing page
+- Catalog: Product catalog and browsing
+- Product Card: Individual product display
+- Cart: Shopping cart functionality
+- Wishlist: Favorite products management
+- Checkout: Order processing and payment
+- Profile: User account and settings
