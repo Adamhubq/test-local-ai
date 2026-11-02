@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { CartService } from '../../core/services/cart.service';
-import { Cart } from '../../core/models/cart.model';
-import { NavigationService } from '../../core/services/navigation.service';
+import { CartService } from '../../../core/services/cart.service';
+import { Cart } from '../../../core/models/cart.model';
+import { NavigationService } from '../../../core/services/navigation.service';
 
 @Component({
   selector: 'app-header',

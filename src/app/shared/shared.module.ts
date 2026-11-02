@@ -24,12 +24,9 @@ import { RatingComponent } from './rating/rating.component';
 import { RangePipe } from './rating/range.pipe';
 import { RatingExampleComponent } from './rating/rating-example.component';
 
-import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
-import { PaginationComponent } from './components/pagination/pagination.component';
-
-// New components for search
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
-import { SearchSuggestionsComponent } from './components/search-suggestions/search-suggestions.component';
+// New components for search (not declared in NgModule since they are standalone)
+// import { SearchBarComponent } from './components/search-bar/search-bar.component';
+// import { SearchSuggestionsComponent } from './components/search-suggestions/search-suggestions.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ModalExampleComponent } from './components/modal/modal-example.component';
 
@@ -59,6 +56,13 @@ import { ErrorStateComponent } from './components/error-state/error-state.compon
 // Design Tokens Demo Component
 import { DesignTokensDemoComponent } from '../design-tokens-demo.component';
 
+// Product Card and Header components
+import { ProductCardComponent } from './components/product-card/product-card.component';
+import { HeaderComponent } from './components/header/header.component';
+
+// Sidebar Navigation Component
+import { SidebarNavigationComponent } from './components/sidebar-navigation/sidebar-navigation.component';
+
 @NgModule({
   declarations: [
     ButtonComponent,
@@ -83,11 +87,11 @@ import { DesignTokensDemoComponent } from '../design-tokens-demo.component';
     RatingComponent,
     RangePipe,
     RatingExampleComponent,
-    BreadcrumbsComponent,
-    PaginationComponent,
-    SearchBarComponent,
+    // BreadcrumbsComponent,
+    // PaginationComponent,  // Removed since it's standalone
+    // SearchBarComponent,  // Removed since it's standalone
+    // SearchSuggestionsComponent,  // Removed since it's standalone
     ModalComponent,
-    SearchSuggestionsComponent,
     ModalExampleComponent,
     DropdownComponent,
     TabsComponent,
@@ -103,7 +107,11 @@ import { DesignTokensDemoComponent } from '../design-tokens-demo.component';
     DesignTokensDemoComponent,
 
     EmptyStateComponent,
-    ErrorStateComponent
+    ErrorStateComponent,
+    
+    ProductCardComponent,
+    HeaderComponent,
+    SidebarNavigationComponent
   ],
   imports: [
     CommonModule
@@ -129,11 +137,12 @@ import { DesignTokensDemoComponent } from '../design-tokens-demo.component';
     DividerExampleComponent,
     PriceExampleComponent,
     RatingComponent,
-    BreadcrumbsComponent,
-    PaginationComponent,
-    SearchBarComponent,
+    // BreadcrumbsComponent,
+    // PaginationComponent,  // Removed since it's standalone
+    // SearchBarComponent,  // Removed since it's standalone
+    // SearchSuggestionsComponent,  // Removed since it's standalone
     ModalComponent,
-    SearchSuggestionsComponent,
+    ModalExampleComponent,
     DropdownComponent,
     TabsComponent,
     AccordionComponent,
@@ -148,7 +157,11 @@ import { DesignTokensDemoComponent } from '../design-tokens-demo.component';
     DesignTokensDemoComponent,
 
     EmptyStateComponent,
-    ErrorStateComponent
+    ErrorStateComponent,
+    
+    ProductCardComponent,
+    HeaderComponent,
+    SidebarNavigationComponent
   ]
 })
 export class SharedModule { }

@@ -2,6 +2,8 @@
 // NOVA STORE Grid System
 // ========================================
 
+@import 'mixins.scss';
+
 // Container Mixin
 @mixin container($max-width: var(--container-max-width-lg)) {
   width: 100%;

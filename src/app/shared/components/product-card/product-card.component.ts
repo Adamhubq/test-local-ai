@@ -1,11 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Product } from '../../models/product.model';
-import { CommonModule } from '@angular/common';
+import { Product } from '../../../models/product.model';
 
 @Component({
   selector: 'app-product-card',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.scss']
 })
@@ -15,7 +12,10 @@ export class ProductCardComponent {
   @Output() toggleFavorite = new EventEmitter<Product>();
 
   get hasImage(): boolean {
-    return this.product.image && this.product.image.length > 0;
+    if (typeof this.product.image === 'string') {
+      return (this.product.image as string).length > 0;
+    }
+    return false;
   }
 
   get hasRating(): boolean {

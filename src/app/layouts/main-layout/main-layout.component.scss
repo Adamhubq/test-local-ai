@@ -1,3 +1,5 @@
+@import '../../../styles/grid.scss';
+
 .main-layout {
   min-height: 100vh;
   display: flex;
@@ -17,8 +19,6 @@
     align-items: center;
   }
 }
-
-@import 'styles/grid';
 
 .app-title {
   margin: 0;

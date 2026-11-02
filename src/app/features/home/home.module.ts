@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
-import { ProductCardComponent } from '../../shared/components/product-card/product-card.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -9,7 +9,7 @@ import { ProductCardComponent } from '../../shared/components/product-card/produ
   ],
   imports: [
     CommonModule,
-    ProductCardComponent
+    SharedModule
   ],
   exports: [
     HomeComponent

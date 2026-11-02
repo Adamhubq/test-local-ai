@@ -1,5 +1,5 @@
-@import 'styles/mixins';
-@import 'styles/grid';
+@import '../../../styles/mixins.scss';
+@import '../../../styles/grid.scss';
 
 .catalog-page {
   padding: var(--spacing-md);
