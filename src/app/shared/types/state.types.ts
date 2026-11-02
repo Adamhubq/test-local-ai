@@ -34,7 +34,7 @@ export const createSuccessState = <T>(data: T): State<T> => createState('success
 
 export const createEmptyState = <T>(): State<T> => createState('empty');
 
-export const createErrorState = <T>(error: string): State<T> => createState('error', undefined, error);
+export const createErrorState = <T>(error: string): State<T> => createState('error', undefined as T, error);
 
 export const toLoadingStateData = <T>(state: State<T>): LoadingStateData<T> => ({
   loading: state.status === 'loading',

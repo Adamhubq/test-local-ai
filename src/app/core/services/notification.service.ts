@@ -32,7 +32,7 @@ export class NotificationService {
     this.notificationsSubject.next(notification);
 
     // Auto-dismiss if duration is set
-    if (notification.duration > 0) {
+    if (notification.duration !== undefined && notification.duration > 0) {
       setTimeout(() => {
         this.dismiss(notification.id);
       }, notification.duration);
