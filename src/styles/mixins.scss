@@ -1,0 +1,48 @@
+// ========================================
+// NOVA STORE Mixins
+// ========================================
+
+// Media Query Mixins
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == 'xs' {
+    @media (min-width: var(--breakpoint-xs)) { @content; }
+  }
+  @if $breakpoint == 'sm' {
+    @media (min-width: var(--breakpoint-sm)) { @content; }
+  }
+  @if $breakpoint == 'md' {
+    @media (min-width: var(--breakpoint-md)) { @content; }
+  }
+  @if $breakpoint == 'lg' {
+    @media (min-width: var(--breakpoint-lg)) { @content; }
+  }
+  @if $breakpoint == 'xl' {
+    @media (min-width: var(--breakpoint-xl)) { @content; }
+  }
+  @if $breakpoint == 'xxl' {
+    @media (min-width: var(--breakpoint-xxl)) { @content; }
+  }
+}
+
+// Button Variant Mixin
+@mixin button-variant($background, $border, $color: null) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+  
+  &:hover {
+    background-color: darken($background, 10%);
+    border-color: darken($border, 10%);
+  }
+}
+
+// Card Variant Mixin
+@mixin card-variant($background, $border) {
+  background-color: $background;
+  border: 1px solid $border;
+  
+  &.card-outline {
+    background-color: transparent;
+    border: 1px solid $border;
+  }
+}

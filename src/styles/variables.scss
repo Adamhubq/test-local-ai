@@ -1,0 +1,56 @@
+// ========================================
+// NOVA STORE SCSS Variables
+// ========================================
+
+// Import design tokens
+@import 'design-tokens';
+
+// Component-specific variables
+$primary-color: var(--color-primary);
+$secondary-color: var(--color-secondary);
+$danger-color: var(--color-danger);
+$warning-color: var(--color-warning);
+$success-color: var(--color-success);
+
+$dark-color: var(--color-dark);
+$light-color: var(--color-light);
+$white-color: var(--color-white);
+$gray-color: var(--color-gray);
+$border-color: var(--color-border);
+
+$font-family-primary: var(--font-family-primary);
+$font-family-secondary: var(--font-family-secondary);
+
+$font-size-xs: var(--font-size-xs);
+$font-size-sm: var(--font-size-sm);
+$font-size-md: var(--font-size-md);
+$font-size-lg: var(--font-size-lg);
+$font-size-xl: var(--font-size-xl);
+$font-size-xxl: var(--font-size-xxl);
+$font-size-xxxl: var(--font-size-xxxl);
+
+$spacing-xxs: var(--spacing-xxs);
+$spacing-xs: var(--spacing-xs);
+$spacing-sm: var(--spacing-sm);
+$spacing-md: var(--spacing-md);
+$spacing-lg: var(--spacing-lg);
+$spacing-xl: var(--spacing-xl);
+$spacing-xxl: var(--spacing-xxl);
+$spacing-xxxl: var(--spacing-xxxl);
+
+$border-radius-xs: var(--border-radius-xs);
+$border-radius-sm: var(--border-radius-sm);
+$border-radius-md: var(--border-radius-md);
+$border-radius-lg: var(--border-radius-lg);
+$border-radius-xl: var(--border-radius-xl);
+$border-radius-full: var(--border-radius-full);
+
+$box-shadow-xs: var(--box-shadow-xs);
+$box-shadow-sm: var(--box-shadow-sm);
+$box-shadow-md: var(--box-shadow-md);
+$box-shadow-lg: var(--box-shadow-lg);
+$box-shadow-xl: var(--box-shadow-xl);
+
+$transition-fast: var(--transition-fast);
+$transition-normal: var(--transition-normal);
+$transition-slow: var(--transition-slow);

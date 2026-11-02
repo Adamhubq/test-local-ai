@@ -1,0 +1,14 @@
+<div class="search-container">
+  <input 
+    #searchInput
+    type="text" 
+    placeholder="Search products..." 
+    (input)="onSearch($event)"
+    class="search-input">
+  <button 
+    *ngIf="searchInput.value"
+    (click)="clearSearch()"
+    class="clear-btn">
+    ✕
+  </button>
+</div>

@@ -1,0 +1,31 @@
+<div class="main-layout">
+  <header class="app-header">
+    <div class="header-content">
+      <button class="menu-toggle" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <h1 class="app-title">NOVA STORE</h1>
+      <div class="header-actions">
+        <button class="cart-btn">🛒 Cart</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-body">
+    <nav class="app-menu" [class.open]="isMenuOpen">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/catalog">Catalog</a></li>
+        <li><a href="/categories">Categories</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main class="app-main">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

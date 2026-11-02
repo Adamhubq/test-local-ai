@@ -1,0 +1,16 @@
+<div class="home-container">
+  <div class="hero-section">
+    <h1>Welcome to NOVA STORE</h1>
+    <p>Your one-stop shop for all your needs</p>
+  </div>
+
+  <div class="featured-products">
+    <h2>Featured Products</h2>
+    <div class="products-grid">
+      <app-product-card 
+        *ngFor="let product of featuredProducts" 
+        [product]="product">
+      </app-product-card>
+    </div>
+  </div>
+</div>

@@ -1,34 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
-// Design tokens
-:root {
-  --color-primary: #2196F3;
-  --color-secondary: #4CAF50;
-  --color-danger: #f44336;
-  --color-warning: #ff9800;
-  --color-success: #4CAF50;
-  --color-dark: #333;
-  --color-light: #f5f5f5;
-  --color-white: #ffffff;
-  --color-gray: #9e9e9e;
-  --color-border: #e0e0e0;
-  
-  --font-family-primary: 'Roboto', Arial, sans-serif;
-  --font-size-small: 12px;
-  --font-size-medium: 16px;
-  --font-size-large: 20px;
-  --font-size-xlarge: 24px;
-  
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 32px;
-  
-  --border-radius: 4px;
-  --box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  --transition: all 0.3s ease;
-}
+// Import design tokens and variables
+@import 'styles/design-tokens';
+@import 'styles/variables';
+@import 'styles/mixins';
+@import 'styles/components';
 
 // Global styles
 * {
@@ -52,17 +28,17 @@ body {
 .btn {
   padding: var(--spacing-sm) var(--spacing-md);
   border: none;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-sm);
   cursor: pointer;
-  transition: var(--transition);
-  font-size: var(--font-size-medium);
+  transition: var(--transition-normal);
+  font-size: var(--font-size-md);
   
   &.btn-primary {
     background-color: var(--color-primary);
     color: var(--color-white);
     
     &:hover {
-      background-color: #1976D2; /* darken by 10% manually */
+      background-color: var(--color-primary-dark);
     }
   }
   
@@ -71,7 +47,7 @@ body {
     color: var(--color-white);
     
     &:hover {
-      background-color: #388E3C; /* darken by 10% manually */
+      background-color: var(--color-secondary-dark);
     }
   }
   
@@ -80,15 +56,15 @@ body {
     color: var(--color-white);
     
     &:hover {
-      background-color: #d32f2f; /* darken by 10% manually */
+      background-color: var(--color-danger-dark);
     }
   }
 }
 
 .card {
   background-color: var(--color-white);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow-md);
   padding: var(--spacing-lg);
   margin-bottom: var(--spacing-md);
 }
