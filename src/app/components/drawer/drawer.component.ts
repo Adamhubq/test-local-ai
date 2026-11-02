@@ -1,9 +1,10 @@
 import { Component, Input, Output, EventEmitter, ElementRef, ViewChild, AfterViewInit, OnDestroy, HostListener } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-drawer',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './drawer.component.html',
   styleUrls: ['./drawer.component.scss']
 })
@@ -17,6 +18,7 @@ export class DrawerComponent implements AfterViewInit, OnDestroy {
   @ViewChild('drawerElement') drawerElement!: ElementRef;
   
   private originalOverflow: string = '';
+  private escapeKeyListener: ((event: KeyboardEvent) => void) | null = null;
   
   ngAfterViewInit(): void {
     if (this.isOpen) {
@@ -26,6 +28,7 @@ export class DrawerComponent implements AfterViewInit, OnDestroy {
   
   ngOnDestroy(): void {
     this.close();
+    this.removeEscapeKeyListener();
   }
   
   open(): void {
@@ -43,6 +46,8 @@ export class DrawerComponent implements AfterViewInit, OnDestroy {
         this.drawerElement.nativeElement.focus();
       }
     }, 0);
+    
+    this.addEscapeKeyListener();
   }
   
   close(): void {
@@ -52,12 +57,26 @@ export class DrawerComponent implements AfterViewInit, OnDestroy {
     if (this.lockScroll && document.body.style.overflow === 'hidden') {
       document.body.style.overflow = this.originalOverflow;
     }
+    
+    this.removeEscapeKeyListener();
   }
   
-  @HostListener('keydown', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent): void {
-    if (event.key === 'Escape' && this.isOpen) {
-      this.close();
+  private addEscapeKeyListener(): void {
+    this.removeEscapeKeyListener(); // Remove any existing listener to prevent duplicates
+    
+    this.escapeKeyListener = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && this.isOpen) {
+        this.close();
+      }
+    };
+
+    document.addEventListener('keydown', this.escapeKeyListener);
+  }
+
+  private removeEscapeKeyListener(): void {
+    if (this.escapeKeyListener) {
+      document.removeEventListener('keydown', this.escapeKeyListener);
+      this.escapeKeyListener = null;
     }
   }
   

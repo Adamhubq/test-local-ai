@@ -1,11 +1,11 @@
-import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnInit, ViewChild, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'nova-dropdown',
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.scss']
 })
-export class DropdownComponent implements OnInit {
+export class DropdownComponent implements OnInit, OnDestroy {
   @Input() items: any[] = [];
   @Input() placeholder: string = 'Select an option';
   @Input() disabled: boolean = false;
@@ -19,6 +19,10 @@ export class DropdownComponent implements OnInit {
   constructor(private elementRef: ElementRef) {}
 
   ngOnInit(): void {}
+
+  ngOnDestroy(): void {
+    // Clean up any event listeners if needed
+  }
 
   toggleDropdown(): void {
     if (this.disabled) return;
@@ -34,6 +38,9 @@ export class DropdownComponent implements OnInit {
           firstItem.focus();
         }
       }, 0);
+    } else {
+      // Return focus to button when closing
+      this.dropdownButton.nativeElement.focus();
     }
   }
 
@@ -41,6 +48,7 @@ export class DropdownComponent implements OnInit {
     this.selectedIndex = index;
     this.isOpen = false;
     // Handle selection logic here
+    this.dropdownButton.nativeElement.focus(); // Return focus to button after selection
   }
 
   @HostListener('document:click', ['$event'])

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
 import { ModalAction } from '../modal/modal.component';
 
 export interface ConfirmationDialogConfig {
@@ -15,7 +15,7 @@ export interface ConfirmationDialogConfig {
   templateUrl: './confirmation-dialog.component.html',
   styleUrls: ['./confirmation-dialog.component.scss']
 })
-export class ConfirmationDialogComponent {
+export class ConfirmationDialogComponent implements OnDestroy {
   @Input() config!: ConfirmationDialogConfig;
   @Output() confirmed = new EventEmitter<void>();
   @Output() cancelled = new EventEmitter<void>();
@@ -37,6 +37,10 @@ export class ConfirmationDialogComponent {
       type: 'button',
       class: 'btn btn-secondary'
     };
+  }
+
+  ngOnDestroy(): void {
+    // Clean up any resources if needed
   }
 
   handleConfirm(): void {

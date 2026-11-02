@@ -27,6 +27,7 @@ export class ModalComponent implements OnInit, OnDestroy {
   private originalFocusElement: HTMLElement | null = null;
   private readonly titleId = `modal-title-${Math.random().toString(36).substr(2, 9)}`;
   private readonly contentId = `modal-content-${Math.random().toString(36).substr(2, 9)}`;
+  private escapeKeyListener: ((event: KeyboardEvent) => void) | null = null;
 
   ngOnInit(): void {
     if (this.isVisible) {
@@ -36,13 +37,14 @@ export class ModalComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.close();
+    this.removeEscapeKeyListener();
   }
 
   open(): void {
     this.originalFocusElement = document.activeElement as HTMLElement;
     document.body.classList.add('modal-open');
     this.focusModal();
-    this.handleEscapeKey();
+    this.addEscapeKeyListener();
   }
 
   close(): void {
@@ -77,14 +79,22 @@ export class ModalComponent implements OnInit, OnDestroy {
     }, 0);
   }
 
-  private handleEscapeKey(): void {
-    const handleEscape = (event: KeyboardEvent) => {
+  private addEscapeKeyListener(): void {
+    this.removeEscapeKeyListener(); // Remove any existing listener to prevent duplicates
+    
+    this.escapeKeyListener = (event: KeyboardEvent) => {
       if (this.closeOnEscape && event.key === 'Escape' && this.isVisible) {
         this.close();
-        document.removeEventListener('keydown', handleEscape);
       }
     };
 
-    document.addEventListener('keydown', handleEscape);
+    document.addEventListener('keydown', this.escapeKeyListener);
+  }
+
+  private removeEscapeKeyListener(): void {
+    if (this.escapeKeyListener) {
+      document.removeEventListener('keydown', this.escapeKeyListener);
+      this.escapeKeyListener = null;
+    }
   }
 }
