@@ -13,6 +13,12 @@ import { BadgeComponent } from './components/badge/badge.component';
 import { ChipComponent } from './components/chip/chip.component';
 import { BadgeExampleComponent } from './components/badge/badge-example.component';
 import { ChipExampleComponent } from './components/chip/chip-example.component';
+import { AvatarComponent } from './components/avatar/avatar.component';
+import { DividerComponent } from './components/divider/divider.component';
+import { PriceComponent } from './components/price/price.component';
+import { AvatarExampleComponent } from './components/avatar/avatar-example.component';
+import { DividerExampleComponent } from './components/divider/divider-example.component';
+import { PriceExampleComponent } from './components/price/price-example.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +34,13 @@ import { ChipExampleComponent } from './components/chip/chip-example.component';
     BadgeComponent,
     ChipComponent,
     BadgeExampleComponent,
-    ChipExampleComponent
+    ChipExampleComponent,
+    AvatarComponent,
+    DividerComponent,
+    PriceComponent,
+    AvatarExampleComponent,
+    DividerExampleComponent,
+    PriceExampleComponent
   ],
   imports: [
     CommonModule
@@ -46,7 +58,13 @@ import { ChipExampleComponent } from './components/chip/chip-example.component';
     BadgeComponent,
     ChipComponent,
     BadgeExampleComponent,
-    ChipExampleComponent
+    ChipExampleComponent,
+    AvatarComponent,
+    DividerComponent,
+    PriceComponent,
+    AvatarExampleComponent,
+    DividerExampleComponent,
+    PriceExampleComponent
   ]
 })
 export class SharedModule { }

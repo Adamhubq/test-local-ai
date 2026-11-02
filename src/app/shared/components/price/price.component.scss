@@ -1,0 +1,32 @@
+.price {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &__current {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.2;
+    
+    &--has-old {
+      font-size: 16px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 14px;
+    color: #666;
+  }
+
+  &__old {
+    text-decoration: line-through;
+  }
+
+  &__discount {
+    color: #e74c3c;
+    font-weight: 500;
+  }
+}

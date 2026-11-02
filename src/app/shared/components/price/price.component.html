@@ -1,0 +1,15 @@
+<div class="price">
+  <span class="price__current" [class.price__current--has-old]="!!oldPrice">
+    {{ formatPrice(currentPrice) }}
+  </span>
+  
+  <div *ngIf="oldPrice || discount" class="price__info">
+    <span *ngIf="oldPrice" class="price__old">
+      {{ oldPriceLabel }}: {{ formatPrice(oldPrice) }}
+    </span>
+    
+    <span *ngIf="discount" class="price__discount">
+      {{ discountLabel }}: {{ discount }}%
+    </span>
+  </div>
+</div>

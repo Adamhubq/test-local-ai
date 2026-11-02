@@ -1,0 +1,14 @@
+.example {
+  padding: 16px;
+  
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    
+    &--vertical {
+      flex-direction: column;
+      height: 200px;
+    }
+  }
+}

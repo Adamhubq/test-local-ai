@@ -1,0 +1,9 @@
+.example {
+  padding: 16px;
+  
+  &__row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+}
