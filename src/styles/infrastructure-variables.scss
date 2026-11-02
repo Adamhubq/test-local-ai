@@ -34,4 +34,7 @@
   --transition-duration-normal: 300ms;
   --transition-duration-slow: 500ms;
   --transition-duration-extra-slow: 750ms;
+  
+  /* Reduced motion support */
+  --transition-reduced: 0.01ms !important;
 }
