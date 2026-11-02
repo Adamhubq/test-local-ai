@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class ComponentsComponent {
   title = 'NOVA STORE UI Kit';
+  
+  // For interactive examples
+  checkboxChecked = false;
+  switchChecked = false;
+  radioValue = 'option1';
+  inputValue = '';
+  textareaValue = '';
+  selectValue = 'option1';
 }

@@ -2,25 +2,6 @@
   <h1>{{ title }}</h1>
   
   <div class="ui-kit-content">
-    <!-- Foundations -->
-    <section class="ui-kit-section">
-      <h2>Foundations</h2>
-      <div class="ui-kit-grid">
-        <div class="ui-kit-card">
-          <h3>Colors</h3>
-          <p>Primary, secondary, and neutral color palette</p>
-        </div>
-        <div class="ui-kit-card">
-          <h3>Typography</h3>
-          <p>Font families, sizes, and weights</p>
-        </div>
-        <div class="ui-kit-card">
-          <h3>Spacing</h3>
-          <p>Grid system and spacing tokens</p>
-        </div>
-      </div>
-    </section>
-
     <!-- Buttons -->
     <section class="ui-kit-section">
       <h2>Buttons</h2>
@@ -50,22 +31,43 @@
         <div class="ui-kit-card">
           <h3>Input Field</h3>
           <p>Text input with validation</p>
-          <input type="text" placeholder="Enter text" class="form-input">
+          <input type="text" [(ngModel)]="inputValue" placeholder="Enter text" class="form-input">
         </div>
         <div class="ui-kit-card">
           <h3>Select Dropdown</h3>
           <p>Dropdown selection component</p>
-          <select class="form-select">
-            <option>Option 1</option>
-            <option>Option 2</option>
+          <select [(ngModel)]="selectValue" class="form-select">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
           </select>
         </div>
         <div class="ui-kit-card">
           <h3>Checkbox</h3>
           <p>Checkbox with label</p>
           <label class="checkbox-label">
-            <input type="checkbox" class="form-checkbox"> 
+            <input type="checkbox" [(ngModel)]="checkboxChecked" class="form-checkbox"> 
             <span>Check me</span>
+          </label>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Radio Buttons</h3>
+          <p>Group of radio buttons</p>
+          <label class="radio-label">
+            <input type="radio" [(ngModel)]="radioValue" value="option1" name="radio-group"> 
+            <span>Option 1</span>
+          </label>
+          <label class="radio-label">
+            <input type="radio" [(ngModel)]="radioValue" value="option2" name="radio-group"> 
+            <span>Option 2</span>
+          </label>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Switch</h3>
+          <p>Toggle switch component</p>
+          <label class="switch-label">
+            <input type="checkbox" [(ngModel)]="switchChecked" class="form-switch"> 
+            <span class="slider"></span>
+            <span>Toggle Switch</span>
           </label>
         </div>
       </div>
@@ -78,20 +80,12 @@
         <div class="ui-kit-card">
           <h3>Text Input</h3>
           <p>Standard text input field</p>
-          <input type="text" placeholder="Text input" class="input-field">
+          <input type="text" [(ngModel)]="inputValue" placeholder="Text input" class="input-field">
         </div>
         <div class="ui-kit-card">
           <h3>Textarea</h3>
           <p>Multi-line text input</p>
-          <textarea placeholder="Enter text here..." class="textarea-field"></textarea>
-        </div>
-        <div class="ui-kit-card">
-          <h3>Radio Buttons</h3>
-          <p>Group of radio buttons</p>
-          <label class="radio-label">
-            <input type="radio" name="radio-group"> 
-            <span>Option 1</span>
-          </label>
+          <textarea [(ngModel)]="textareaValue" placeholder="Enter text here..." class="textarea-field"></textarea>
         </div>
       </div>
     </section>
@@ -101,19 +95,67 @@
       <h2>Navigation</h2>
       <div class="ui-kit-grid">
         <div class="ui-kit-card">
-          <h3>Header</h3>
-          <p>Main navigation header</p>
-          <header class="header">Header Navigation</header>
-        </div>
-        <div class="ui-kit-card">
-          <h3>Menu</h3>
-          <p>Navigation menu component</p>
-          <nav class="menu">Navigation Menu</nav>
-        </div>
-        <div class="ui-kit-card">
           <h3>Breadcrumbs</h3>
           <p>Path navigation breadcrumbs</p>
           <nav class="breadcrumbs">Home / Category / Product</nav>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Pagination</h3>
+          <p>Page navigation controls</p>
+          <nav class="pagination">
+            <button class="btn btn-secondary">&laquo; Previous</button>
+            <button class="btn btn-primary">1</button>
+            <button class="btn btn-secondary">2</button>
+            <button class="btn btn-secondary">3</button>
+            <button class="btn btn-secondary">Next &raquo;</button>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Display -->
+    <section class="ui-kit-section">
+      <h2>Data Display</h2>
+      <div class="ui-kit-grid">
+        <div class="ui-kit-card">
+          <h3>Badge</h3>
+          <p>Badge with status or count</p>
+          <span class="badge">New</span>
+          <span class="badge" style="background-color: #e74c3c;">Error</span>
+          <span class="badge" style="background-color: #27ae60;">Success</span>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Chip</h3>
+          <p>Tag or filter chip component</p>
+          <span class="chip">Chip 1</span>
+          <span class="chip" style="background-color: #9b59b6;">Chip 2</span>
+          <span class="chip" style="background-color: #f39c12;">Chip 3</span>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Divider</h3>
+          <p>Visual separator</p>
+          <hr class="divider">
+        </div>
+        <div class="ui-kit-card">
+          <h3>Avatar</h3>
+          <p>User avatar component</p>
+          <div class="avatar">JD</div>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Price</h3>
+          <p>Product price display</p>
+          <div class="price">$99.99</div>
+        </div>
+        <div class="ui-kit-card">
+          <h3>Rating</h3>
+          <p>Star rating component</p>
+          <div class="rating">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">☆</span>
+            <span class="star">☆</span>
+          </div>
         </div>
       </div>
     </section>
@@ -125,17 +167,30 @@
         <div class="ui-kit-card">
           <h3>Product Card</h3>
           <p>Display product information</p>
-          <div class="product-card">Product Card</div>
+          <div class="product-card">
+            <div class="product-image">Image</div>
+            <div class="product-info">
+              <h4>Product Name</h4>
+              <p class="price">$29.99</p>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
         </div>
         <div class="ui-kit-card">
           <h3>Info Card</h3>
           <p>Information display card</p>
-          <div class="info-card">Info Card</div>
+          <div class="info-card">
+            <h4>Card Title</h4>
+            <p>Card content goes here...</p>
+          </div>
         </div>
         <div class="ui-kit-card">
           <h3>Feature Card</h3>
           <p>Feature or benefit card</p>
-          <div class="feature-card">Feature Card</div>
+          <div class="feature-card">
+            <h4>Feature Title</h4>
+            <p>Feature description...</p>
+          </div>
         </div>
       </div>
     </section>
@@ -147,17 +202,27 @@
         <div class="ui-kit-card">
           <h3>Product Grid</h3>
           <p>Grid layout for products</p>
-          <div class="product-grid">Product Grid</div>
+          <div class="product-grid">
+            <div class="product-item">Item 1</div>
+            <div class="product-item">Item 2</div>
+            <div class="product-item">Item 3</div>
+          </div>
         </div>
         <div class="ui-kit-card">
           <h3>Product List</h3>
           <p>List view of products</p>
-          <div class="product-list">Product List</div>
+          <div class="product-list">
+            <div class="list-item">List Item 1</div>
+            <div class="list-item">List Item 2</div>
+          </div>
         </div>
         <div class="ui-kit-card">
           <h3>Product Detail</h3>
           <p>Detailed product information</p>
-          <div class="product-detail">Product Detail</div>
+          <div class="product-detail">
+            <h4>Product Title</h4>
+            <p>Product description...</p>
+          </div>
         </div>
       </div>
     </section>
@@ -198,35 +263,24 @@
           <p>Informational alert message</p>
           <div class="alert">Alert Message</div>
         </div>
-        <div class="ui-kit-card">
-          <h3>Badge</h3>
-          <p>Badge with status or count</p>
-          <span class="badge">New</span>
-        </div>
       </div>
     </section>
 
-    <!-- Data Display -->
+    <!-- Foundations -->
     <section class="ui-kit-section">
-      <h2>Data Display</h2>
+      <h2>Foundations</h2>
       <div class="ui-kit-grid">
         <div class="ui-kit-card">
-          <h3>Table</h3>
-          <p>Tabular data display</p>
-          <table class="data-table">
-            <tr><td>Row 1</td></tr>
-            <tr><td>Row 2</td></tr>
-          </table>
+          <h3>Colors</h3>
+          <p>Primary, secondary, and neutral color palette</p>
         </div>
         <div class="ui-kit-card">
-          <h3>Pagination</h3>
-          <p>Page navigation controls</p>
-          <nav class="pagination">Pagination Controls</nav>
+          <h3>Typography</h3>
+          <p>Font families, sizes, and weights</p>
         </div>
         <div class="ui-kit-card">
-          <h3>Chip</h3>
-          <p>Tag or filter chip component</p>
-          <span class="chip">Chip</span>
+          <h3>Spacing</h3>
+          <p>Grid system and spacing tokens</p>
         </div>
       </div>
     </section>
