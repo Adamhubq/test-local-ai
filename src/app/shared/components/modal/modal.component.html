@@ -1,0 +1,51 @@
+<div 
+  class="modal-overlay" 
+  role="dialog"
+  aria-modal="true"
+  [attr.aria-labelledby]="titleId"
+  [attr.aria-describedby]="contentId"
+  (click)="onOverlayClick($event)"
+  *ngIf="isVisible"
+>
+  <div 
+    class="modal-content"
+    role="document"
+    tabindex="-1"
+    #modalElement
+  >
+    <header class="modal-header">
+      <h2 
+        class="modal-title" 
+        [id]="titleId"
+      >
+        {{ title }}
+      </h2>
+      <button 
+        class="modal-close-button"
+        type="button"
+        aria-label="Close modal"
+        (click)="close()"
+      >
+        &times;
+      </button>
+    </header>
+    
+    <div 
+      class="modal-body"
+      [id]="contentId"
+    >
+      <ng-content></ng-content>
+    </div>
+    
+    <footer class="modal-footer" *ngIf="actions.length > 0">
+      <button
+        *ngFor="let action of actions"
+        [type]="action.type || 'button'"
+        [class]="action.class || ''"
+        (click)="onActionClick(action)"
+      >
+        {{ action.label }}
+      </button>
+    </footer>
+  </div>
+</div>

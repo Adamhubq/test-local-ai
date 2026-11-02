@@ -30,6 +30,8 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 // New components for search
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { SearchSuggestionsComponent } from './components/search-suggestions/search-suggestions.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { ModalExampleComponent } from './components/modal/modal-example.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { SearchSuggestionsComponent } from './components/search-suggestions/sear
     BreadcrumbsComponent,
     PaginationComponent,
     SearchBarComponent,
-    SearchSuggestionsComponent
+    ModalComponent,
+    SearchSuggestionsComponent,
+    ModalExampleComponent
   ],
   imports: [
     CommonModule
@@ -87,6 +91,7 @@ import { SearchSuggestionsComponent } from './components/search-suggestions/sear
     BreadcrumbsComponent,
     PaginationComponent,
     SearchBarComponent,
+    ModalComponent,
     SearchSuggestionsComponent
   ]
 })
