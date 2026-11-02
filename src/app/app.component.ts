@@ -7,8 +7,8 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
   standalone: true,
   imports: [RouterOutlet, MainLayoutComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-shop';
+  title = 'NOVA STORE';
 }
