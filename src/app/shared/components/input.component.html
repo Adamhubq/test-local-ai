@@ -1,0 +1,33 @@
+<div class="ns-input-wrapper">
+  <label 
+    *ngIf="label" 
+    [for]="id || 'input-' + (Math.random() | number)"
+    class="ns-input__label"
+  >
+    {{ label }}
+    <span *ngIf="required" class="ns-input__required">*</span>
+  </label>
+
+  <div class="ns-input__container">
+    <input
+      [id]="id || 'input-' + (Math.random() | number)"
+      [type]="type"
+      [placeholder]="placeholder"
+      [disabled]="disabled"
+      [required]="required"
+      [value]="value"
+      (input)="onInputChange($event)"
+      (blur)="onBlur()"
+      class="ns-input__field"
+      [class.ns-input__field--error]="!!error"
+      [class.ns-input__field--disabled]="disabled"
+    />
+  </div>
+
+  <div *ngIf="hint" class="ns-input__hint">
+    {{ hint }}
+  </div>
+
+  <div *ngIf="error" class="ns-input__error">
+    {{ error }}
+  </div>
