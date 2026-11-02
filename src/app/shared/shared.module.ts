@@ -25,6 +25,7 @@ import { RangePipe } from './rating/range.pipe';
 import { RatingExampleComponent } from './rating/rating-example.component';
 
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.compo
     RatingComponent,
     RangePipe,
     RatingExampleComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    PaginationComponent
   ],
   imports: [
     CommonModule
@@ -76,7 +78,8 @@ import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.compo
     DividerExampleComponent,
     PriceExampleComponent,
     RatingComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    PaginationComponent
   ]
 })
 export class SharedModule { }

@@ -1,0 +1,52 @@
+<nav class="pagination" role="navigation" aria-label="Pagination">
+  <ul class="pagination__list" role="menubar">
+    <!-- Previous button -->
+    <li class="pagination__item">
+      <button 
+        class="pagination__button pagination__button--prev"
+        [disabled]="!pagination.hasPrev"
+        (click)="onPrevPage()"
+        aria-label="Previous page"
+        type="button">
+        <span class="pagination__arrow">&larr;</span>
+      </button>
+    </li>
+
+    <!-- Page numbers -->
+    <ng-container *ngFor="let page of getPages(); let i = index">
+      <li class="pagination__item" *ngIf="page !== '...'">
+        <button 
+          class="pagination__button"
+          [class.pagination__button--active]="isCurrentPage(page)"
+          (click)="onPageChange(page)"
+          (keydown)="onKeydown($event, page)"
+          [attr.aria-current]="isCurrentPage(page) ? 'page' : null"
+          [attr.aria-label]="'Page ' + page"
+          type="button">
+          {{ page }}
+        </button>
+      </li>
+      
+      <li class="pagination__item" *ngIf="page === '...'">
+        <span class="pagination__ellipsis" aria-hidden="true">...</span>
+      </li>
+    </ng-container>
+
+    <!-- Next button -->
+    <li class="pagination__item">
+      <button 
+        class="pagination__button pagination__button--next"
+        [disabled]="!pagination.hasNext"
+        (click)="onNextPage()"
+        aria-label="Next page"
+        type="button">
+        <span class="pagination__arrow">&rarr;</span>
+      </button>
+    </li>
+  </ul>
+
+  <!-- Page info -->
+  <div class="pagination__info" *ngIf="pagination.totalPages > 1">
+    Page {{ pagination.page }} of {{ pagination.totalPages }}
+  </div>
+</nav>
