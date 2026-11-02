@@ -27,6 +27,10 @@ import { RatingExampleComponent } from './rating/rating-example.component';
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 
+// New components for search
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { SearchSuggestionsComponent } from './components/search-suggestions/search-suggestions.component';
+
 @NgModule({
   declarations: [
     ButtonComponent,
@@ -52,7 +56,9 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     RangePipe,
     RatingExampleComponent,
     BreadcrumbsComponent,
-    PaginationComponent
+    PaginationComponent,
+    SearchBarComponent,
+    SearchSuggestionsComponent
   ],
   imports: [
     CommonModule
@@ -79,7 +85,9 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     PriceExampleComponent,
     RatingComponent,
     BreadcrumbsComponent,
-    PaginationComponent
+    PaginationComponent,
+    SearchBarComponent,
+    SearchSuggestionsComponent
   ]
 })
 export class SharedModule { }

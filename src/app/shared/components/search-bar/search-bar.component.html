@@ -1,0 +1,18 @@
+<div class="search-bar-container">
+  <input 
+    #searchInput
+    type="text" 
+    [placeholder]="placeholder"
+    (input)="onSearch($event)"
+    (keydown)="onKeydown($event)"
+    class="search-input"
+    aria-label="Search products"
+    autocomplete="off">
+  <button 
+    *ngIf="searchInput.value"
+    (click)="clearSearch()"
+    class="clear-btn"
+    aria-label="Clear search">
+    ✕
+  </button>
+</div>

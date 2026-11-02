@@ -1,0 +1,14 @@
+<div class="suggestions-container" *ngIf="isVisible">
+  <ul class="suggestions-list">
+    <li 
+      *ngFor="let suggestion of suggestions$ | async" 
+      class="suggestion-item"
+      (click)="selectSuggestion(suggestion)"
+      role="option"
+      tabindex="0"
+      aria-label="Search suggestion: {{suggestion.title}}">
+      <span class="suggestion-title">{{suggestion.title}}</span>
+      <span class="suggestion-type">{{suggestion.type}}</span>
+    </li>
+  </ul>
+</div>
