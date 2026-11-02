@@ -56,23 +56,14 @@
       </div>
 
       <div class="demo-section">
-        <h3>Modal Example</h3>
-        <button class="btn btn-primary">Open Modal</button>
-        <div class="modal-demo" style="display: block; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-          <h4>Sample Modal</h4>
-          <p>This is a sample modal content.</p>
-        </div>
-      </div>
-
-      <div class="demo-section">
         <h3>Accordion Example</h3>
         <div class="accordion-demo">
           <div class="accordion-item">
-            <div class="accordion-header">What is NOVA STORE?</div>
+            <div class="accordion-header">What is NOVA STORE?<span class="accordion-toggle">+</span></div>
             <div class="accordion-content">NOVA STORE is an e-commerce platform for selling products online.</div>
           </div>
           <div class="accordion-item">
-            <div class="accordion-header">How does it work?</div>
+            <div class="accordion-header">How does it work?<span class="accordion-toggle">+</span></div>
             <div class="accordion-content">Customers browse products, add to cart, and checkout securely.</div>
           </div>
         </div>
@@ -81,7 +72,7 @@
       <div class="demo-section">
         <h3>Toast Example</h3>
         <button class="btn btn-primary" (click)="showToast()">Show Toast</button>
-        <div class="toast-demo" style="position: fixed; bottom: 20px; right: 20px; background: #333; color: white; padding: 10px 15px; border-radius: 4px;">
+        <div class="toast-demo">
           This is a toast message!
         </div>
       </div>
