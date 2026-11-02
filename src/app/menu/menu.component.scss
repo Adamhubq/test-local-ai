@@ -1,0 +1,112 @@
+.main-menu {
+  background: var(--color-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow-2);
+  padding: 0.5rem;
+  transition: var(--transition-normal);
+}
+
+.menu-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.5rem;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--color-dark);
+  text-decoration: none;
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition-normal);
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-primary);
+    opacity: 0;
+    transition: var(--transition-normal);
+    z-index: 0;
+  }
+  
+  &:hover {
+    color: var(--color-white);
+    
+    &::before {
+      opacity: 0.1;
+    }
+  }
+  
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+  
+  &:active {
+    transform: scale(0.98);
+    transition: var(--transition-fast);
+  }
+}
+
+/* Dropdown menu support */
+.menu-item:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--color-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow-3);
+  padding: 0.5rem 0;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: var(--transition-normal);
+  z-index: var(--z-index-dropdown);
+  
+  li {
+    margin: 0;
+    
+    a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: var(--color-dark);
+      text-decoration: none;
+      transition: var(--transition-fast);
+      
+      &:hover {
+        background: var(--color-surface);
+        color: var(--color-primary);
+      }
+    }
+  }
+}
+
+/* Reduce motion support */
+@media (prefers-reduced-motion: reduce) {
+  .main-menu,
+  .menu-link,
+  .dropdown-menu {
+    transition: none !important;
+    transform: none !important;
+  }
+}

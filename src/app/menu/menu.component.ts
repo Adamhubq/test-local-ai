@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './menu.component.scss'
 })
 export class MenuComponent {
-
+  onMenuClick(event: Event) {
+    event.preventDefault();
+    // Basic click handling for menu items
+    console.log('Menu item clicked');
+  }
 }
