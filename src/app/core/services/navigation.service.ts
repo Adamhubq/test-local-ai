@@ -14,7 +14,7 @@ export class NavigationService {
    * @param route - The route path to navigate to
    * @param params - Optional route parameters
    */
-  navigateTo(route: string, params?: any): Observable<boolean> {
+  navigateTo(route: string, params?: Record<string, unknown>): Observable<boolean> {
     if (!route) {
       console.error('NavigationService: Route is required');
       return from(Promise.resolve(false));
