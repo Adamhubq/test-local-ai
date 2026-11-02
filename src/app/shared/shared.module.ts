@@ -33,6 +33,10 @@ import { SearchSuggestionsComponent } from './components/search-suggestions/sear
 import { ModalComponent } from './components/modal/modal.component';
 import { ModalExampleComponent } from './components/modal/modal-example.component';
 
+// Dropdown and Tabs components
+import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { TabsComponent } from './components/tabs/tabs.component';
+
 @NgModule({
   declarations: [
     ButtonComponent,
@@ -62,7 +66,9 @@ import { ModalExampleComponent } from './components/modal/modal-example.componen
     SearchBarComponent,
     ModalComponent,
     SearchSuggestionsComponent,
-    ModalExampleComponent
+    ModalExampleComponent,
+    DropdownComponent,
+    TabsComponent
   ],
   imports: [
     CommonModule
@@ -92,7 +98,9 @@ import { ModalExampleComponent } from './components/modal/modal-example.componen
     PaginationComponent,
     SearchBarComponent,
     ModalComponent,
-    SearchSuggestionsComponent
+    SearchSuggestionsComponent,
+    DropdownComponent,
+    TabsComponent
   ]
 })
 export class SharedModule { }

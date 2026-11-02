@@ -1,0 +1,31 @@
+<button 
+  #dropdownButton
+  type="button" 
+  class="dropdown-button"
+  [attr.aria-haspopup]="true"
+  [attr.aria-expanded]="isOpen"
+  [attr.aria-disabled]="disabled"
+  [disabled]="disabled"
+  (click)="toggleDropdown()">
+  <span class="dropdown-button-text">{{ selectedValue || placeholder }}</span>
+  <i class="dropdown-icon" [class.dropdown-icon--open]="isOpen"></i>
+</button>
+
+@if (isOpen) {
+  <ul 
+    #dropdownMenu
+    class="dropdown-menu"
+    role="menu"
+    [attr.aria-label]="'Dropdown menu'">
+    @for (item of items; track $index) {
+      <li 
+        role="menuitem"
+        tabindex="{{ selectedIndex === $index ? 0 : -1 }}"
+        class="dropdown-item"
+        [class.dropdown-item--selected]="selectedIndex === $index"
+        (click)="selectItem(item, $index)">
+        {{ item.label || item }}
+      </li>
+    }
+  </ul>
+}

@@ -1,0 +1,29 @@
+<div class="tabs-container">
+  <nav class="tabs-nav" role="tablist">
+    @for (tab of tabs; track tab.id) {
+      <button 
+        type="button"
+        class="tab-button"
+        [attr.role]="tab.id === activeTabId ? 'tab' : 'button'"
+        [attr.aria-selected]="tab.id === activeTabId"
+        [attr.aria-controls]="'tab-panel-' + tab.id"
+        (click)="selectTab(tab.id)"
+        [class.tab-button--active]="tab.id === activeTabId">
+        {{ tab.label }}
+      </button>
+    }
+  </nav>
+  
+  <div class="tabs-content">
+    @for (tab of tabs; track tab.id) {
+      <section 
+        role="tabpanel"
+        [attr.aria-labelledby]="'tab-' + tab.id"
+        [id]="'tab-panel-' + tab.id"
+        [class.tab-panel--active]="tab.id === activeTabId"
+        [class.tab-panel--hidden]="tab.id !== activeTabId">
+        <ng-container *ngTemplateOutlet="tab.content"></ng-container>
+      </section>
+    }
+  </div>
+</div>
