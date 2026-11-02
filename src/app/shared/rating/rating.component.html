@@ -1,12 +1,12 @@
-<div class="rating {{ sizeClass }}" role="img" aria-label="Rating: {{ rating }} out of {{ maxRating }}">
+<div class="rating {{ sizeClass }}" role="img" [attr.aria-label]="'Rating: ' + rating + ' out of ' + maxRating">
   <span class="rating__stars">
-    <ng-container *ngFor="let star of [] | range: filledStars">
+    <ng-container *ngFor="let star of filledStars | range">
       <svg class="rating__star rating__star--filled" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
         <path d="M8 12.777l-4.935 2.554 1.058-5.99L.36 6.04l6.003-.867L8 0l1.637 5.183 6.003.867-4.32 4.297 1.058 5.99z"/>
       </svg>
     </ng-container>
     
-    <ng-container *ngFor="let star of [] | range: (hasHalfStar ? 1 : 0)">
+    <ng-container *ngFor="let star of (hasHalfStar ? 1 : 0) | range">
       <svg class="rating__star rating__star--half" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
         <defs>
           <clipPath id="half-star-clip">
@@ -17,7 +17,7 @@
       </svg>
     </ng-container>
     
-    <ng-container *ngFor="let star of [] | range: emptyStars">
+    <ng-container *ngFor="let star of emptyStars | range">
       <svg class="rating__star rating__star--empty" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
         <path d="M8 12.777l-4.935 2.554 1.058-5.99L.36 6.04l6.003-.867L8 0l1.637 5.183 6.003.867-4.32 4.297 1.058 5.99z"/>
       </svg>

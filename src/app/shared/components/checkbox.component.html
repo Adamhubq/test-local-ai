@@ -1,7 +1,7 @@
 <div class="ns-checkbox-wrapper">
   <div class="ns-checkbox__container">
     <input
-      [id]="id || 'checkbox-' + (Math.random() | number)"
+      [id]="id || generateId('checkbox')"
       type="checkbox"
       [checked]="checked"
       [indeterminate]="indeterminate"
@@ -17,7 +17,7 @@
 
   <label 
     *ngIf="label" 
-    [for]="id || 'checkbox-' + (Math.random() | number)"
+    [for]="id || generateId('checkbox')"
     class="ns-checkbox__label"
   >
     {{ label }}

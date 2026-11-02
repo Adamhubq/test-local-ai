@@ -2,7 +2,7 @@
   <app-toast 
     *ngFor="let notification of notifications; let i = index"
     [notification]="notification"
-    [isVisible]="notification.isVisible"
+    [isVisible]="notification.isVisible ?? true"
     (dismiss)="onDismiss(notification.id)"
   >
   </app-toast>

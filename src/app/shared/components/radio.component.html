@@ -1,7 +1,7 @@
 <div class="ns-radio-wrapper">
   <div class="ns-radio__container">
     <input
-      [id]="id || 'radio-' + (Math.random() | number)"
+      [id]="id || generateId('radio')"
       type="radio"
       [name]="getGroupName()"
       [value]="value"
@@ -17,7 +17,7 @@
 
   <label 
     *ngIf="label" 
-    [for]="id || 'radio-' + (Math.random() | number)"
+    [for]="id || generateId('radio')"
     class="ns-radio__label"
   >
     {{ label }}

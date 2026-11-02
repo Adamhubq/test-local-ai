@@ -67,6 +67,16 @@ export class RadioComponent implements ControlValueAccessor {
   private onChange = (value: any) => {};
   private onTouched = () => {};
 
+  // Generate unique ID
+  generateId(prefix: string): string {
+    return prefix + '-' + Math.random().toString(36).substr(2, 9);
+  }
+
+  // Get group name for radio button grouping
+  getGroupName(): string {
+    return this.id || 'radio-group-' + Math.random().toString(36).substr(2, 9);
+  }
+
   // Handle radio change
   onRadioChange(): void {
     if (!this.disabled) {

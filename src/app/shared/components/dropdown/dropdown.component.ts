@@ -46,10 +46,21 @@ export class DropdownComponent implements OnInit, OnDestroy {
 
   selectItem(item: any, index: number): void {
     this.selectedIndex = index;
+    this._selectedValue = item;
     this.isOpen = false;
     // Handle selection logic here
     this.dropdownButton.nativeElement.focus(); // Return focus to button after selection
   }
+
+  get selectedValue(): any {
+    return this._selectedValue;
+  }
+
+  set selectedValue(value: any) {
+    this._selectedValue = value;
+  }
+
+  private _selectedValue: any = null;
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent): void {

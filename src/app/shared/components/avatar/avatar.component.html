@@ -1,6 +1,6 @@
 <div class="avatar" [class.avatar--size-sm]="size === 'sm'" [class.avatar--size-md]="size === 'md'" [class.avatar--size-lg]="size === 'lg'">
   <img *ngIf="src" [src]="src" [alt]="alt" class="avatar__image" (error)="onImageError()">
   <span *ngIf="!src" class="avatar__fallback">
-    <nova-icon [name]="fallbackIcon"></nova-icon>
+    {{ fallbackIcon }}
   </span>
 </div>

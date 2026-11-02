@@ -10,4 +10,9 @@ export class AvatarComponent {
   @Input() alt?: string;
   @Input() size: 'sm' | 'md' | 'lg' = 'md';
   @Input() fallbackIcon = 'person';
+
+  onImageError(): void {
+    // Handle image loading error
+    // This method is called when an image fails to load
+  }
 }

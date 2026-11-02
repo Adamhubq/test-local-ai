@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
         <nova-chip type="success" label="Success"></nova-chip>
         <nova-chip type="warning" label="Warning"></nova-chip>
         <nova-chip type="danger" label="Danger"></nova-chip>
-        <nova-chip type="accent" label="Dismissible" dismissible="true"></nova-chip>
+        <nova-chip type="accent" label="Dismissible" [dismissible]="true"></nova-chip>
       </div>
     </div>
   `

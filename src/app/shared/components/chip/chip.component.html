@@ -5,7 +5,7 @@
     class="chip__dismiss"
     type="button"
     (click)="onDismiss()"
-    aria-label="Remove {{ label }}">
+    [attr.aria-label]="'Remove ' + label">
     &times;
   </button>
 </span>

@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-catalog',
-  templateUrl: './catalog.component.html';
+  templateUrl: './catalog.component.html',
   styleUrls: ['./catalog.component.scss'],
   imports: [ProductCardComponent] // SidebarNavigationComponent is now in SharedModule
 })

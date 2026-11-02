@@ -22,6 +22,7 @@ export class SwitchComponent implements ControlValueAccessor {
   @Input() required = false;
 
   private _checked = false;
+  private uniqueId: string | null = null;
 
   constructor(@Optional() @Self() public ngControl: NgControl) {
     if (this.ngControl) {
@@ -56,6 +57,23 @@ export class SwitchComponent implements ControlValueAccessor {
 
   setDisabledState(isDisabled: boolean): void {
     this.disabled = isDisabled;
+  }
+
+  // Generate unique ID
+  private generateId(prefix: string): string {
+    if (this.uniqueId) {
+      return this.uniqueId;
+    }
+    this.uniqueId = prefix + '-' + Math.random().toString(36).substr(2, 9);
+    return this.uniqueId;
+  }
+
+  // Get the ID to use (either provided or generated)
+  get switchId(): string {
+    if (this.id) {
+      return this.id;
+    }
+    return this.generateId('switch');
   }
 
   // Private methods for ControlValueAccessor

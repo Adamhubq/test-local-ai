@@ -85,6 +85,11 @@ export class CheckboxComponent implements ControlValueAccessor {
   private onChange = (value: boolean | null) => {};
   private onTouched = () => {};
 
+  // Generate unique ID
+  generateId(prefix: string): string {
+    return prefix + '-' + Math.random().toString(36).substr(2, 9);
+  }
+
   // Handle checkbox change
   onCheckboxChange(): void {
     if (!this.disabled) {

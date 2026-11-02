@@ -1,7 +1,7 @@
 <div class="ns-input-wrapper">
   <label 
     *ngIf="label" 
-    [for]="id || 'input-' + (Math.random() | number)"
+    [for]="inputId"
     class="ns-input__label"
   >
     {{ label }}
@@ -10,7 +10,7 @@
 
   <div class="ns-input__container">
     <input
-      [id]="id || 'input-' + (Math.random() | number)"
+      [id]="inputId"
       [type]="type"
       [placeholder]="placeholder"
       [disabled]="disabled"

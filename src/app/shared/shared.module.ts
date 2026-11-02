@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { ButtonComponent } from './components/button.component';
 import { IconButtonComponent } from './components/icon-button.component';
 import { ButtonExampleComponent } from './components/button-example.component';
@@ -114,7 +115,8 @@ import { SidebarNavigationComponent } from './components/sidebar-navigation/side
     SidebarNavigationComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     ButtonComponent,

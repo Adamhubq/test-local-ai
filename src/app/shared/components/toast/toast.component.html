@@ -13,7 +13,7 @@
   <button 
     *ngIf="notification.dismissible !== false"
     class="toast__close-button"
-    (click)="dismiss()"
+    (click)="dismiss.emit(notification.id)"
     aria-label="Close notification"
   >
     ×

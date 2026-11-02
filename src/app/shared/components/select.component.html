@@ -1,7 +1,7 @@
 <div class="ns-select-wrapper">
   <label 
     *ngIf="label" 
-    [for]="id || 'select-' + (Math.random() | number)"
+    [for]="id || generateId('select')"
     class="ns-select__label"
   >
     {{ label }}
@@ -10,7 +10,7 @@
 
   <div class="ns-select__container">
     <select
-      [id]="id || 'select-' + (Math.random() | number)"
+      [id]="id || generateId('select')"
       [disabled]="disabled"
       [required]="required"
       [value]="value"

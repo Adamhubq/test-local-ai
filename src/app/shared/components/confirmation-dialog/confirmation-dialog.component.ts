@@ -69,4 +69,12 @@ export class ConfirmationDialogComponent implements OnDestroy {
   handleCancel(): void {
     this.cancelled.emit();
   }
+
+  handleAction(action: ModalAction): void {
+    if (action.type === 'submit') {
+      this.handleConfirm();
+    } else {
+      this.handleCancel();
+    }
+  }
 }

@@ -1,7 +1,7 @@
 <div class="ns-textarea-wrapper">
   <label 
     *ngIf="label" 
-    [for]="id || 'textarea-' + (Math.random() | number)"
+    [for]="textareaId"
     class="ns-textarea__label"
   >
     {{ label }}
@@ -10,7 +10,7 @@
 
   <div class="ns-textarea__container">
     <textarea
-      [id]="id || 'textarea-' + (Math.random() | number)"
+      [id]="textareaId"
       [placeholder]="placeholder"
       [disabled]="disabled"
       [required]="required"

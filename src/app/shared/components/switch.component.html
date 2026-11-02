@@ -1,7 +1,7 @@
 <div class="ns-switch-wrapper">
   <div class="ns-switch__container">
     <input
-      [id]="id || 'switch-' + (Math.random() | number)"
+      [id]="switchId"
       type="checkbox"
       [checked]="checked"
       [disabled]="disabled"
@@ -15,7 +15,7 @@
 
   <label 
     *ngIf="label" 
-    [for]="id || 'switch-' + (Math.random() | number)"
+    [for]="switchId"
     class="ns-switch__label"
   >
     {{ label }}

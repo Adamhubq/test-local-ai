@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartItem } from '../../core/models/cart.model';
 
 @Component({
   selector: 'app-cart',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class CartComponent {
   hasItems = false;
-  cartItems = [];
+  cartItems: CartItem[] = [];
   
   continueShopping() {
     // Implementation

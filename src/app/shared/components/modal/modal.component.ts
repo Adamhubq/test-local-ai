@@ -25,8 +25,8 @@ export class ModalComponent implements OnInit, OnDestroy {
   @ViewChild('modalElement', { static: true }) modalElement!: ElementRef;
 
   private originalFocusElement: HTMLElement | null = null;
-  private readonly titleId = `modal-title-${Math.random().toString(36).substr(2, 9)}`;
-  private readonly contentId = `modal-content-${Math.random().toString(36).substr(2, 9)}`;
+  readonly titleId = `modal-title-${Math.random().toString(36).substr(2, 9)}`;
+  readonly contentId = `modal-content-${Math.random().toString(36).substr(2, 9)}`;
   private escapeKeyListener: ((event: KeyboardEvent) => void) | null = null;
 
   ngOnInit(): void {

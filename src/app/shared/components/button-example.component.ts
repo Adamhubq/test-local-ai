@@ -24,7 +24,7 @@ import { Component } from '@angular/core';
       <div class="button-row">
         <ns-button [disabled]="true">Disabled</ns-button>
         <ns-button [loading]="true">Loading</ns-button>
-        <ns-button fullWidth>Full Width</ns-button>
+        <ns-button [fullWidth]="true">Full Width</ns-button>
       </div>
 
       <h3>Icon Button Examples</h3>

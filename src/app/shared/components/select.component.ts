@@ -68,6 +68,11 @@ export class SelectComponent implements ControlValueAccessor {
   private onChange = (value: any) => {};
   private onTouched = () => {};
 
+  // Generate unique ID
+  generateId(prefix: string): string {
+    return prefix + '-' + Math.random().toString(36).substr(2, 9);
+  }
+
   // Handle select change
   onSelectChange(event: Event): void {
     const target = event.target as HTMLSelectElement;

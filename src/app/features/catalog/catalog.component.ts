@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../../core/models/product.model';
 
 @Component({
   selector: 'app-catalog',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./catalog.component.scss']
 })
 export class CatalogComponent implements OnInit {
-  products = [];
+  products: Product[] = [];
   
   constructor() { }
 
