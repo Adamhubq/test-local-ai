@@ -1,199 +1,225 @@
 <div class="showcase-container">
   <h1>{{ title }}</h1>
   
+  <!-- Search Bar for Components -->
+  <div class="components-search-container">
+    <app-search-bar 
+      [placeholder]="'Search components by name or description...'"
+      (search)="onSearch($event)">
+    </app-search-bar>
+    <p *ngIf="searchQuery && filteredSections.length === 0" class="no-results">
+      No components found matching "{{ searchQuery }}"
+    </p>
+  </div>
+  
   <div class="showcase-content">
-    <!-- Product Card -->
-    <section class="showcase-section">
-      <h2>Product Card</h2>
+    <!-- Display filtered sections -->
+    <section *ngFor="let section of filteredSections" class="showcase-section">
+      <h2>{{ section.title }}</h2>
+      <p class="component-description">{{ section.description }}</p>
       <div class="showcase-grid">
         <div class="showcase-card">
-          <app-product-card 
-            [product]="demoProducts[0]"
-            (addToCart)="onAddToCart($event)"
-            (toggleFavorite)="onToggleFavorite($event)">
-          </app-product-card>
+          <!-- This would be the actual component example -->
+          <p>Example of {{ section.title }} component</p>
         </div>
       </div>
     </section>
 
-    <!-- Product Grid -->
-    <section class="showcase-section">
-      <h2>Product Grid</h2>
-      <div class="showcase-grid">
-        <app-product-grid [products]="demoProducts"></app-product-grid>
-      </div>
-    </section>
-
-    <!-- Search Bar -->
-    <section class="showcase-section">
-      <h2>Search Bar</h2>
-      <div class="showcase-card">
-        <app-search-bar 
-          [placeholder]="'Search products...'"
-          (search)="onSearch($event)">
-        </app-search-bar>
-        <p>Search query: {{ searchQuery }}</p>
-      </div>
-    </section>
-
-    <!-- Search Suggestions -->
-    <section class="showcase-section">
-      <h2>Search Suggestions</h2>
-      <div class="showcase-card">
-        <app-search-suggestions 
-          [suggestions]="demoSearchSuggestions"
-          (selectSuggestion)="onSelectSuggestion($event)">
-        </app-search-suggestions>
-      </div>
-    </section>
-
-    <!-- Modal -->
-    <section class="showcase-section">
-      <h2>Modal</h2>
-      <div class="showcase-card">
-        <button class="btn btn-primary" (click)="openModal()">Open Modal</button>
-        <app-modal 
-          *ngIf="isModalOpen"
-          [title]="'Sample Modal'"
-          (close)="closeModal()">
-          <p>This is a sample modal content.</p>
-          <p>You can put any content here.</p>
-        </app-modal>
-      </div>
-    </section>
-
-    <!-- Drawer -->
-    <section class="showcase-section">
-      <h2>Drawer</h2>
-      <div class="showcase-card">
-        <button class="btn btn-primary" (click)="openDrawer()">Open Drawer</button>
-        <app-drawer 
-          *ngIf="isDrawerOpen"
-          [title]="'Sample Drawer'"
-          (close)="closeDrawer()">
-          <p>This is a sample drawer content.</p>
-          <p>Drawers are useful for additional information or actions.</p>
-        </app-drawer>
-      </div>
-    </section>
-
-    <!-- Dropdown -->
-    <section class="showcase-section">
-      <h2>Dropdown</h2>
-      <div class="showcase-card">
-        <app-dropdown 
-          [isOpen]="isDropdownOpen"
-          (toggle)="openDropdown()"
-          (close)="closeDropdown()">
-          <button class="btn btn-secondary">Open Dropdown</button>
-          <div dropdown-content>
-            <a href="#" class="dropdown-item">Item 1</a>
-            <a href="#" class="dropdown-item">Item 2</a>
-            <a href="#" class="dropdown-item">Item 3</a>
+    <!-- Show all sections when no search is active -->
+    <ng-container *ngIf="!searchQuery">
+      <!-- Product Card -->
+      <section class="showcase-section">
+        <h2>Product Card</h2>
+        <div class="showcase-grid">
+          <div class="showcase-card">
+            <app-product-card 
+              [product]="demoProducts[0]"
+              (addToCart)="onAddToCart($event)"
+              (toggleFavorite)="onToggleFavorite($event)">
+            </app-product-card>
           </div>
-        </app-dropdown>
-      </div>
-    </section>
-
-    <!-- Tabs -->
-    <section class="showcase-section">
-      <h2>Tabs</h2>
-      <div class="showcase-card">
-        <app-tabs 
-          [tabs]="[
-            { id: 'tab1', label: 'Tab 1' },
-            { id: 'tab2', label: 'Tab 2' },
-            { id: 'tab3', label: 'Tab 3' }
-          ]"
-          [activeTab]="activeTab"
-          (tabChange)="activeTab = $event">
-        </app-tabs>
-        <div class="tab-content">
-          <p>Content for {{ activeTab }}</p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Accordion -->
-    <section class="showcase-section">
-      <h2>Accordion</h2>
-      <div class="showcase-card">
-        <app-accordion>
-          <app-accordion-item 
-            *ngFor="let item of accordionItems" 
-            [title]="item.title"
-            [content]="item.content">
-          </app-accordion-item>
-        </app-accordion>
-      </div>
-    </section>
+      <!-- Product Grid -->
+      <section class="showcase-section">
+        <h2>Product Grid</h2>
+        <div class="showcase-grid">
+          <app-product-grid [products]="demoProducts"></app-product-grid>
+        </div>
+      </section>
 
-    <!-- Toast -->
-    <section class="showcase-section">
-      <h2>Toast</h2>
-      <div class="showcase-card">
-        <button class="btn btn-primary" (click)="showToastMessage('This is a toast message!')">Show Toast</button>
-        <app-toast 
-          *ngIf="showToast"
-          [message]="toastMessage"
-          [type]="'success'">
-        </app-toast>
-      </div>
-    </section>
+      <!-- Search Bar -->
+      <section class="showcase-section">
+        <h2>Search Bar</h2>
+        <div class="showcase-card">
+          <app-search-bar 
+            [placeholder]="'Search products...'"
+            (search)="onSearch($event)">
+          </app-search-bar>
+          <p>Search query: {{ searchQuery }}</p>
+        </div>
+      </section>
 
-    <!-- Skeleton -->
-    <section class="showcase-section">
-      <h2>Skeleton</h2>
-      <div class="showcase-card">
-        <app-skeleton [rows]="3"></app-skeleton>
-      </div>
-    </section>
+      <!-- Search Suggestions -->
+      <section class="showcase-section">
+        <h2>Search Suggestions</h2>
+        <div class="showcase-card">
+          <app-search-suggestions 
+            [suggestions]="demoSearchSuggestions"
+            (selectSuggestion)="onSelectSuggestion($event)">
+          </app-search-suggestions>
+        </div>
+      </section>
 
-    <!-- Loader -->
-    <section class="showcase-section">
-      <h2>Loader</h2>
-      <div class="showcase-card">
-        <app-loader></app-loader>
-      </div>
-    </section>
+      <!-- Modal -->
+      <section class="showcase-section">
+        <h2>Modal</h2>
+        <div class="showcase-card">
+          <button class="btn btn-primary" (click)="openModal()">Open Modal</button>
+          <app-modal 
+            *ngIf="isModalOpen"
+            [title]="'Sample Modal'"
+            (close)="closeModal()">
+            <p>This is a sample modal content.</p>
+            <p>You can put any content here.</p>
+          </app-modal>
+        </div>
+      </section>
 
-    <!-- Empty State -->
-    <section class="showcase-section">
-      <h2>Empty State</h2>
-      <div class="showcase-card">
-        <app-empty-state 
-          [title]="'No products found'"
-          [message]="'Try adjusting your search or filter to find what you\'re looking for.'"
-          [icon]="'search'">
-        </app-empty-state>
-      </div>
-    </section>
+      <!-- Drawer -->
+      <section class="showcase-section">
+        <h2>Drawer</h2>
+        <div class="showcase-card">
+          <button class="btn btn-primary" (click)="openDrawer()">Open Drawer</button>
+          <app-drawer 
+            *ngIf="isDrawerOpen"
+            [title]="'Sample Drawer'"
+            (close)="closeDrawer()">
+            <p>This is a sample drawer content.</p>
+            <p>Drawers are useful for additional information or actions.</p>
+          </app-drawer>
+        </div>
+      </section>
 
-    <!-- Error State -->
-    <section class="showcase-section">
-      <h2>Error State</h2>
-      <div class="showcase-card">
-        <app-error-state 
-          [title]="'Something went wrong'"
-          [message]="'We couldn\'t load the content. Please try again later.'"
-          [icon]="'error'">
-        </app-error-state>
-      </div>
-    </section>
+      <!-- Dropdown -->
+      <section class="showcase-section">
+        <h2>Dropdown</h2>
+        <div class="showcase-card">
+          <app-dropdown 
+            [isOpen]="isDropdownOpen"
+            (toggle)="openDropdown()"
+            (close)="closeDropdown()">
+            <button class="btn btn-secondary">Open Dropdown</button>
+            <div dropdown-content>
+              <a href="#" class="dropdown-item">Item 1</a>
+              <a href="#" class="dropdown-item">Item 2</a>
+              <a href="#" class="dropdown-item">Item 3</a>
+            </div>
+          </app-dropdown>
+        </div>
+      </section>
 
-    <!-- Confirmation Dialog -->
-    <section class="showcase-section">
-      <h2>Confirmation Dialog</h2>
-      <div class="showcase-card">
-        <button class="btn btn-primary" (click)="openConfirmationDialog()">Open Confirmation Dialog</button>
-        <app-confirmation-dialog 
-          *ngIf="isConfirmationDialogOpen"
-          [title]="'Confirm Action'"
-          [message]="'Are you sure you want to perform this action?'"
-          (confirm)="confirmAction()"
-          (cancel)="cancelAction()">
-        </app-confirmation-dialog>
-      </div>
-    </section>
+      <!-- Tabs -->
+      <section class="showcase-section">
+        <h2>Tabs</h2>
+        <div class="showcase-card">
+          <app-tabs 
+            [tabs]="[
+              { id: 'tab1', label: 'Tab 1' },
+              { id: 'tab2', label: 'Tab 2' },
+              { id: 'tab3', label: 'Tab 3' }
+            ]"
+            [activeTab]="activeTab"
+            (tabChange)="activeTab = $event">
+          </app-tabs>
+          <div class="tab-content">
+            <p>Content for {{ activeTab }}</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Accordion -->
+      <section class="showcase-section">
+        <h2>Accordion</h2>
+        <div class="showcase-card">
+          <app-accordion>
+            <app-accordion-item 
+              *ngFor="let item of accordionItems" 
+              [title]="item.title"
+              [content]="item.content">
+            </app-accordion-item>
+          </app-accordion>
+        </div>
+      </section>
+
+      <!-- Toast -->
+      <section class="showcase-section">
+        <h2>Toast</h2>
+        <div class="showcase-card">
+          <button class="btn btn-primary" (click)="showToastMessage('This is a toast message!')">Show Toast</button>
+          <app-toast 
+            *ngIf="showToast"
+            [message]="toastMessage"
+            [type]="'success'">
+          </app-toast>
+        </div>
+      </section>
+
+      <!-- Skeleton -->
+      <section class="showcase-section">
+        <h2>Skeleton</h2>
+        <div class="showcase-card">
+          <app-skeleton [rows]="3"></app-skeleton>
+        </div>
+      </section>
+
+      <!-- Loader -->
+      <section class="showcase-section">
+        <h2>Loader</h2>
+        <div class="showcase-card">
+          <app-loader></app-loader>
+        </div>
+      </section>
+
+      <!-- Empty State -->
+      <section class="showcase-section">
+        <h2>Empty State</h2>
+        <div class="showcase-card">
+          <app-empty-state 
+            [title]="'No products found'"
+            [message]="'Try adjusting your search or filter to find what you\'re looking for.'"
+            [icon]="'search'">
+          </app-empty-state>
+        </div>
+      </section>
+
+      <!-- Error State -->
+      <section class="showcase-section">
+        <h2>Error State</h2>
+        <div class="showcase-card">
+          <app-error-state 
+            [title]="'Something went wrong'"
+            [message]="'We couldn\'t load the content. Please try again later.'"
+            [icon]="'error'">
+          </app-error-state>
+        </div>
+      </section>
+
+      <!-- Confirmation Dialog -->
+      <section class="showcase-section">
+        <h2>Confirmation Dialog</h2>
+        <div class="showcase-card">
+          <button class="btn btn-primary" (click)="openConfirmationDialog()">Open Confirmation Dialog</button>
+          <app-confirmation-dialog 
+            *ngIf="isConfirmationDialogOpen"
+            [title]="'Confirm Action'"
+            [message]="'Are you sure you want to perform this action?'"
+            (confirm)="confirmAction()"
+            (cancel)="cancelAction()">
+          </app-confirmation-dialog>
+        </div>
+      </section>
+    </ng-container>
   </div>
 </div>

@@ -13,6 +13,17 @@ h1 {
   font-weight: 700;
 }
 
+.components-search-container {
+  margin-bottom: 30px;
+}
+
+.no-results {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 20px;
+}
+
 .ui-kit-content {
   display: flex;
   flex-direction: column;
@@ -64,6 +75,11 @@ h1 {
   color: #7f8c8d;
   margin-bottom: 15px;
   font-size: 0.95rem;
+}
+
+.component-description {
+  color: #666;
+  margin-top: 5px;
 }
 
 /* Button styles */
