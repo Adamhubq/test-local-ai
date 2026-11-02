@@ -1,0 +1,32 @@
+<div class="container">
+  <div *ngIf="product; else loading" class="product-detail">
+    <div class="product-image">
+      <img [src]="product.imageUrl" [alt]="product.name" />
+    </div>
+    
+    <div class="product-info">
+      <h2>{{ product.name }}</h2>
+      <p class="price">${{ product.price }}</p>
+      <p class="description">{{ product.description }}</p>
+      
+      <div class="product-meta">
+        <span class="category">Category: {{ product.category }}</span>
+        <span class="rating" *ngIf="product.rating">Rating: {{ product.rating }} ⭐</span>
+        <span class="stock" [class.in-stock]="product.inStock" [class.out-of-stock]="!product.inStock">
+          {{ product.inStock ? 'In Stock' : 'Out of Stock' }}
+        </span>
+      </div>
+      
+      <button 
+        class="btn btn-primary" 
+        (click)="addToCart(product)" 
+        [disabled]="!product.inStock">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+  
+  <ng-template #loading>
+    <p>Loading product details...</p>
+  </ng-template>
+</div>
