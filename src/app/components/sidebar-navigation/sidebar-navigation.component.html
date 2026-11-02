@@ -1,0 +1,9 @@
+<nav class="sidebar-navigation">
+  <ul class="navigation-list">
+    <li *ngFor="let item of navigationItems" class="navigation-item">
+      <a [routerLink]="item.route" class="navigation-link">
+        {{ item.label }}
+      </a>
+    </li>
+  </ul>
+</nav>

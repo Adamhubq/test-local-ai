@@ -4,11 +4,15 @@
     <app-search (search)="onSearch($event)"></app-search>
   </div>
   
-  <div class="products-grid">
-    <app-product-card 
-      *ngFor="let product of filteredProducts" 
-      [product]="product">
-    </app-product-card>
+  <div class="catalog-content">
+    <app-sidebar-navigation class="sidebar"></app-sidebar-navigation>
+    
+    <div class="products-grid">
+      <app-product-card 
+        *ngFor="let product of filteredProducts" 
+        [product]="product">
+      </app-product-card>
+    </div>
   </div>
   
   <div *ngIf="filteredProducts.length === 0" class="no-products">

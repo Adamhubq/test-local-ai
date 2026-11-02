@@ -4,11 +4,13 @@ import { ProductService } from '../services/product.service';
 import { ProductCardComponent } from '../components/product-card/product-card.component';
 import { SearchComponent } from '../components/search/search.component';
 import { CommonModule } from '@angular/common';
+import { SidebarNavigationComponent } from '../components/sidebar-navigation/sidebar-navigation.component';
 
 @Component({
   selector: 'app-catalog',
   templateUrl: './catalog.component.html',
-  styleUrls: ['./catalog.component.scss']
+  styleUrls: ['./catalog.component.scss'],
+  imports: [SidebarNavigationComponent]
 })
 export class CatalogComponent implements OnInit {
   products: Product[] = [];

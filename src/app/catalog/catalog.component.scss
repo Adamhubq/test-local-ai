@@ -21,11 +21,21 @@
   }
 }
 
+.catalog-content {
+  display: flex;
+  gap: 1rem;
+}
+
+.sidebar {
+  flex-shrink: 0;
+}
+
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
+  flex-grow: 1;
 }
 
 .no-products {
@@ -45,6 +55,10 @@
   .catalog-header {
     flex-direction: column;
     align-items: stretch;
+  }
+  
+  .catalog-content {
+    flex-direction: column;
   }
   
   h1 {
