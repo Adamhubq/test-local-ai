@@ -1,0 +1,21 @@
+<div 
+  class="drawer"
+  [class.drawer--open]="isOpen"
+  [class.drawer--left]="position === 'left'"
+  [class.drawer--right]="position === 'right'"
+  [class.drawer--top]="position === 'top'"
+  [class.drawer--bottom]="position === 'bottom'"
+  [class.drawer--with-overlay]="hasOverlay"
+  #drawerElement
+  tabindex="-1">
+  
+  <div class="drawer-content">
+    <ng-content></ng-content>
+  </div>
+  
+  <div 
+    class="drawer-overlay" 
+    *ngIf="hasOverlay"
+    (click)="close()">
+  </div>
+</div>
