@@ -44,6 +44,9 @@ export class DrawerComponent implements AfterViewInit, OnDestroy {
     setTimeout(() => {
       if (this.drawerElement?.nativeElement) {
         this.drawerElement.nativeElement.focus();
+        // Add ARIA attributes for accessibility
+        this.drawerElement.nativeElement.setAttribute('aria-modal', 'true');
+        this.drawerElement.nativeElement.setAttribute('role', 'dialog');
       }
     }, 0);
     

@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     // This would typically come from a service
+    // For now, using mock data but properly typed
     this.featuredProducts = [
       {
         id: 1,
@@ -21,7 +22,10 @@ export class HomeComponent implements OnInit {
         price: 699.99,
         category: 'Electronics',
         image: 'assets/images/smartphone.jpg',
-        inStock: true
+        inStock: true,
+        colors: [],
+        sizes: [],
+        images: []
       },
       {
         id: 2,
@@ -30,7 +34,10 @@ export class HomeComponent implements OnInit {
         price: 1299.99,
         category: 'Electronics',
         image: 'assets/images/laptop.jpg',
-        inStock: true
+        inStock: true,
+        colors: [],
+        sizes: [],
+        images: []
       }
     ];
   }
