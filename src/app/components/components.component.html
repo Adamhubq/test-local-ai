@@ -30,6 +30,14 @@
       <!-- Product Card -->
       <section class="showcase-section">
         <h2>Product Card</h2>
+        <div class="code-example">
+          <pre><code>&lt;app-product-card 
+  [product]="demoProducts[0]"
+  (addToCart)="onAddToCart($event)"
+  (toggleFavorite)="onToggleFavorite($event)"&gt;
+&lt;/app-product-card&gt;</code></pre>
+          <button class="copy-button" (click)="copyCode('app-product-card')">Copy</button>
+        </div>
         <div class="showcase-grid">
           <div class="showcase-card">
             <app-product-card 
@@ -44,6 +52,10 @@
       <!-- Product Grid -->
       <section class="showcase-section">
         <h2>Product Grid</h2>
+        <div class="code-example">
+          <pre><code>&lt;app-product-grid [products]="demoProducts"&gt;&lt;/app-product-grid&gt;</code></pre>
+          <button class="copy-button" (click)="copyCode('app-product-grid')">Copy</button>
+        </div>
         <div class="showcase-grid">
           <app-product-grid [products]="demoProducts"></app-product-grid>
         </div>
@@ -52,6 +64,13 @@
       <!-- Search Bar -->
       <section class="showcase-section">
         <h2>Search Bar</h2>
+        <div class="code-example">
+          <pre><code>&lt;app-search-bar 
+  [placeholder]="'Search products...'"
+  (search)="onSearch($event)"&gt;
+&lt;/app-search-bar&gt;</code></pre>
+          <button class="copy-button" (click)="copyCode('app-search-bar')">Copy</button>
+        </div>
         <div class="showcase-card">
           <app-search-bar 
             [placeholder]="'Search products...'"
@@ -64,6 +83,13 @@
       <!-- Search Suggestions -->
       <section class="showcase-section">
         <h2>Search Suggestions</h2>
+        <div class="code-example">
+          <pre><code>&lt;app-search-suggestions 
+  [suggestions]="demoSearchSuggestions"
+  (selectSuggestion)="onSelectSuggestion($event)"&gt;
+&lt;/app-search-suggestions&gt;</code></pre>
+          <button class="copy-button" (click)="copyCode('app-search-suggestions')">Copy</button>
+        </div>
         <div class="showcase-card">
           <app-search-suggestions 
             [suggestions]="demoSearchSuggestions"
@@ -75,6 +101,17 @@
       <!-- Modal -->
       <section class="showcase-section">
         <h2>Modal</h2>
+        <div class="code-example">
+          <pre><code>&lt;button class="btn btn-primary" (click)="openModal()"&gt;Open Modal&lt;/button&gt;
+&lt;app-modal 
+  *ngIf="isModalOpen"
+  [title]="'Sample Modal'"
+  (close)="closeModal()"&gt;
+  &lt;p&gt;This is a sample modal content.&lt;/p&gt;
+  &lt;p&gt;You can put any content here.&lt;/p&gt;
+&lt;/app-modal&gt;</code></pre>
+          <button class="copy-button" (click)="copyCode('app-modal')">Copy</button>
+        </div>
         <div class="showcase-card">
           <button class="btn btn-primary" (click)="openModal()">Open Modal</button>
           <app-modal 
@@ -90,6 +127,17 @@
       <!-- Drawer -->
       <section class="showcase-section">
         <h2>Drawer</h2>
+        <div class="code-example">
+          <pre><code>&lt;button class="btn btn-primary" (click)="openDrawer()"&gt;Open Drawer&lt;/button&gt;
+&lt;app-drawer 
+  *ngIf="isDrawerOpen"
+  [title]="'Sample Drawer'"
+  (close)="closeDrawer()"&gt;
+  &lt;p&gt;This is a sample drawer content.&lt;/p&gt;
+  &lt;p&gt;Drawers are useful for additional information or actions.&lt;/p&gt;
+&lt;/app-drawer&gt;</code></pre>
+          <button class="copy-button" (click)="copyCode('app-drawer')">Copy</button>
+        </div>
         <div class="showcase-card">
           <button class="btn btn-primary" (click)="openDrawer()">Open Drawer</button>
           <app-drawer 
@@ -105,6 +153,20 @@
       <!-- Dropdown -->
       <section class="showcase-section">
         <h2>Dropdown</h2>
+        <div class="code-example">
+          <pre><code>&lt;app-dropdown 
+  [isOpen]="isDropdownOpen"
+  (toggle)="openDropdown()"
+  (close)="closeDropdown()"&gt;
+  &lt;button class="btn btn-secondary"&gt;Open Dropdown&lt;/button&gt;
+  &lt;div dropdown-content&gt;
+    &lt;a href="#" class="dropdown-item"&gt;Item 1&lt;/a&gt;
+    &lt;a href="#" class="dropdown-item"&gt;Item 2&lt;/a&gt;
+    &lt;a href="#" class="dropdown-item"&gt;Item 3&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/app-dropdown&gt;</code></pre>
+          <button class="copy-button" (click)="copyCode('app-dropdown')">Copy</button>
+        </div>
         <div class="showcase-card">
           <app-dropdown 
             [isOpen]="isDropdownOpen"
@@ -123,6 +185,18 @@
       <!-- Tabs -->
       <section class="showcase-section">
         <h2>Tabs</h2>
+        <div class="code-example">
+          <pre><code>&lt;app-tabs 
+  [tabs]="[
+    { id: 'tab1', label: 'Tab 1' },
+    { id: 'tab2', label: 'Tab 2' },
+    { id: 'tab3', label: 'Tab 3' }
+  ]"
+  [activeTab]="activeTab"
+  (tabChange)="activeTab = $event"&gt;
+&lt;/app-tabs&gt;</code></pre>
+          <button class="copy-button" (click)="copyCode('app-tabs')">Copy</button>
+        </div>
         <div class="showcase-card">
           <app-tabs 
             [tabs]="[
@@ -142,6 +216,16 @@
       <!-- Accordion -->
       <section class="showcase-section">
         <h2>Accordion</h2>
+        <div class="code-example">
+          <pre><code>&lt;app-accordion&gt;
+  &lt;app-accordion-item 
+    *ngFor="let item of accordionItems" 
+    [title]="item.title"
+    [content]="item.content"&gt;
+  &lt;/app-accordion-item&gt;
+&lt;/app-accordion&gt;</code></pre>
+          <button class="copy-button" (click)="copyCode('app-accordion')">Copy</button>
+        </div>
         <div class="showcase-card">
           <app-accordion>
             <app-accordion-item 
@@ -156,6 +240,15 @@
       <!-- Toast -->
       <section class="showcase-section">
         <h2>Toast</h2>
+        <div class="code-example">
+          <pre><code>&lt;button class="btn btn-primary" (click)="showToastMessage('This is a toast message!')"&gt;Show Toast&lt;/button&gt;
+&lt;app-toast 
+  *ngIf="showToast"
+  [message]="toastMessage"
+  [type]="'success'"&gt;
+&lt;/app-toast&gt;</code></pre>
+          <button class="copy-button" (click)="copyCode('app-toast')">Copy</button>
+        </div>
         <div class="showcase-card">
           <button class="btn btn-primary" (click)="showToastMessage('This is a toast message!')">Show Toast</button>
           <app-toast 
@@ -169,6 +262,10 @@
       <!-- Skeleton -->
       <section class="showcase-section">
         <h2>Skeleton</h2>
+        <div class="code-example">
+          <pre><code>&lt;app-skeleton [rows]="3"&gt;&lt;/app-skeleton&gt;</code></pre>
+          <button class="copy-button" (click)="copyCode('app-skeleton')">Copy</button>
+        </div>
         <div class="showcase-card">
           <app-skeleton [rows]="3"></app-skeleton>
         </div>
@@ -177,6 +274,10 @@
       <!-- Loader -->
       <section class="showcase-section">
         <h2>Loader</h2>
+        <div class="code-example">
+          <pre><code>&lt;app-loader&gt;&lt;/app-loader&gt;</code></pre>
+          <button class="copy-button" (click)="copyCode('app-loader')">Copy</button>
+        </div>
         <div class="showcase-card">
           <app-loader></app-loader>
         </div>
@@ -185,6 +286,14 @@
       <!-- Empty State -->
       <section class="showcase-section">
         <h2>Empty State</h2>
+        <div class="code-example">
+          <pre><code>&lt;app-empty-state 
+  [title]="'No products found'"
+  [message]="'Try adjusting your search or filter to find what you\'re looking for.'"
+  [icon]="'search'"&gt;
+&lt;/app-empty-state&gt;</code></pre>
+          <button class="copy-button" (click)="copyCode('app-empty-state')">Copy</button>
+        </div>
         <div class="showcase-card">
           <app-empty-state 
             [title]="'No products found'"
@@ -197,6 +306,14 @@
       <!-- Error State -->
       <section class="showcase-section">
         <h2>Error State</h2>
+        <div class="code-example">
+          <pre><code>&lt;app-error-state 
+  [title]="'Something went wrong'"
+  [message]="'We couldn\'t load the content. Please try again later.'"
+  [icon]="'error'"&gt;
+&lt;/app-error-state&gt;</code></pre>
+          <button class="copy-button" (click)="copyCode('app-error-state')">Copy</button>
+        </div>
         <div class="showcase-card">
           <app-error-state 
             [title]="'Something went wrong'"
@@ -209,6 +326,17 @@
       <!-- Confirmation Dialog -->
       <section class="showcase-section">
         <h2>Confirmation Dialog</h2>
+        <div class="code-example">
+          <pre><code>&lt;button class="btn btn-primary" (click)="openConfirmationDialog()"&gt;Open Confirmation Dialog&lt;/button&gt;
+&lt;app-confirmation-dialog 
+  *ngIf="isConfirmationDialogOpen"
+  [title]="'Confirm Action'"
+  [message]="'Are you sure you want to perform this action?'"
+  (confirm)="confirmAction()"
+  (cancel)="cancelAction()"&gt;
+&lt;/app-confirmation-dialog&gt;</code></pre>
+          <button class="copy-button" (click)="copyCode('app-confirmation-dialog')">Copy</button>
+        </div>
         <div class="showcase-card">
           <button class="btn btn-primary" (click)="openConfirmationDialog()">Open Confirmation Dialog</button>
           <app-confirmation-dialog 
