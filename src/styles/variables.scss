@@ -5,6 +5,9 @@
 // Import design tokens first
 @import 'design-tokens';
 
+// Import semantic color tokens
+@import 'semantic-colors';
+
 // Import infrastructure variables
 @import 'infrastructure-variables';
 
@@ -12,7 +15,7 @@
 $primary-color: var(--color-primary);
 $secondary-color: var(--color-secondary);
 $accent-color: var(--color-accent);
-$danger-color: var(--color-danger);
+$danger-color: var(--color-error);
 $warning-color: var(--color-warning);
 $success-color: var(--color-success);
 
@@ -23,10 +26,10 @@ $text-secondary-color: var(--color-text-secondary);
 $text-muted-color: var(--color-text-muted);
 $border-color: var(--color-border);
 
-$dark-color: var(--color-dark);
-$light-color: var(--color-light);
-$white-color: var(--color-white);
-$gray-color: var(--color-gray);
+$dark-color: var(--color-primary);
+$light-color: var(--color-surface);
+$white-color: var(--color-background);
+$gray-color: var(--color-text-muted);
 
 $font-family-primary: var(--font-family-primary);
 $font-family-secondary: var(--font-family-secondary);
@@ -66,5 +69,5 @@ $box-shadow-6: var(--box-shadow-6);
 
 $border-width: var(--border-width);
 $border-style: var(--border-style);
-$border-color: var(--border-color);
+$border-color: var(--color-border);
 $border: var(--border);
