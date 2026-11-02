@@ -48,8 +48,9 @@ import { ToastContainerComponent } from './components/toast-container/toast-cont
 import { SkeletonComponent } from './components/skeleton/skeleton.component';
 import { LoaderComponent } from './components/loader/loader.component';
 
-    EmptyStateComponent,
-    ErrorStateComponent
+// Confirmation Dialog component
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
+import { ConfirmationDialogExampleComponent } from './components/confirmation-dialog/confirmation-dialog-example.component';
 
 // Empty State and Error State
 import { EmptyStateComponent } from './components/empty-state/empty-state.component';
@@ -93,7 +94,9 @@ import { ErrorStateComponent } from './components/error-state/error-state.compon
     ToastComponent,
     ToastContainerComponent,
     SkeletonComponent,
-    LoaderComponent
+    LoaderComponent,
+    ConfirmationDialogComponent,
+    ConfirmationDialogExampleComponent
 
     EmptyStateComponent,
     ErrorStateComponent
@@ -135,7 +138,9 @@ import { ErrorStateComponent } from './components/error-state/error-state.compon
     ToastComponent,
     ToastContainerComponent,
     SkeletonComponent,
-    LoaderComponent
+    LoaderComponent,
+    ConfirmationDialogComponent,
+    ConfirmationDialogExampleComponent
 
     EmptyStateComponent,
     ErrorStateComponent

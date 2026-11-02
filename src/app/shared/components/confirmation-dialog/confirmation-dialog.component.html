@@ -1,0 +1,13 @@
+<app-modal
+  [title]="config.title"
+  [isVisible]="true"
+  [actions]="[cancelAction, confirmAction]"
+  [closeOnBackdropClick]="false"
+  [closeOnEscape]="false"
+  (closed)="handleCancel()"
+  (actionClicked)="handleAction($event)"
+>
+  <div class="confirmation-dialog-content">
+    <p>{{ config.message }}</p>
+  </div>
+</app-modal>
