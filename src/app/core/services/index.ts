@@ -4,3 +4,4 @@ export * from './error-handler.service';
 export * from './global-error-handler';
 export * from './notification.service';
 export * from './storage.service';
+export * from './ui-state.service';
