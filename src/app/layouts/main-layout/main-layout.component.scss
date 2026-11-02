@@ -7,15 +7,14 @@
 .app-header {
   background-color: #2c3e50;
   color: white;
-  padding: 16px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: var(--spacing-md) 0;
+  box-shadow: var(--box-shadow-sm);
   
   .header-content {
+    @include container();
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
   }
 }
 

@@ -1,0 +1,143 @@
+// ========================================
+// NOVA STORE Grid System
+// ========================================
+
+// Container Mixin
+@mixin container($max-width: var(--container-max-width-lg)) {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--spacing-md);
+  padding-left: var(--spacing-md);
+  
+  @include respond-to('sm') {
+    padding-right: var(--spacing-lg);
+    padding-left: var(--spacing-lg);
+  }
+  
+  @include respond-to('md') {
+    padding-right: var(--spacing-xl);
+    padding-left: var(--spacing-xl);
+  }
+  
+  @include respond-to('lg') {
+    max-width: $max-width;
+    padding-right: var(--spacing-xl);
+    padding-left: var(--spacing-xl);
+  }
+  
+  @include respond-to('xl') {
+    max-width: $max-width;
+    padding-right: var(--spacing-xxl);
+    padding-left: var(--spacing-xxl);
+  }
+}
+
+// Grid System Mixins
+@mixin make-row($gutter: var(--grid-gutter-md)) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: calc(-1 * #{$gutter});
+  margin-left: calc(-1 * #{$gutter});
+}
+
+@mixin make-col-ready($gutter: var(--grid-gutter-md)) {
+  position: relative;
+  width: 100%;
+  padding-right: $gutter;
+  padding-left: $gutter;
+}
+
+@mixin make-col($size: false, $columns: 12) {
+  @if $size {
+    flex: 0 0 percentage($size / $columns);
+    max-width: percentage($size / $columns);
+  } @else {
+    flex: 1 1 0%;
+    max-width: 100%;
+  }
+}
+
+// Responsive Grid Column Mixins
+@mixin make-col-span($size, $breakpoint: 'md') {
+  @if $breakpoint == 'xs' {
+    @media (min-width: var(--breakpoint-xs)) { width: percentage($size / 12); }
+  }
+  @if $breakpoint == 'sm' {
+    @media (min-width: var(--breakpoint-sm)) { width: percentage($size / 12); }
+  }
+  @if $breakpoint == 'md' {
+    @media (min-width: var(--breakpoint-md)) { width: percentage($size / 12); }
+  }
+  @if $breakpoint == 'lg' {
+    @media (min-width: var(--breakpoint-lg)) { width: percentage($size / 12); }
+  }
+  @if $breakpoint == 'xl' {
+    @media (min-width: var(--breakpoint-xl)) { width: percentage($size / 12); }
+  }
+  @if $breakpoint == 'xxl' {
+    @media (min-width: var(--breakpoint-xxl)) { width: percentage($size / 12); }
+  }
+}
+
+// Grid Gutter Mixins
+@mixin grid-gutter($gutter: var(--grid-gutter-md)) {
+  margin-right: calc(-1 * #{$gutter});
+  margin-left: calc(-1 * #{$gutter});
+  
+  > [class*="col-"] {
+    padding-right: $gutter;
+    padding-left: $gutter;
+  }
+}
+
+// Responsive Grid Gutter Mixins
+@mixin grid-gutter-responsive($gutter-xs: var(--grid-gutter-xs), $gutter-sm: var(--grid-gutter-sm), $gutter-md: var(--grid-gutter-md), $gutter-lg: var(--grid-gutter-lg), $gutter-xl: var(--grid-gutter-xl)) {
+  margin-right: calc(-1 * #{$gutter-xs});
+  margin-left: calc(-1 * #{$gutter-xs});
+  
+  > [class*="col-"] {
+    padding-right: $gutter-xs;
+    padding-left: $gutter-xs;
+  }
+  
+  @include respond-to('sm') {
+    margin-right: calc(-1 * #{$gutter-sm});
+    margin-left: calc(-1 * #{$gutter-sm});
+    
+    > [class*="col-"] {
+      padding-right: $gutter-sm;
+      padding-left: $gutter-sm;
+    }
+  }
+  
+  @include respond-to('md') {
+    margin-right: calc(-1 * #{$gutter-md});
+    margin-left: calc(-1 * #{$gutter-md});
+    
+    > [class*="col-"] {
+      padding-right: $gutter-md;
+      padding-left: $gutter-md;
+    }
+  }
+  
+  @include respond-to('lg') {
+    margin-right: calc(-1 * #{$gutter-lg});
+    margin-left: calc(-1 * #{$gutter-lg});
+    
+    > [class*="col-"] {
+      padding-right: $gutter-lg;
+      padding-left: $gutter-lg;
+    }
+  }
+  
+  @include respond-to('xl') {
+    margin-right: calc(-1 * #{$gutter-xl});
+    margin-left: calc(-1 * #{$gutter-xl});
+    
+    > [class*="col-"] {
+      padding-right: $gutter-xl;
+      padding-left: $gutter-xl;
+    }
+  }
+}
