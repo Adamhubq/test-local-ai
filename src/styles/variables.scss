@@ -56,12 +56,15 @@ $border-radius-lg: var(--border-radius-lg);
 $border-radius-xl: var(--border-radius-xl);
 $border-radius-full: var(--border-radius-full);
 
-$box-shadow-xs: var(--box-shadow-xs);
-$box-shadow-sm: var(--box-shadow-sm);
-$box-shadow-md: var(--box-shadow-md);
-$box-shadow-lg: var(--box-shadow-lg);
-$box-shadow-xl: var(--box-shadow-xl);
+$box-shadow-none: var(--box-shadow-none);
+$box-shadow-1: var(--box-shadow-1);
+$box-shadow-2: var(--box-shadow-2);
+$box-shadow-3: var(--box-shadow-3);
+$box-shadow-4: var(--box-shadow-4);
+$box-shadow-5: var(--box-shadow-5);
+$box-shadow-6: var(--box-shadow-6);
 
-$transition-fast: var(--transition-duration-fast);
-$transition-normal: var(--transition-duration-normal);
-$transition-slow: var(--transition-duration-slow);
+$border-width: var(--border-width);
+$border-style: var(--border-style);
+$border-color: var(--border-color);
+$border: var(--border);

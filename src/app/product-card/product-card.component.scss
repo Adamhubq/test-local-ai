@@ -2,7 +2,7 @@
   background: var(--color-white);
   border-radius: var(--border-radius-md);
   overflow: hidden;
-  box-shadow: var(--box-shadow-sm);
+  box-shadow: var(--box-shadow-2);
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -11,7 +11,7 @@
 
 .product-card:hover {
   transform: translateY(-5px);
-  box-shadow: var(--box-shadow-md);
+  box-shadow: var(--box-shadow-4);
 }
 
 .product-image {

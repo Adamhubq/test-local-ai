@@ -1,14 +1,14 @@
 .product-card {
-  border: 1px solid var(--color-border);
+  border: var(--border);
   border-radius: var(--border-radius-md);
   padding: var(--spacing-md);
-  box-shadow: var(--box-shadow-sm);
+  box-shadow: var(--box-shadow-2);
   transition: var(--transition-normal);
   background-color: var(--color-background);
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: var(--box-shadow-lg);
+    box-shadow: var(--box-shadow-4);
   }
 
   .product-image-container {
