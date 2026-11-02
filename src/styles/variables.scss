@@ -8,18 +8,25 @@
 // Import infrastructure variables
 @import 'infrastructure-variables';
 
-// Component-specific variables
+// Component-specific variables - Updated for new color system
 $primary-color: var(--color-primary);
 $secondary-color: var(--color-secondary);
+$accent-color: var(--color-accent);
 $danger-color: var(--color-danger);
 $warning-color: var(--color-warning);
 $success-color: var(--color-success);
+
+$background-color: var(--color-background);
+$surface-color: var(--color-surface);
+$text-color: var(--color-text);
+$text-secondary-color: var(--color-text-secondary);
+$text-muted-color: var(--color-text-muted);
+$border-color: var(--color-border);
 
 $dark-color: var(--color-dark);
 $light-color: var(--color-light);
 $white-color: var(--color-white);
 $gray-color: var(--color-gray);
-$border-color: var(--color-border);
 
 $font-family-primary: var(--font-family-primary);
 $font-family-secondary: var(--font-family-secondary);
