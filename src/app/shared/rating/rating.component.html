@@ -1,0 +1,31 @@
+<div class="rating {{ sizeClass }}" role="img" aria-label="Rating: {{ rating }} out of {{ maxRating }}">
+  <span class="rating__stars">
+    <ng-container *ngFor="let star of [] | range: filledStars">
+      <svg class="rating__star rating__star--filled" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M8 12.777l-4.935 2.554 1.058-5.99L.36 6.04l6.003-.867L8 0l1.637 5.183 6.003.867-4.32 4.297 1.058 5.99z"/>
+      </svg>
+    </ng-container>
+    
+    <ng-container *ngFor="let star of [] | range: (hasHalfStar ? 1 : 0)">
+      <svg class="rating__star rating__star--half" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+        <defs>
+          <clipPath id="half-star-clip">
+            <rect x="0" y="0" width="8" height="16" />
+          </clipPath>
+        </defs>
+        <path d="M8 12.777l-4.935 2.554 1.058-5.99L.36 6.04l6.003-.867L8 0l1.637 5.183 6.003.867-4.32 4.297 1.058 5.99z" clip-path="url(#half-star-clip)"/>
+      </svg>
+    </ng-container>
+    
+    <ng-container *ngFor="let star of [] | range: emptyStars">
+      <svg class="rating__star rating__star--empty" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M8 12.777l-4.935 2.554 1.058-5.99L.36 6.04l6.003-.867L8 0l1.637 5.183 6.003.867-4.32 4.297 1.058 5.99z"/>
+      </svg>
+    </ng-container>
+  </span>
+  
+  <span class="rating__value" *ngIf="showCount">
+    {{ rating }} 
+    <span class="rating__count" *ngIf="count > 0">({{ count }} reviews)</span>
+  </span>
+</div>

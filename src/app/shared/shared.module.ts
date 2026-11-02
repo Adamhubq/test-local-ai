@@ -20,6 +20,10 @@ import { AvatarExampleComponent } from './components/avatar/avatar-example.compo
 import { DividerExampleComponent } from './components/divider/divider-example.component';
 import { PriceExampleComponent } from './components/price/price-example.component';
 
+import { RatingComponent } from './rating/rating.component';
+import { RangePipe } from './rating/range.pipe';
+import { RatingExampleComponent } from './rating/rating-example.component';
+
 @NgModule({
   declarations: [
     ButtonComponent,
@@ -40,7 +44,10 @@ import { PriceExampleComponent } from './components/price/price-example.componen
     PriceComponent,
     AvatarExampleComponent,
     DividerExampleComponent,
-    PriceExampleComponent
+    PriceExampleComponent,
+    RatingComponent,
+    RangePipe,
+    RatingExampleComponent
   ],
   imports: [
     CommonModule
@@ -64,7 +71,8 @@ import { PriceExampleComponent } from './components/price/price-example.componen
     PriceComponent,
     AvatarExampleComponent,
     DividerExampleComponent,
-    PriceExampleComponent
+    PriceExampleComponent,
+    RatingComponent
   ]
 })
 export class SharedModule { }
