@@ -9,6 +9,10 @@ import { SelectComponent } from './components/select.component';
 import { CheckboxComponent } from './components/checkbox.component';
 import { RadioComponent } from './components/radio.component';
 import { SwitchComponent } from './components/switch.component';
+import { BadgeComponent } from './components/badge/badge.component';
+import { ChipComponent } from './components/chip/chip.component';
+import { BadgeExampleComponent } from './components/badge/badge-example.component';
+import { ChipExampleComponent } from './components/chip/chip-example.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { SwitchComponent } from './components/switch.component';
     SelectComponent,
     CheckboxComponent,
     RadioComponent,
-    SwitchComponent
+    SwitchComponent,
+    BadgeComponent,
+    ChipComponent,
+    BadgeExampleComponent,
+    ChipExampleComponent
   ],
   imports: [
     CommonModule
@@ -34,7 +42,11 @@ import { SwitchComponent } from './components/switch.component';
     SelectComponent,
     CheckboxComponent,
     RadioComponent,
-    SwitchComponent
+    SwitchComponent,
+    BadgeComponent,
+    ChipComponent,
+    BadgeExampleComponent,
+    ChipExampleComponent
   ]
 })
 export class SharedModule { }

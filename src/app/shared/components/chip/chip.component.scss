@@ -1,0 +1,101 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-primary);
+
+  &__label {
+    margin-right: 0.25rem;
+  }
+
+  &__dismiss {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 0.25rem;
+    font-size: 1rem;
+    line-height: 1;
+    color: var(--color-text);
+    
+    &:hover {
+      color: var(--color-primary-dark);
+    }
+  }
+
+  &--neutral {
+    background-color: var(--color-surface);
+    border-color: var(--color-border-primary);
+    color: var(--color-text);
+
+    .chip__dismiss {
+      color: var(--color-text);
+      
+      &:hover {
+        color: var(--color-primary-dark);
+      }
+    }
+  }
+
+  &--accent {
+    background-color: var(--color-accent-light);
+    border-color: var(--color-accent);
+    color: var(--color-accent-dark);
+
+    .chip__dismiss {
+      color: var(--color-accent-dark);
+      
+      &:hover {
+        color: var(--color-accent-dark);
+      }
+    }
+  }
+
+  &--success {
+    background-color: var(--color-success-light);
+    border-color: var(--color-success);
+    color: var(--color-success-dark);
+
+    .chip__dismiss {
+      color: var(--color-success-dark);
+      
+      &:hover {
+        color: var(--color-success-dark);
+      }
+    }
+  }
+
+  &--warning {
+    background-color: var(--color-warning-light);
+    border-color: var(--color-warning);
+    color: var(--color-warning-dark);
+
+    .chip__dismiss {
+      color: var(--color-warning-dark);
+      
+      &:hover {
+        color: var(--color-warning-dark);
+      }
+    }
+  }
+
+  &--danger {
+    background-color: var(--color-error-light);
+    border-color: var(--color-error);
+    color: var(--color-error-dark);
+
+    .chip__dismiss {
+      color: var(--color-error-dark);
+      
+      &:hover {
+        color: var(--color-error-dark);
+      }
+    }
+  }
+}

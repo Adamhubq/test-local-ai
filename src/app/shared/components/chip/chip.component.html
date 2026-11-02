@@ -1,0 +1,11 @@
+<span class="chip chip--{{ type }}">
+  <span class="chip__label">{{ label }}</span>
+  <button 
+    *ngIf="dismissible" 
+    class="chip__dismiss"
+    type="button"
+    (click)="onDismiss()"
+    aria-label="Remove {{ label }}">
+    &times;
+  </button>
+</span>
