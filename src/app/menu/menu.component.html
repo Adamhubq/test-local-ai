@@ -1,19 +1,28 @@
 <nav class="main-menu" role="navigation" aria-label="Main navigation">
   <ul class="menu-list">
     <li class="menu-item">
-      <a href="#" class="menu-link" (click)="onMenuClick($event)">Home</a>
+      <a href="#" class="menu-link" (click)="onMenuClick($event, 'Home')">Home</a>
     </li>
     <li class="menu-item">
-      <a href="#" class="menu-link" (click)="onMenuClick($event)">Products</a>
+      <a href="#" class="menu-link" (click)="onMenuClick($event, 'Products')">Products</a>
     </li>
     <li class="menu-item">
-      <a href="#" class="menu-link" (click)="onMenuClick($event)">Categories</a>
+      <a href="#" class="menu-link" (click)="onMenuClick($event, 'Categories')">Categories</a>
     </li>
     <li class="menu-item">
-      <a href="#" class="menu-link" (click)="onMenuClick($event)">About</a>
+      <a href="#" class="menu-link" (click)="onMenuClick($event, 'About')">About</a>
     </li>
     <li class="menu-item">
-      <a href="#" class="menu-link" (click)="onMenuClick($event)">Contact</a>
+      <a href="#" class="menu-link" (click)="onMenuClick($event, 'Contact')">Contact</a>
     </li>
   </ul>
+  
+  <!-- Categories dropdown -->
+  <div *ngIf="isCategoriesOpen" class="categories-dropdown">
+    <ul class="categories-list">
+      <li *ngFor="let category of categories" class="category-item">
+        <a href="#" class="category-link" (click)="onCategoryClick(category)">{{ category.name }}</a>
+      </li>
+    </ul>
+  </div>
 </nav>

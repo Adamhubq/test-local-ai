@@ -1,48 +1,46 @@
-// ========================================
-// NOVA STORE Mixins
-// ========================================
+// Mixins for the project
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-// Media Query Mixins
+@mixin button-style($bg-color, $text-color: white) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@mixin responsive-text($font-size, $line-height: 1.4) {
+  font-size: $font-size;
+  line-height: $line-height;
+  
+  @media (max-width: 768px) {
+    font-size: $font-size * 0.8;
+  }
+}
+
+// Responsive mixin for breakpoints
 @mixin respond-to($breakpoint) {
   @if $breakpoint == 'xs' {
-    @media (min-width: var(--breakpoint-xs)) { @content; }
+    @media (min-width: 0) { @content; }
   }
   @if $breakpoint == 'sm' {
-    @media (min-width: var(--breakpoint-sm)) { @content; }
+    @media (min-width: 576px) { @content; }
   }
   @if $breakpoint == 'md' {
-    @media (min-width: var(--breakpoint-md)) { @content; }
+    @media (min-width: 768px) { @content; }
   }
   @if $breakpoint == 'lg' {
-    @media (min-width: var(--breakpoint-lg)) { @content; }
+    @media (min-width: 992px) { @content; }
   }
   @if $breakpoint == 'xl' {
-    @media (min-width: var(--breakpoint-xl)) { @content; }
+    @media (min-width: 1200px) { @content; }
   }
   @if $breakpoint == 'xxl' {
-    @media (min-width: var(--breakpoint-xxl)) { @content; }
-  }
-}
-
-// Button Variant Mixin
-@mixin button-variant($background, $border, $color: null) {
-  color: $color;
-  background-color: $background;
-  border-color: $border;
-  
-  &:hover {
-    background-color: darken($background, 10%);
-    border-color: darken($border, 10%);
-  }
-}
-
-// Card Variant Mixin
-@mixin card-variant($background, $border) {
-  background-color: $background;
-  border: 1px solid $border;
-  
-  &.card-outline {
-    background-color: transparent;
-    border: 1px solid $border;
+    @media (min-width: 1400px) { @content; }
   }
 }

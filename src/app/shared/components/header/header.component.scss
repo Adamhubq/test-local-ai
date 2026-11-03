@@ -21,6 +21,21 @@
   flex-shrink: 0;
 }
 
+.header-menu-wrapper {
+  position: relative;
+  flex-grow: 1;
+}
+
+.cursor-indicator {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 3px;
+  background-color: #8BC34A;
+  width: 100px; /* Adjust based on menu item width */
+  transition: left 0.3s ease;
+}
+
 .header-menu {
   flex-grow: 1;
 }
