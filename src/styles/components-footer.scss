@@ -1,0 +1,64 @@
+// ========================================
+// NOVA STORE Component Styles
+// ========================================
+
+// Footer Styles
+.footer {
+  background-color: var(--color-background-dark);
+  color: var(--color-text-light);
+  padding: var(--spacing-lg) 0;
+  margin-top: var(--spacing-xl);
+  
+  &-container {
+    @include container();
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  &-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+  }
+  
+  &-section {
+    h3 {
+      font-size: var(--font-size-lg);
+      margin-bottom: var(--spacing-sm);
+      color: var(--color-text-light);
+    }
+    
+    p {
+      color: var(--color-text-secondary-light);
+      line-height: var(--line-height-md);
+    }
+  }
+  
+  &-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      margin-bottom: var(--spacing-xs);
+      
+      a {
+        color: var(--color-text-secondary-light);
+        text-decoration: none;
+        
+        &:hover {
+          color: var(--color-primary-light);
+        }
+      }
+    }
+  }
+  
+  &-copyright {
+    border-top: 1px solid var(--color-border-dark);
+    padding-top: var(--spacing-md);
+    text-align: center;
+    color: var(--color-text-secondary-light);
+    font-size: var(--font-size-sm);
+  }
+}

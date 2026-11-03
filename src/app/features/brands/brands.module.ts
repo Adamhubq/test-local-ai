@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrandsComponent } from './brands.component';
 
 @NgModule({
-  declarations: [
-    BrandsComponent
-  ],
+  declarations: [],
   imports: [
     CommonModule
   ]

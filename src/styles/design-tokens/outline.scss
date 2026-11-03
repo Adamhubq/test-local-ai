@@ -1,0 +1,17 @@
+// ========================================
+// Outline/Focus Tokens
+// ========================================
+
+:root {
+  --outline-width: 2px;
+  --outline-style: solid;
+  --outline-color: var(--color-accent);
+  --outline-offset: 2px;
+  
+  /* Focus ring for interactive elements */
+  --outline-focus: var(--outline-width) var(--outline-style) var(--outline-color);
+  --outline-focus-offset: var(--outline-offset);
+  
+  /* Overlay focus rings */
+  --outline-overlay-focus: 0 0 0 3px rgba(139, 195, 74, 0.3);
+}

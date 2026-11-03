@@ -1,0 +1,24 @@
+// ========================================
+// Border Tokens
+// ========================================
+
+:root {
+  --border-width: 1px;
+  --border-width-xs: 1px;
+  --border-width-sm: 2px;
+  --border-width-md: 3px;
+  --border-width-lg: 4px;
+  --border-width-xl: 5px;
+  
+  --border-style: solid;
+  
+  --border-color-primary: var(--color-border);
+  --border-color-secondary: var(--color-border-dark);
+  --border-color-accent: var(--color-accent);
+  --border-color-success: var(--color-success);
+  --border-color-warning: var(--color-warning);
+  --border-color-danger: var(--color-danger);
+  --border-color-disabled: var(--color-border);
+  
+  --border: var(--border-width) var(--border-style) var(--border-color);
+}

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-design-tokens-demo',
@@ -27,10 +28,6 @@ import { Component } from '@angular/core';
                  [style.line-height]="font.lineHeight">
               {{ font.name }}
             </div>
-            <div class="font-info">
-              <span class="font-name">{{ font.name }}</span>
-              <span class="font-details">Size: {{ font.size }}, Weight: {{ font.weight }}, Line height: {{ font.lineHeight }}</span>
-            </div>
           </div>
         </div>
       </section>
@@ -46,334 +43,106 @@ import { Component } from '@angular/core';
           </div>
         </div>
       </section>
-
-      <!-- Border Radius Tokens -->
-      <section class="tokens-section">
-        <h2>Border Radius Tokens</h2>
-        <div class="radius-grid">
-          <div class="radius-item" *ngFor="let radius of borderRadiusTokens">
-            <div class="radius-preview" [style.border-radius]="radius.value"></div>
-            <span class="radius-name">{{ radius.name }}</span>
-            <span class="radius-value">{{ radius.value }}</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Box Shadow Tokens -->
-      <section class="tokens-section">
-        <h2>Box Shadow Tokens</h2>
-        <div class="shadow-grid">
-          <div class="shadow-item" *ngFor="let shadow of boxShadowTokens">
-            <div class="shadow-preview" [style.box-shadow]="shadow.value"></div>
-            <span class="shadow-name">{{ shadow.name }}</span>
-            <span class="shadow-value">{{ shadow.value }}</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Border Tokens -->
-      <section class="tokens-section">
-        <h2>Border Tokens</h2>
-        <div class="border-grid">
-          <div class="border-item" *ngFor="let border of borderTokens">
-            <div class="border-preview" [style.border]="border.value"></div>
-            <span class="border-name">{{ border.name }}</span>
-            <span class="border-value">{{ border.value }}</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Interactive States -->
-      <section class="tokens-section">
-        <h2>Interactive States</h2>
-        <div class="interactive-grid">
-          <div class="interactive-item" *ngFor="let state of interactiveStates">
-            <div class="interactive-preview" [style.outline]="state.value"></div>
-            <span class="interactive-name">{{ state.name }}</span>
-            <span class="interactive-value">{{ state.value }}</span>
-          </div>
-        </div>
-      </section>
     </div>
   `,
   styles: [`
     .tokens-demo-container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: var(--spacing-md);
-      font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      padding: 16px;
     }
 
     h1 {
-      font-size: var(--font-size-xxl);
-      font-weight: var(--font-weight-bold);
-      margin-bottom: var(--spacing-lg);
-      color: var(--color-text);
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 24px;
     }
 
     h2 {
-      font-size: var(--font-size-xl);
-      font-weight: var(--font-weight-semibold);
-      margin-bottom: var(--spacing-md);
-      color: var(--color-text);
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
     }
 
     .tokens-section {
-      margin-bottom: var(--spacing-xl);
+      margin-bottom: 32px;
     }
 
-    /* Color Grid */
-    .color-grid {
+    /* Simplified Grid Layout */
+    .color-grid,
+    .typography-grid,
+    .spacing-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: var(--spacing-md);
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 16px;
+    }
+
+    /* Common Item Styles */
+    .color-item,
+    .typography-item,
+    .spacing-item {
+      padding: 12px;
+      border-radius: 4px;
+      text-align: center;
     }
 
     .color-item {
-      padding: var(--spacing-md);
-      border-radius: var(--border-radius-sm);
       color: white;
-      text-align: center;
-      box-shadow: var(--box-shadow-1);
-    }
-
-    .color-name {
-      display: block;
-      font-weight: var(--font-weight-bold);
-      margin-bottom: var(--spacing-xs);
-    }
-
-    .color-value {
-      display: block;
-      font-size: var(--font-size-sm);
-      opacity: 0.9;
-    }
-
-    /* Typography Grid */
-    .typography-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: var(--spacing-md);
     }
 
     .typography-item {
-      padding: var(--spacing-md);
-      border-radius: var(--border-radius-sm);
-      background-color: var(--color-surface);
+      background-color: #f5f5f5;
     }
 
+    /* Preview Elements */
     .font-preview {
-      margin-bottom: var(--spacing-md);
-      padding: var(--spacing-sm);
-      border: 1px solid var(--color-border);
-      border-radius: var(--border-radius-sm);
-    }
-
-    .font-name {
-      display: block;
-      font-weight: var(--font-weight-bold);
-      margin-bottom: var(--spacing-xs);
-    }
-
-    .font-details {
-      display: block;
-      font-size: var(--font-size-sm);
-      color: var(--color-text-muted);
-    }
-
-    /* Spacing Grid */
-    .spacing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: var(--spacing-md);
-    }
-
-    .spacing-item {
-      text-align: center;
+      margin-bottom: 12px;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
     }
 
     .spacing-preview {
       width: 100%;
-      height: 60px;
-      background-color: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--border-radius-sm);
-      margin-bottom: var(--spacing-xs);
+      height: 30px;
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      margin-bottom: 8px;
+      border-radius: 4px;
     }
 
+    /* Text Elements */
+    .color-name,
+    .font-name,
     .spacing-name {
       display: block;
-      font-weight: var(--font-weight-medium);
-      margin-bottom: var(--spacing-xs);
+      font-weight: bold;
+      margin-bottom: 4px;
     }
 
+    .color-value,
+    .font-details,
     .spacing-value {
       display: block;
-      font-size: var(--font-size-sm);
-      color: var(--color-text-muted);
-    }
-
-    /* Border Radius Grid */
-    .radius-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: var(--spacing-md);
-    }
-
-    .radius-item {
-      text-align: center;
-    }
-
-    .radius-preview {
-      width: 80px;
-      height: 80px;
-      background-color: var(--color-surface);
-      margin: 0 auto var(--spacing-xs);
-      border: 1px solid var(--color-border);
-    }
-
-    .radius-name {
-      display: block;
-      font-weight: var(--font-weight-medium);
-      margin-bottom: var(--spacing-xs);
-    }
-
-    .radius-value {
-      display: block;
-      font-size: var(--font-size-sm);
-      color: var(--color-text-muted);
-    }
-
-    /* Box Shadow Grid */
-    .shadow-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: var(--spacing-md);
-    }
-
-    .shadow-item {
-      text-align: center;
-    }
-
-    .shadow-preview {
-      width: 100%;
-      height: 60px;
-      background-color: var(--color-background);
-      border: 1px solid var(--color-border);
-      margin-bottom: var(--spacing-xs);
-      border-radius: var(--border-radius-sm);
-    }
-
-    .shadow-name {
-      display: block;
-      font-weight: var(--font-weight-medium);
-      margin-bottom: var(--spacing-xs);
-    }
-
-    .shadow-value {
-      display: block;
-      font-size: var(--font-size-sm);
-      color: var(--color-text-muted);
-    }
-
-    /* Border Grid */
-    .border-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: var(--spacing-md);
-    }
-
-    .border-item {
-      text-align: center;
-    }
-
-    .border-preview {
-      width: 80px;
-      height: 40px;
-      background-color: var(--color-background);
-      margin: 0 auto var(--spacing-xs);
-      border: 1px solid var(--color-border);
-    }
-
-    .border-name {
-      display: block;
-      font-weight: var(--font-weight-medium);
-      margin-bottom: var(--spacing-xs);
-    }
-
-    .border-value {
-      display: block;
-      font-size: var(--font-size-sm);
-      color: var(--color-text-muted);
-    }
-
-    /* Interactive States Grid */
-    .interactive-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: var(--spacing-md);
-    }
-
-    .interactive-item {
-      text-align: center;
-    }
-
-    .interactive-preview {
-      width: 80px;
-      height: 40px;
-      background-color: var(--color-background);
-      margin: 0 auto var(--spacing-xs);
-      border: 1px solid var(--color-border);
-    }
-
-    .interactive-name {
-      display: block;
-      font-weight: var(--font-weight-medium);
-      margin-bottom: var(--spacing-xs);
-    }
-
-    .interactive-value {
-      display: block;
-      font-size: var(--font-size-sm);
-      color: var(--color-text-muted);
+      font-size: 12px;
+      color: #666;
     }
 
     @media (max-width: 768px) {
       .tokens-demo-container {
-        padding: var(--spacing-sm);
+        padding: 8px;
       }
       
       h1 {
-        font-size: var(--font-size-xl);
+        font-size: 20px;
       }
       
       h2 {
-        font-size: var(--font-size-lg);
-      }
-      
-      .color-grid,
-      .typography-grid,
-      .spacing-grid,
-      .radius-grid,
-      .shadow-grid,
-      .border-grid,
-      .interactive-grid {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        font-size: 18px;
       }
     }
-
-    @media (max-width: 480px) {
-      .color-grid,
-      .typography-grid,
-      .spacing-grid,
-      .radius-grid,
-      .shadow-grid,
-      .border-grid,
-      .interactive-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  `]
+  `],
+  imports: [CommonModule]
 })
 export class DesignTokensDemoComponent {
   colorTokens = [
@@ -384,60 +153,20 @@ export class DesignTokensDemoComponent {
     { name: 'Success', value: '#4CAF50' },
     { name: 'Warning', value: '#ff9800' },
     { name: 'Error', value: '#f44336' },
-    { name: 'Background', value: '#ffffff' },
-    { name: 'Surface', value: '#f5f5f5' },
   ];
 
   typographyTokens = [
-    { name: 'Display', size: 'var(--font-size-xxxxl)', weight: 'var(--font-weight-bold)', lineHeight: 'var(--line-height-tight)' },
-    { name: 'Heading', size: 'var(--font-size-xxxl)', weight: 'var(--font-weight-semibold)', lineHeight: 'var(--line-height-tight)' },
-    { name: 'Title', size: 'var(--font-size-xxl)', weight: 'var(--font-weight-bold)', lineHeight: 'var(--line-height-tight)' },
-    { name: 'Body', size: 'var(--font-size-md)', weight: 'var(--font-weight-normal)', lineHeight: 'var(--line-height-normal)' },
-    { name: 'Caption', size: 'var(--font-size-sm)', weight: 'var(--font-weight-normal)', lineHeight: 'var(--line-height-tight)' },
-    { name: 'Label', size: 'var(--font-size-sm)', weight: 'var(--font-weight-medium)', lineHeight: 'var(--line-height-tight)' },
+    { name: 'Display', size: '32px', weight: 'bold', lineHeight: '1.2' },
+    { name: 'Heading', size: '24px', weight: '600', lineHeight: '1.2' },
+    { name: 'Body', size: '16px', weight: 'normal', lineHeight: '1.5' },
   ];
 
   spacingTokens = [
-    { name: 'XXS', value: 'var(--spacing-xxs)' },
-    { name: 'XS', value: 'var(--spacing-xs)' },
-    { name: 'SM', value: 'var(--spacing-sm)' },
-    { name: 'MD', value: 'var(--spacing-md)' },
-    { name: 'LG', value: 'var(--spacing-lg)' },
-    { name: 'XL', value: 'var(--spacing-xl)' },
-    { name: 'XXL', value: 'var(--spacing-xxl)' },
-    { name: 'XXXL', value: 'var(--spacing-xxxl)' },
+    { name: 'XS', value: '8px' },
+    { name: 'SM', value: '12px' },
+    { name: 'MD', value: '16px' },
+    { name: 'LG', value: '24px' },
   ];
 
-  borderRadiusTokens = [
-    { name: 'XS', value: 'var(--border-radius-xs)' },
-    { name: 'SM', value: 'var(--border-radius-sm)' },
-    { name: 'MD', value: 'var(--border-radius-md)' },
-    { name: 'LG', value: 'var(--border-radius-lg)' },
-    { name: 'XL', value: 'var(--border-radius-xl)' },
-    { name: 'XXL', value: 'var(--border-radius-xxl)' },
-    { name: 'Full', value: 'var(--border-radius-full)' },
-  ];
-
-  boxShadowTokens = [
-    { name: 'Shadow 1', value: 'var(--box-shadow-1)' },
-    { name: 'Shadow 2', value: 'var(--box-shadow-2)' },
-    { name: 'Shadow 3', value: 'var(--box-shadow-3)' },
-    { name: 'Shadow 4', value: 'var(--box-shadow-4)' },
-    { name: 'Shadow 5', value: 'var(--box-shadow-5)' },
-    { name: 'Shadow 6', value: 'var(--box-shadow-6)' },
-  ];
-
-  borderTokens = [
-    { name: 'Border Width XS', value: 'var(--border-width-xs) var(--border-style) var(--border-color-primary)' },
-    { name: 'Border Width SM', value: 'var(--border-width-sm) var(--border-style) var(--border-color-primary)' },
-    { name: 'Border Width MD', value: 'var(--border-width-md) var(--border-style) var(--border-color-primary)' },
-    { name: 'Border Width LG', value: 'var(--border-width-lg) var(--border-style) var(--border-color-primary)' },
-  ];
-
-  interactiveStates = [
-    { name: 'Focus Outline', value: 'var(--outline-focus)' },
-    { name: 'Focus Offset', value: 'var(--outline-focus-offset)' },
-    { name: 'Transition Fast', value: 'var(--transition-fast)' },
-    { name: 'Transition Normal', value: 'var(--transition-normal)' },
-  ];
+  // Removed other token types to reduce size
 }

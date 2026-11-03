@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sidebar-navigation',
   templateUrl: './sidebar-navigation.component.html',
-  styleUrls: ['./sidebar-navigation.component.scss']
+  styleUrls: ['./sidebar-navigation.component.scss'],
+  imports: [RouterModule, CommonModule]
 })
 export class SidebarNavigationComponent {
   navigationItems = [

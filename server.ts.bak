@@ -1,0 +1,27 @@
+import express from 'express';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
+import { AppComponent } from './src/app/app.component';
+
+const server = express();
+const serverDistFolder = dirname(fileURLToPath(import.meta.url));
+const browserDistFolder = join(serverDistFolder, '../browser');
+
+server.get('**', (req, res, next) => {
+  const { protocol, originalUrl, headers } = req;
+
+  // Используем правильный импорт для Angular 17
+  import('@angular/ssr')
+    .then((ssrModule) => {
+      return ssrModule.renderToString({
+        documentFilePath: join(browserDistFolder, 'index.html'),
+        url: `${protocol}://${headers.host}${originalUrl}`,
+        publicPath: browserDistFolder,
+        bootstrap: AppComponent,
+      });
+    })
+    .then((html) => res.send(html))
+    .catch((err) => next(err));
+});
+
+export { server };

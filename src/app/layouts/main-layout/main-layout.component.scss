@@ -1,4 +1,4 @@
-@import '../../../styles/grid.scss';
+@use '../../../styles/grid.scss' as *;
 
 .main-layout {
   min-height: 100vh;

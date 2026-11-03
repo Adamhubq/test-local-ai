@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { ButtonComponent } from './components/button.component';
 import { IconButtonComponent } from './components/icon-button.component';
 import { ButtonExampleComponent } from './components/button-example.component';
@@ -24,12 +25,9 @@ import { RatingComponent } from './rating/rating.component';
 import { RangePipe } from './rating/range.pipe';
 import { RatingExampleComponent } from './rating/rating-example.component';
 
-import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
-import { PaginationComponent } from './components/pagination/pagination.component';
-
-// New components for search
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
-import { SearchSuggestionsComponent } from './components/search-suggestions/search-suggestions.component';
+// New components for search (not declared in NgModule since they are standalone)
+// import { SearchBarComponent } from './components/search-bar/search-bar.component';
+// import { SearchSuggestionsComponent } from './components/search-suggestions/search-suggestions.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ModalExampleComponent } from './components/modal/modal-example.component';
 
@@ -47,6 +45,24 @@ import { ToastComponent } from './components/toast/toast.component';
 import { ToastContainerComponent } from './components/toast-container/toast-container.component';
 import { SkeletonComponent } from './components/skeleton/skeleton.component';
 import { LoaderComponent } from './components/loader/loader.component';
+
+// Confirmation Dialog component
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
+import { ConfirmationDialogExampleComponent } from './components/confirmation-dialog/confirmation-dialog-example.component';
+
+// Empty State and Error State
+import { EmptyStateComponent } from './components/empty-state/empty-state.component';
+import { ErrorStateComponent } from './components/error-state/error-state.component';
+
+// Design Tokens Demo Component
+import { DesignTokensDemoComponent } from '../design-tokens-demo.component';
+
+// Product Card and Header components
+import { ProductCardComponent } from './components/product-card/product-card.component';
+import { HeaderComponent } from './components/header/header.component';
+
+// Sidebar Navigation Component
+import { SidebarNavigationComponent } from './components/sidebar-navigation/sidebar-navigation.component';
 
 @NgModule({
   declarations: [
@@ -72,11 +88,11 @@ import { LoaderComponent } from './components/loader/loader.component';
     RatingComponent,
     RangePipe,
     RatingExampleComponent,
-    BreadcrumbsComponent,
-    PaginationComponent,
-    SearchBarComponent,
+    // BreadcrumbsComponent,
+    // PaginationComponent,  // Removed since it's standalone
+    // SearchBarComponent,  // Removed since it's standalone
+    // SearchSuggestionsComponent,  // Removed since it's standalone
     ModalComponent,
-    SearchSuggestionsComponent,
     ModalExampleComponent,
     DropdownComponent,
     TabsComponent,
@@ -86,10 +102,21 @@ import { LoaderComponent } from './components/loader/loader.component';
     ToastComponent,
     ToastContainerComponent,
     SkeletonComponent,
-    LoaderComponent
+    LoaderComponent,
+    ConfirmationDialogComponent,
+    ConfirmationDialogExampleComponent,
+    DesignTokensDemoComponent,
+
+    EmptyStateComponent,
+    ErrorStateComponent,
+    
+    ProductCardComponent,
+    HeaderComponent,
+    SidebarNavigationComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     ButtonComponent,
@@ -112,11 +139,13 @@ import { LoaderComponent } from './components/loader/loader.component';
     DividerExampleComponent,
     PriceExampleComponent,
     RatingComponent,
-    BreadcrumbsComponent,
-    PaginationComponent,
-    SearchBarComponent,
+    RangePipe,
+    // BreadcrumbsComponent,
+    // PaginationComponent,  // Removed since it's standalone
+    // SearchBarComponent,  // Removed since it's standalone
+    // SearchSuggestionsComponent,  // Removed since it's standalone
     ModalComponent,
-    SearchSuggestionsComponent,
+    ModalExampleComponent,
     DropdownComponent,
     TabsComponent,
     AccordionComponent,
@@ -125,7 +154,17 @@ import { LoaderComponent } from './components/loader/loader.component';
     ToastComponent,
     ToastContainerComponent,
     SkeletonComponent,
-    LoaderComponent
+    LoaderComponent,
+    ConfirmationDialogComponent,
+    ConfirmationDialogExampleComponent,
+    DesignTokensDemoComponent,
+
+    EmptyStateComponent,
+    ErrorStateComponent,
+    
+    ProductCardComponent,
+    HeaderComponent,
+    SidebarNavigationComponent
   ]
 })
 export class SharedModule { }

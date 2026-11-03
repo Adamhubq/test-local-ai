@@ -1,0 +1,240 @@
+// ========================================
+// NOVA STORE Component Styles
+// ========================================
+
+// Header Styles
+.header {
+  background-color: var(--color-background);
+  box-shadow: var(--box-shadow-sm);
+  padding: var(--spacing-md) 0;
+  
+  &-container {
+    @include container();
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  &-logo {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    text-decoration: none;
+    
+    &:hover {
+      color: var(--color-primary-dark);
+    }
+  }
+  
+  &-nav {
+    display: flex;
+    gap: var(--spacing-lg);
+    
+    &-link {
+      text-decoration: none;
+      color: var(--color-text);
+      font-weight: var(--font-weight-medium);
+      transition: var(--transition-normal);
+      
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
+  }
+  
+  &-actions {
+    display: flex;
+    gap: var(--spacing-md);
+  }
+}
+
+// Footer Styles
+.footer {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--spacing-xl) 0;
+  margin-top: var(--spacing-xl);
+  
+  &-container {
+    @include container();
+  }
+  
+  &-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+  }
+  
+  &-title {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-accent-light);
+  }
+  
+  &-links {
+    list-style: none;
+    
+    &-item {
+      margin-bottom: var(--spacing-sm);
+      
+      &-link {
+        color: var(--color-text-muted);
+        text-decoration: none;
+        transition: var(--transition-normal);
+        
+        &:hover {
+          color: var(--color-white);
+        }
+      }
+    }
+  }
+}
+
+// Product Card Styles
+.product-card {
+  background-color: var(--color-background);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow-sm);
+  overflow: hidden;
+  transition: var(--transition-normal);
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-lg);
+  }
+  
+  &-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  &-content {
+    padding: var(--spacing-md);
+  }
+  
+  &-title {
+    @extend .product-title;
+  }
+  
+  &-price {
+    @extend .product-price;
+  }
+  
+  &-description {
+    @extend .product-description;
+  }
+}
+
+// Cart Styles
+.cart {
+  &-item {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--color-border);
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  
+  &-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: var(--spacing-md);
+    border-radius: var(--border-radius-sm);
+  }
+  
+  &-info {
+    flex: 1;
+  }
+  
+  &-title {
+    @extend .product-title;
+  }
+  
+  &-price {
+    @extend .product-price;
+  }
+  
+  &-quantity {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    
+    &-input {
+      width: 50px;
+      padding: var(--spacing-xs);
+      text-align: center;
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-sm);
+    }
+  }
+  
+  &-total {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-border);
+  }
+}
+
+// Form Styles
+.form {
+  &-group {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  &-label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text);
+  }
+  
+  &-control {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-md);
+    
+    &:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 2px rgba(139, 195, 74, 0.2);
+    }
+  }
+  
+  &-btn {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-medium);
+    
+    &.btn-primary {
+      background-color: var(--color-accent);
+      color: var(--color-white);
+      
+      &:hover {
+        background-color: var(--color-accent-dark);
+      }
+    }
+    
+    &.btn-secondary {
+      background-color: var(--color-secondary);
+      color: var(--color-white);
+      
+      &:hover {
+        background-color: var(--color-secondary-dark);
+      }
+    }
+  }
+}

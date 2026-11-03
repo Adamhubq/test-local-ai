@@ -3,7 +3,15 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-components',
   templateUrl: './components.component.html',
-  styleUrls: ['./components.component.scss']
+  styleUrls: [
+    './ui-kit-layout.component.scss',
+    './ui-kit-buttons.component.scss',
+    './ui-kit-forms.component.scss',
+    './ui-kit-cards.component.scss',
+    './ui-kit-layouts.component.scss',
+    './ui-kit-feedback.component.scss',
+    './ui-kit-data-display.component.scss'
+  ]
 })
 export class ComponentsComponent {
   title = 'NOVA STORE UI Kit';

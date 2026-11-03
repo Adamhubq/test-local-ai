@@ -1,0 +1,49 @@
+// ========================================
+// NOVA STORE Semantic Color Tokens
+// ========================================
+
+// Semantic color roles with hover, active, focus, and disabled variants
+:root {
+  // Button colors
+  --color-button-primary: var(--color-primary);
+  --color-button-primary-hover: var(--color-primary-dark);
+  --color-button-primary-active: var(--color-primary-dark);
+  --color-button-primary-disabled: var(--color-border);
+  
+  --color-button-secondary: var(--color-secondary);
+  --color-button-secondary-hover: var(--color-secondary-dark);
+  --color-button-secondary-active: var(--color-secondary-dark);
+  --color-button-secondary-disabled: var(--color-border);
+  
+  // Link colors
+  --color-link: var(--color-primary);
+  --color-link-hover: var(--color-primary-dark);
+  --color-link-active: var(--color-primary-dark);
+  
+  // Input colors
+  --color-input-background: var(--color-background);
+  --color-input-border: var(--color-border);
+  --color-input-border-focus: var(--color-primary);
+  --color-input-text: var(--color-text);
+  
+  // Card colors
+  --color-card-background: var(--color-background);
+  --color-card-border: var(--color-border);
+  --color-card-shadow: var(--box-shadow-1);
+}
+
+// Additional semantic tokens for interactive elements
+:root {
+  // Hover states
+  --color-hover-primary: rgba(33, 33, 33, 0.05);
+  --color-hover-secondary: rgba(255, 152, 0, 0.05);
+  
+  // Focus states
+  --color-focus-outline: var(--color-primary);
+  --color-focus-shadow: 0 0 0 2px rgba(33, 33, 33, 0.2);
+  
+  // Disabled states
+  --color-disabled-background: var(--color-background-light);
+  --color-disabled-text: var(--color-text-muted);
+  --color-disabled-border: var(--color-border);
+}
