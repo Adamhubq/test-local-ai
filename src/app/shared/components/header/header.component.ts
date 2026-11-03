@@ -3,11 +3,13 @@ import { Router } from '@angular/router';
 import { CartService } from '../../../core/services/cart.service';
 import { Cart } from '../../../core/models/cart.model';
 import { NavigationService } from '../../../core/services/navigation.service';
+import { MenuComponent } from '../menu/menu.component';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  imports: [MenuComponent]
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   cart: Cart = { items: [], totalItems: 0, totalPrice: 0 };

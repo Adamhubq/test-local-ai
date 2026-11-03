@@ -11,17 +11,24 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
+    gap: var(--spacing-lg);
   }
 }
 
 .app-title {
   margin: 0;
   font-size: 1.5em;
+  flex-shrink: 0;
+}
+
+.header-menu {
+  flex-grow: 1;
 }
 
 .header-actions {
   display: flex;
   gap: var(--spacing-sm);
+  flex-shrink: 0;
 }
 
 .cart-btn, .search-btn {
