@@ -21,7 +21,9 @@ import { SharedModule } from '../../shared/shared.module';
     SharedModule
   ],
   exports: [
-    CatalogComponent
+    CatalogComponent,
+    SidebarNavigationComponent,
+    ProductCardComponent
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
