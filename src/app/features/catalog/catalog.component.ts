@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../../../models/product.model';
+import { Product } from '../../models/product.model';
 import { CommonModule } from '@angular/common';
-import { SidebarNavigationComponent } from '../../../shared/components/sidebar-navigation/sidebar-navigation.component';
-import { ProductCardComponent } from '../../../shared/components/product-card/product-card.component';
+import { SidebarNavigationComponent } from '../../shared/components/sidebar-navigation/sidebar-navigation.component';
+import { ProductCardComponent } from '../../shared/components/product-card/product-card.component';
 
 @Component({
   selector: 'app-catalog',

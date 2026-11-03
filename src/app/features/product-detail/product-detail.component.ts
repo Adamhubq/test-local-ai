@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Product } from '../../../models/product.model';
-import { CartService } from '../../../core/services/cart.service';
+import { Product } from '../../models/product.model';
+import { CartService } from '../../core/services/cart.service';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.scss']
+  styleUrls: ['./product-detail.component.scss'],
+  imports: [CurrencyPipe]
 })
 export class ProductDetailComponent implements OnInit {
   product: Product | null = null;
@@ -37,9 +39,9 @@ export class ProductDetailComponent implements OnInit {
         description: 'High-quality wireless headphones with noise cancellation',
         price: 199.99,
         category: 'Electronics',
-        brand: 'TechBrand',
-        images: ['assets/images/headphones.jpg'],
-        slug: 'wireless-headphones'
+        brand: 'AudioTech',
+        image: 'assets/images/headphones.jpg',
+        inStock: true
       },
       {
         id: 2,
@@ -47,13 +49,13 @@ export class ProductDetailComponent implements OnInit {
         description: 'Comfortable running shoes for daily exercise',
         price: 89.99,
         category: 'Footwear',
-        brand: 'SportBrand',
-        images: ['assets/images/shoes.jpg'],
-        slug: 'running-shoes'
+        brand: 'StrideWear',
+        image: 'assets/images/shoes.jpg',
+        inStock: true
       }
     ];
 
-    this.product = mockProducts.find(p => p.slug === slug) || null;
+    this.product = mockProducts.find(p => p.id === parseInt(slug, 10)) || null;
   }
 
   addToCart(): void {
