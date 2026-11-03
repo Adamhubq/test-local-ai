@@ -11,6 +11,19 @@
 npm-debug.log
 yarn-error.log
 
+# Не читается сборкой: кэш, логи прогонов, бэкапы, вложенная копия
+/.angular
+/.history
+/стол
+.orch-batch-logs/
+.orch-batch-state.json
+.orch-last-verify.log
+.orch-live.log
+*.bak
+*.backup
+backup_package.json
+backup_package-lock.json
+
 # IDEs and editors
 .idea/
 .project
@@ -29,7 +42,6 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
-/.angular/cache
 .sass-cache/
 /connect.lock
 /coverage

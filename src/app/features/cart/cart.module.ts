@@ -4,9 +4,6 @@ import { RouterModule } from '@angular/router';
 import { CartComponent } from './cart.component';
 
 @NgModule({
-  declarations: [
-    CartComponent
-  ],
   imports: [
     CommonModule,
     RouterModule.forChild([
