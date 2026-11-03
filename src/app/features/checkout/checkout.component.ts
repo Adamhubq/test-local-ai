@@ -1,15 +1,15 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CartService } from '../../core/services/cart.service';
 import { Subscription } from 'rxjs';
-import { CartItem } from '../../core/services/cart.service';
+import { CartItem } from '../../core/models/cart-item.model';
 import { CurrencyPipe, CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.scss'],
-  imports: [CurrencyPipe, CommonModule]
+  imports: [CurrencyPipe, CommonModule, ReactiveFormsModule]
 })
 export class CheckoutComponent implements OnInit, OnDestroy {
   checkoutForm: FormGroup;

@@ -1,21 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule, CurrencyPipe } from '@angular/common';
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app.routes';
+import { RouterModule } from '@angular/router';
+import { routes } from './app.routes';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    RouterModule.forRoot(routes),
     CommonModule
   ],
   providers: [
     CurrencyPipe
-  ],
-  bootstrap: [AppComponent]
+  ]
 })
 export class AppModule { }

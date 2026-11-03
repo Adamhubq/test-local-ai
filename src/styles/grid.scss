@@ -3,6 +3,7 @@
 // ========================================
 
 @use 'mixins.scss' as *;
+@use 'sass:math';
 
 // Container Mixin
 @mixin container($max-width: var(--container-max-width-lg)) {
@@ -52,8 +53,8 @@
 
 @mixin make-col($size: false, $columns: 12) {
   @if $size {
-    flex: 0 0 percentage(calc($size / $columns));
-    max-width: percentage(calc($size / $columns));
+    flex: 0 0 math.percentage(math.div($size, $columns));
+    max-width: math.percentage(math.div($size, $columns));
   } @else {
     flex: 1 1 0%;
     max-width: 100%;
@@ -63,22 +64,22 @@
 // Responsive Grid Column Mixins
 @mixin make-col-span($size, $breakpoint: 'md') {
   @if $breakpoint == 'xs' {
-    @media (min-width: var(--breakpoint-xs)) { width: percentage(calc($size / 12)); }
+    @media (min-width: var(--breakpoint-xs)) { width: math.percentage(math.div($size, 12)); }
   }
   @if $breakpoint == 'sm' {
-    @media (min-width: var(--breakpoint-sm)) { width: percentage(calc($size / 12)); }
+    @media (min-width: var(--breakpoint-sm)) { width: math.percentage(math.div($size, 12)); }
   }
   @if $breakpoint == 'md' {
-    @media (min-width: var(--breakpoint-md)) { width: percentage(calc($size / 12)); }
+    @media (min-width: var(--breakpoint-md)) { width: math.percentage(math.div($size, 12)); }
   }
   @if $breakpoint == 'lg' {
-    @media (min-width: var(--breakpoint-lg)) { width: percentage(calc($size / 12)); }
+    @media (min-width: var(--breakpoint-lg)) { width: math.percentage(math.div($size, 12)); }
   }
   @if $breakpoint == 'xl' {
-    @media (min-width: var(--breakpoint-xl)) { width: percentage(calc($size / 12)); }
+    @media (min-width: var(--breakpoint-xl)) { width: math.percentage(math.div($size, 12)); }
   }
   @if $breakpoint == 'xxl' {
-    @media (min-width: var(--breakpoint-xxl)) { width: percentage(calc($size / 12)); }
+    @media (min-width: var(--breakpoint-xxl)) { width: math.percentage(math.div($size, 12)); }
   }
 }
 

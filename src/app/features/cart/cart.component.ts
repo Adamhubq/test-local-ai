@@ -1,11 +1,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CartService } from '../../core/services/cart.service';
 import { CartItem } from '../../core/models/cart-item.model';
+import { CurrencyPipe, CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss']
+  styleUrls: ['./cart.component.scss'],
+  imports: [CurrencyPipe, CommonModule]
 })
 export class CartComponent implements OnInit, OnDestroy {
   cartItems: CartItem[] = [];
