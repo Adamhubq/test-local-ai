@@ -4,12 +4,13 @@ import { ProductService } from '../services/product.service';
 import { ProductCardComponent } from '../../shared/components/product-card/product-card.component';
 import { SearchComponent } from '../components/search/search.component';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from '../shared/shared.module';
 
 @Component({
   selector: 'app-catalog',
   templateUrl: './catalog.component.html',
   styleUrls: ['./catalog.component.scss'],
-  imports: [ProductCardComponent] // SidebarNavigationComponent is now in SharedModule
+  imports: [ProductCardComponent, SharedModule] // SidebarNavigationComponent is now in SharedModule
 })
 export class CatalogComponent implements OnInit {
   products: Product[] = [];
