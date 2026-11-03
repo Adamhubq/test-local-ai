@@ -139,6 +139,7 @@ import { SidebarNavigationComponent } from './components/sidebar-navigation/side
     DividerExampleComponent,
     PriceExampleComponent,
     RatingComponent,
+    RangePipe,
     // BreadcrumbsComponent,
     // PaginationComponent,  // Removed since it's standalone
     // SearchBarComponent,  // Removed since it's standalone
