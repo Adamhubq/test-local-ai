@@ -7,17 +7,13 @@ import { FilterComponent } from './components/filter/filter.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { SearchComponent } from '../search/search.component';
 import { SharedModule } from '../../shared/shared.module';
-import { SidebarNavigationComponent } from '../../shared/components/sidebar-navigation/sidebar-navigation.component';
-import { ProductCardComponent } from '../../shared/components/product-card/product-card.component';
 
 @NgModule({
   declarations: [
     CatalogComponent,
     FilterComponent,
     ProductListComponent,
-    SearchComponent,
-    SidebarNavigationComponent,
-    ProductCardComponent
+    SearchComponent
   ],
   imports: [
     CommonModule,
@@ -25,9 +21,7 @@ import { ProductCardComponent } from '../../shared/components/product-card/produ
     SharedModule
   ],
   exports: [
-    CatalogComponent,
-    SidebarNavigationComponent,
-    ProductCardComponent
+    CatalogComponent
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
