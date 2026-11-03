@@ -5,7 +5,17 @@
   </div>
   
   <div class="catalog-content">
-    <app-sidebar-navigation class="sidebar"></app-sidebar-navigation>
+    <div class="sidebar">
+      <div class="categories-list">
+        <h3>Categories</h3>
+        <ul>
+          <li *ngFor="let category of categories">
+            {{ category.name }}
+          </li>
+        </ul>
+      </div>
+      <app-sidebar-navigation></app-sidebar-navigation>
+    </div>
     
     <div class="products-grid">
       <app-product-card 

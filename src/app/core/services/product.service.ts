@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Product } from '../models/product.model';
+import { Product } from '../../models/product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +9,7 @@ export class ProductService {
   private products: Product[] = [
     {
       id: 1,
+      slug: 'smartphone-x',
       name: 'Smartphone X',
       description: 'Latest smartphone with advanced features',
       price: 699.99,
@@ -18,6 +19,7 @@ export class ProductService {
     },
     {
       id: 2,
+      slug: 'laptop-pro',
       name: 'Laptop Pro',
       description: 'High-performance laptop for professionals',
       price: 1299.99,
@@ -27,6 +29,7 @@ export class ProductService {
     },
     {
       id: 3,
+      slug: 'coffee-maker',
       name: 'Coffee Maker',
       description: 'Automatic coffee maker with timer',
       price: 89.99,
@@ -44,6 +47,11 @@ export class ProductService {
 
   getProductById(id: number): Observable<Product | undefined> {
     const product = this.products.find(p => p.id === id);
+    return of(product);
+  }
+
+  getProductBySlug(slug: string): Observable<Product | undefined> {
+    const product = this.products.find(p => p.slug === slug);
     return of(product);
   }
 

@@ -1,38 +1,64 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProductService } from '../../core/services/product.service';
-import { Product } from '../../core/models/product.model';
-import { CartService } from '../../core/services/cart.service';
-import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { Product } from '../../../models/product.model';
+import { CartService } from '../../../core/services/cart.service';
 
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.scss'],
-  imports: [RouterModule, CommonModule]
+  styleUrls: ['./product-detail.component.scss']
 })
 export class ProductDetailComponent implements OnInit {
-  product!: Product;
+  product: Product | null = null;
 
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService,
     private cartService: CartService
   ) { }
 
   ngOnInit(): void {
-    const productId = Number(this.route.snapshot.paramMap.get('id'));
-    if (productId) {
-      this.productService.getProductById(productId).subscribe(product => {
-        if (product) {
-          this.product = product;
-        }
-      });
-    }
+    // In a real app, we would fetch the product by slug from a service
+    // For now, we'll simulate this with mock data
+    this.route.params.subscribe(params => {
+      const slug = params['slug'];
+      // This is a simplified version - in reality you'd have a ProductService
+      // that fetches products by slug from an API or mock data
+      this.loadProductBySlug(slug);
+    });
   }
 
-  addToCart(product: Product): void {
-    this.cartService.addToCart(product);
+  private loadProductBySlug(slug: string): void {
+    // This would normally be replaced with actual service call
+    // For now, we'll simulate by finding product in mock data
+    const mockProducts = [
+      {
+        id: 1,
+        name: 'Wireless Headphones',
+        description: 'High-quality wireless headphones with noise cancellation',
+        price: 199.99,
+        category: 'Electronics',
+        brand: 'TechBrand',
+        images: ['assets/images/headphones.jpg'],
+        slug: 'wireless-headphones'
+      },
+      {
+        id: 2,
+        name: 'Running Shoes',
+        description: 'Comfortable running shoes for daily exercise',
+        price: 89.99,
+        category: 'Footwear',
+        brand: 'SportBrand',
+        images: ['assets/images/shoes.jpg'],
+        slug: 'running-shoes'
+      }
+    ];
+
+    this.product = mockProducts.find(p => p.slug === slug) || null;
+  }
+
+  addToCart(): void {
+    if (this.product) {
+      this.cartService.addToCart(this.product);
+    }
   }
 }

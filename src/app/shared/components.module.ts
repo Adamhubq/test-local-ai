@@ -3,15 +3,15 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 // Basic components
-import { ButtonComponent } from './components/button.component';
-import { IconButtonComponent } from './components/icon-button.component';
-import { InputComponent } from './components/input.component';
-import { TextareaComponent } from './components/textarea.component';
-import { SelectComponent } from './components/select.component';
-import { CheckboxComponent } from './components/checkbox.component';
-import { RadioComponent } from './components/radio.component';
-import { SwitchComponent } from './components/switch.component';
-import { ButtonExampleComponent } from './components/button-example.component';
+import { ButtonComponent } from './components/button/button.component';
+import { IconButtonComponent } from './components/icon-button/icon-button.component';
+import { InputComponent } from './components/input/input.component';
+import { TextareaComponent } from './components/textarea/textarea.component';
+import { SelectComponent } from './components/select/select.component';
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
+import { RadioComponent } from './components/radio/radio.component';
+import { SwitchComponent } from './components/switch/switch.component';
+import { ButtonExampleComponent } from './components/button-example/button-example.component';
 
 // Badge and Chip components
 import { BadgeComponent } from './components/badge/badge.component';

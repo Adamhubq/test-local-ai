@@ -1,29 +1,47 @@
-<div class="cart-page">
-  <div class="cart-header">
-    <h1>Корзина</h1>
-  </div>
+<div class="cart-container">
+  <h2>Shopping Cart</h2>
   
-  <div class="cart-content">
+  <div *ngIf="cartItems.length === 0" class="empty-cart">
+    <p>Your cart is empty</p>
+  </div>
+
+  <div *ngIf="cartItems.length > 0" class="cart-content">
     <div class="cart-items">
-      <!-- Список товаров в корзине будет здесь -->
-      <div class="empty-cart" *ngIf="!hasItems">
-        <p>Ваша корзина пуста</p>
-      </div>
-      
-      <div class="cart-item" *ngFor="let item of cartItems">
-        <!-- Элементы корзины будут здесь -->
-        <app-product-card [product]="item.product"></app-product-card>
+      <div *ngFor="let item of cartItems" class="cart-item">
+        <div class="item-info">
+          <h3>{{ item.product.name }}</h3>
+          <p>{{ item.product.description }}</p>
+        </div>
+        <div class="item-quantity">
+          <button (click)="updateQuantity(item.product.id, item.quantity - 1)">-</button>
+          <span>{{ item.quantity }}</span>
+          <button (click)="updateQuantity(item.product.id, item.quantity + 1)">+</button>
+        </div>
+        <div class="item-price">
+          <p>{{ item.product.price * item.quantity | currency }}</p>
+        </div>
+        <div class="item-actions">
+          <button (click)="removeFromCart(item.product.id)" class="remove-btn">Remove</button>
+        </div>
       </div>
     </div>
-    
+
     <div class="cart-summary">
-      <div class="summary-total">
-        <h3>Итого: <span class="total-amount">0 ₽</span></h3>
+      <h3>Order Summary</h3>
+      <div class="summary-row">
+        <span>Subtotal:</span>
+        <span>{{ total | currency }}</span>
       </div>
-      
-      <div class="summary-actions">
-        <button class="btn btn-secondary" (click)="continueShopping()">Продолжить покупки</button>
-        <button class="btn btn-primary" (click)="proceedToCheckout()">Оформить заказ</button>
+      <div class="summary-row">
+        <span>Shipping:</span>
+        <span>Free</span>
       </div>
+      <div class="summary-row total">
+        <span>Total:</span>
+        <span>{{ total | currency }}</span>
+      </div>
+      <button (click)="clearCart()" class="clear-btn">Clear Cart</button>
+      <button routerLink="/checkout" class="checkout-btn">Proceed to Checkout</button>
     </div>
   </div>
+</div>

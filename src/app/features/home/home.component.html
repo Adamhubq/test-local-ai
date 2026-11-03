@@ -10,6 +10,11 @@
     
     <section class="categories">
       <h2>Категории товаров</h2>
+      <div class="categories-list">
+        <div *ngFor="let category of categories$ | async" class="category-item">
+          {{ category.name }}
+        </div>
+      </div>
     </section>
     
     <section class="popular-products">
