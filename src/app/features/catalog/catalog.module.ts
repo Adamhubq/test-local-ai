@@ -15,7 +15,9 @@ import { ProductCardComponent } from '../../shared/components/product-card/produ
     CatalogComponent,
     FilterComponent,
     ProductListComponent,
-    SearchComponent
+    SearchComponent,
+    SidebarNavigationComponent,
+    ProductCardComponent
   ],
   imports: [
     CommonModule,
