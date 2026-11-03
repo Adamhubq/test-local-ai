@@ -35,6 +35,7 @@ export class ProductDetailComponent implements OnInit {
     const mockProducts = [
       {
         id: 1,
+        slug: 'wireless-headphones',
         name: 'Wireless Headphones',
         description: 'High-quality wireless headphones with noise cancellation',
         price: 199.99,
@@ -45,6 +46,7 @@ export class ProductDetailComponent implements OnInit {
       },
       {
         id: 2,
+        slug: 'running-shoes',
         name: 'Running Shoes',
         description: 'Comfortable running shoes for daily exercise',
         price: 89.99,
@@ -55,7 +57,7 @@ export class ProductDetailComponent implements OnInit {
       }
     ];
 
-    this.product = mockProducts.find(p => p.id === parseInt(slug, 10)) || null;
+    this.product = mockProducts.find(p => p.slug === slug) || null;
   }
 
   addToCart(): void {

@@ -9,33 +9,36 @@ export class ProductService {
   private products: Product[] = [
     {
       id: 1,
-      slug: 'smartphone-x',
       name: 'Smartphone X',
       description: 'Latest smartphone with advanced features',
       price: 699.99,
       category: 'Electronics',
+      brand: 'Brand X',
       image: 'assets/images/smartphone.jpg',
-      inStock: true
+      inStock: true,
+      slug: 'smartphone-x'
     },
     {
       id: 2,
-      slug: 'laptop-pro',
       name: 'Laptop Pro',
       description: 'High-performance laptop for professionals',
       price: 1299.99,
       category: 'Electronics',
+      brand: 'Brand X',
       image: 'assets/images/laptop.jpg',
-      inStock: true
+      inStock: true,
+      slug: 'laptop-pro'
     },
     {
       id: 3,
-      slug: 'coffee-maker',
       name: 'Coffee Maker',
       description: 'Automatic coffee maker with timer',
       price: 89.99,
       category: 'Home Appliances',
+      brand: 'Brand Y',
       image: 'assets/images/coffee-maker.jpg',
-      inStock: false
+      inStock: false,
+      slug: 'coffee-maker'
     }
   ];
 
@@ -47,11 +50,6 @@ export class ProductService {
 
   getProductById(id: number): Observable<Product | undefined> {
     const product = this.products.find(p => p.id === id);
-    return of(product);
-  }
-
-  getProductBySlug(slug: string): Observable<Product | undefined> {
-    const product = this.products.find(p => p.slug === slug);
     return of(product);
   }
 

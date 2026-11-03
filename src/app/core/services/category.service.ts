@@ -1,17 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Category } from '../models/category.model';
+import { CATEGORIES } from '../../../assets/mock/categories.mock';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
-  private categories: Category[] = [
-    { id: 1, name: 'Electronics' },
-    { id: 2, name: 'Home Appliances' },
-    { id: 3, name: 'Clothing' },
-    { id: 4, name: 'Books' }
-  ];
+  private categories: Category[] = CATEGORIES;
 
   constructor() { }
 

@@ -8,4 +8,5 @@ export interface Product {
   image: string;
   inStock: boolean;
   rating?: number;
+  slug: string;
 }

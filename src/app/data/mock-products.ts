@@ -10,7 +10,8 @@ export const MOCK_PRODUCTS: Product[] = [
     brand: 'TechBrand',
     image: 'assets/images/smartphone.jpg',
     inStock: true,
-    rating: 4.5
+    rating: 4.5,
+    slug: 'smartphone-xyz'
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ export const MOCK_PRODUCTS: Product[] = [
     brand: 'TechBrand',
     image: 'assets/images/laptop.jpg',
     inStock: true,
-    rating: 4.8
+    rating: 4.8,
+    slug: 'laptop-abc'
   }
 ];

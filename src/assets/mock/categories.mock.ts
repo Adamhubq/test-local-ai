@@ -1,4 +1,5 @@
-export const CATEGORIES = [
+export const 
+CATEGORIES = [
   {
     id: 1,
     name: "Женская одежда",

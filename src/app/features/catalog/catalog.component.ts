@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../models/product.model';
+import { Category } from '../../models/category.model';
 import { CommonModule } from '@angular/common';
 import { SidebarNavigationComponent } from '../../shared/components/sidebar-navigation/sidebar-navigation.component';
 import { ProductCardComponent } from '../../shared/components/product-card/product-card.component';
+import { CategoryService } from '../../core/services/category.service';
+import { ProductService } from '../../core/services/product.service';
 
 @Component({
   selector: 'app-catalog',
@@ -13,12 +16,28 @@ import { ProductCardComponent } from '../../shared/components/product-card/produ
 export class CatalogComponent implements OnInit {
   products: Product[] = [];
   filteredProducts: Product[] = [];
-  
-  constructor() { }
+  categories: Category[] = [];
+
+  constructor(private productService: ProductService, private categoryService: CategoryService) { }
 
   ngOnInit(): void {
+    this.loadProducts();
+    this.loadCategories();
   }
-  
+
+  loadProducts(): void {
+    this.productService.getProducts().subscribe(products => {
+      this.products = products;
+      this.filteredProducts = products;
+    });
+  }
+
+  loadCategories(): void {
+    this.categoryService.getCategories().subscribe(categories => {
+      this.categories = categories;
+    });
+  }
+
   onSearch(query: string): void {
     // Filter products based on search query
     if (!query) {

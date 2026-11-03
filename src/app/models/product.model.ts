@@ -7,5 +7,6 @@ export interface Product {
   brand: string;
   image: string;
   inStock: boolean;
+  slug: string;
   rating?: number;
 }

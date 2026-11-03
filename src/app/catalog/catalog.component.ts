@@ -6,7 +6,7 @@ import { ProductCardComponent } from '../../shared/components/product-card/produ
 import { SearchComponent } from '../../shared/components/search/search.component';
 import { CommonModule } from '@angular/common';
 import { SidebarNavigationComponent } from '../../shared/components/sidebar-navigation/sidebar-navigation.component';
-import { ProductService } from '../../core/services';
+import { ProductService } from '../../core/services/product.service';
 
 @Component({
   selector: 'app-catalog',
