@@ -12,6 +12,7 @@ import { routes } from './app.routes';
   ],
   providers: [
     CurrencyPipe
-  ]
+  ],
+  bootstrap: [] // Remove bootstrap array for standalone components
 })
 export class AppModule { }
